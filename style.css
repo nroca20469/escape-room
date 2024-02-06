@@ -1,0 +1,92 @@
+/*
+COLORES:
+- Dark green --> #041F1E
+- Sepia --> #774E24 
+- Seal brown --> #6A381F
+- Pale --> #FFDDD2  
+- Gray --> #9C9990
+
+FUENTES:
+- Para tipo carta --> @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap');
+                        font-family: 'Grape Nuts', cursive;
+- Para texto de historia --> @import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
+                            font-family: 'Sevillana', cursive;
+- Para texto general --> @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+                        font-family: 'Nanum Gothic', sans-serif;
+- Para logo --> @import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
+                font-family: 'Rubik Burned', system-ui;
+*/
+
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');  Logo */
+/* @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap'); /* Botones */
+/* @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap'); */
+    
+
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+body{
+    /* padding-bottom: 20px; */
+    background-color: #9C9990;
+
+}
+
+/* HEADER */
+header {
+    padding-left: 20px;
+    height: 125px;
+    background-color: #6A381F;
+
+}
+
+header h3, header img{
+    height: 75px;
+    float: left;
+    color: #FFDDD2;
+    
+}
+
+h3, h2 {
+    padding-top: 45px;
+    font-family: 'Rubik Burned', system-ui;
+}
+
+header img {
+    padding: 25px;
+    color: #fff;
+}
+
+header button {
+    margin-top: 40px;
+    margin-right: 30px;
+    font-size: 18px;
+    padding: 10px;
+    float: right;
+    border: 1px solid #FFDDD2;
+    border-radius: 10px;
+    background-color: #6A381F;
+    color:#FFDDD2;
+}
+
+header button:hover {
+    background-color: #FFDDD2;
+    color: #6A381F;
+    
+}
+
+#logout {
+    display: none;
+}
+
+footer {
+    /* margin-top: 20px; */
+    height: 70px;
+    background-color: #6A381F;
+    position:sticky;
+    width: 100%;
+    bottom: 0;
+}
+

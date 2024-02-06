@@ -1,0 +1,106 @@
+22/01/2024(Noche):
+HECHO:
+- Creacion html de login i register
+- Creacion del js de register(y creacion del ususario) y login(comprovacion de si eiste)
+
+POR HACER:
+- En el js de login(cambiar el estado del ususario a true).
+- Si el usuario esta iniciado ya, borrar los botones de login register y mostrar el de logout.
+- En el js de register --> buscar el regex de la contraseña
+
+
+23/01/2024(Mañana):
+HECHO:
+- Pequeño cambio en la bd(localstorage) para guardar los usuarios
+- Boton de logout con js para cerrar session
+- En login ya inicia session
+- Botones de inicio de session, registro y logout programados para que aparezcasn o desaparezcan segun convenga
+
+POR HACER:
+- Buscar como borrar un usuarios del localStorage
+- Acabar el updateData de user en showAllUsers.js
+- Comprovar que al entrar en showAllUsers.html es un administrador
+- En updateUser actualizar la contraseña a una de default y mostrar por pantalla
+
+
+23/01/2024(Tarde):
+HECHO:
+- Pagina de mapLevel1.html --> con css y js(faltara que en el momento de actuallizacion, se actualize con el estado de juego del usuario --> esta empezado);
+
+POR HACER:
+- Acabar css y js de mapLevel1.html. --> al seleccionar que se abra una pagina y guardar el estado de la partida
+- Acabar cuadricula y que los numeros aparezcan por pantalla
+
+
+24/01/2024(Mañana):
+HECHO:
+- Implementar nivel1 juego 1 con la cuadricula. Guardando uno para poder funcionar
+
+POR HACER:
+- Guardar estadode la partida para mas adelante habiendo iniciado session puedan continuar en el estado anterior de este nivel
+
+
+24/01/2024(Tarde):
+HECHO
+- Boton de check funcionando, implementacion de codigo correcta en menos lineas
+- Eleccion de json de sudoku segun nivel con random.
+
+POR HACER:
+- Guardar partida, añadir mas en el array para poder implementar y ver diferentes y no solo uno
+
+
+24/01/2024(Noche):
+HECHO:
+- Añadir sudokus(4 de cada tipo) segun nivel --> Con correccion incluida
+
+POR HACER: 
+- Boton de save funcional, que guarde la partida en estado acctual(con el original, actual y la correccion)
+
+
+25/01/2024(Mañana):
+HECHO:
+- Boton de save funcional, que guarde la partida en estado acctual(con el original, actual y la correccion)
+
+POR HACER: 
+- Mirar como hacer un evento en un input por cambio de numero cuando esta en incorrecta para que se cambie el color
+
+
+30/01/2024(Tarde):
+HECHO:
+- Buscar imagenes del nivel 3 nivel 1, mapearlas y empezar sus json
+- Mirar como conectarlo con las paginas con las quadriculas
+
+POR HACER:
+- Pasa a json los sudokus del nivel 3 nivel 1
+- Acabar de mirar como conectar los sudokus
+
+
+30/01/2024(Noche):
+HECHO:
+- Acabar json de los sudokus samurais(ejercicio/correccion)
+- Correcta connexion y mostrar por pantalla del sudoku
+
+
+31/01/2024(Tarde):
+HECHO:
+- Arreglado lo de guardar que sudoku samurai del lev3lev1, guardamos el indice, el json de las tablas y quadriculas y la correccion de este mismo
+- Arreglado que se cambiara el color al cambiar un numero incorrecto
+- En el lev3lev1quad1 ya se rellena correctamente
+
+PARA HACER:
+-Acabar la creacions de cuadriculas del lev3lev1 y mirar que funcione correctamente
+
+
+05/02/2024(Tarde)
+HECHO:
+- Correccion de errores en json i creacion de estos
+
+POR HACER:
+- Creacion pistas, puntacion, faltas i tiempo 
+
+06/02/2024(Mañana)
+HECHO:
+- Creacion de pistas, puntuacion i correccion de faltas, errores, correctos al actualizar la pagina
+
+POR HACER:
+- Creacion de puntuacion segun tiempo(actualizar, guardar y extraer al informacion)

@@ -1,0 +1,99 @@
+/* MAIN */
+main {
+    padding-block: 5%;
+}
+
+main h2 {
+    color: #041F1E;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+main button {
+    margin-block: 10px;
+    background-color: #6A381F;
+    color: #9C9990;
+    padding-inline: 10px;
+    padding-block: 10px;
+    width: 60%;
+    text-align: center;
+    border: none;
+    border-radius: 10px;
+    font-family: 'Kalam', cursive;
+    font-size: 20px;
+    display: block;
+}
+
+main a {
+    text-decoration: none;
+
+}
+
+footer {
+    text-align: center;
+}
+
+footer button {
+    margin-top: 12px;
+    /* margin-right: 30px; */
+    font-size: 18px;
+    padding: 10px;
+    margin-inline: 10px;
+    text-align: center;
+    
+    /* float: right; */
+    border: 1px solid #FFDDD2;
+    border-radius: 10px;
+    background-color: #6A381F;
+    color:#FFDDD2;
+}
+
+/* main button:last-of-type {
+    margin-bottom: 30px;
+} */
+
+#modal.close {
+    display: none; /* Por defecto, estará oculto */
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Se situará por encima de otros elementos de la página*/
+    padding-top: 200px; /* El contenido estará situado a 200px de la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Algura completa */
+    overflow: auto; /* Se activará el scroll si es necesario */
+    background-color: rgba(0,0,0,0.5); /* Color negro con opacidad del 50% */
+    text-align: center;
+}
+
+#modal.open {
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Se situará por encima de otros elementos de la página*/
+    padding-top: 200px; /* El contenido estará situado a 200px de la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Algura completa */
+    overflow: auto; /* Se activará el scroll si es necesario */
+    background-color: rgba(0,0,0,0.5); /* Color negro con opacidad del 50% */
+    text-align: center;
+    
+}
+
+#modal.open #contenido-modal {
+    position: relative; /* Relativo con respecto al contenedor -modal- */
+    background-color: #9C9990;
+    margin: auto; /* Centrada */
+    padding: 40px;
+    width: 60%;
+    border-radius: 15px;
+    color: #041F1E;
+    font-size: 20px;
+}
+
+#modal.open #contenido-modal p {
+    margin-bottom: 20px;
+    font-family: 'Kalam', cursive;
+}
+

@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+
+/* MAIN */
+main.login {
+    padding-block: 5%;
+}
+
+main h2 {
+    color: #041F1E;
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 20px;
+    padding-top: 40px;  
+}
+
+main
+#form {
+    width: 50%;
+    background-color: #774E24;
+    color: #FFDDD2;
+    padding: 2%;
+    border: 1px solid #FFDDD2;
+    border-radius: 20px;
+}
+
+main #form div {
+    text-align: center;
+    margin-block: 20px;
+}
+
+#form div label {
+    font-family: 'Nanum Gothic', sans-serif;
+    font-size: 14px;
+}
+
+#form div input {
+    margin-inline: 10px;
+    background-color: #9C9990;
+    border: 2px solid #FFDDD2;
+    border-radius: 7px;
+    padding: 3px;
+    
+}
+
+#form div input:hover, #form div input:focus {
+    background-color: #FFDDD2;
+    color: #041F1E;
+}
+
+
+#form div button {
+    padding: 5px 10%;
+    margin-top: 10px;
+    background-color: #9C9990;
+    color: #041F1E;
+    border: 1px solid #041F1E;
+    border-radius: 5px;
+}
+
+#form div button:hover {
+    background-color: #041F1E;
+    color: #9C9990;
+}

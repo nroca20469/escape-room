@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Escape Room</title> -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/home.css">
+</head>
+<body>
+    <header>
+        <a href="./index.html"><img src="./img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
+        <a href="./index.html"><h3>The Escape Room Game</h3></a>
+
+        <span id="buttonsLogInRegister">
+            <a href="./form/login.html"><button type="button"> Log in </button></a>
+            <a href="./form/register.html"><button type="button"> Register </button></a>
+        </span>
+        <a href="./form/profile.html"><button type="button"> View Profile </button></a>
+        <button type="button" id="logout"> Log out </button></header>
+
+    <main id="container">
+        <!-- <div id="buttons">
+            
+            <button> Continue previous game </button>
+        </div> -->
+        
+
+            <h2>Choose a LEVEL</h2>
+            <a href="./form/mapLevel1.html"><button type="button"> Easy </button></a>
+            <a href="./form/mapLevel2.html"><button type="button"> Medium </button></a>
+            <a href="./form/mapLevel3.html"><button type="button"> Difficult </button></a>
+
+
+            <div id="modal" class="close">
+                <div id="contenido-modal">
+                    <p>Are you sure you want to restart the game? </p>
+                    <button id="btnRestartSure"> Yes </button>
+                    <button id="btnRestartNo"> No </button>
+                </div>
+                
+            </div>
+        
+    </main>
+
+    <footer>
+        <button id="btnNewGame"> Start a new game  </button>
+    </footer>
+
+    <script src="./js/logout.js"></script>
+    <script src="./js/newGame.js"></script>
+</body>
+</html>

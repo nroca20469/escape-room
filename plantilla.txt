@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <title>Escape Room</title> -->
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
+        <a href="../index.html"><h3>The Escape Room Game</h3></a>
+
+        <span id="buttonsLogInRegister">
+            <a href="../form/login.html"><button type="button"> Log in </button></a>
+            <a href="../form/register.html"><button type="button"> Register </button></a>
+        </span>
+        <span id="admin">
+            <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+        </span>
+        <button type="button" id="logout"> Log out </button>
+    </header>
+
+
+    <main id="container">
+
+    </main>
+
+    <footer>
+        Hi
+    </footer>
+
+     <script src="../js/logout.js"></script>
+</body>
+</html>

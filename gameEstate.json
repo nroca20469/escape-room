@@ -1,0 +1,56 @@
+{"gameEstate" : [{
+    "map1": [{
+        "level1": {
+            "savedGame": null,
+            "estate": null,
+            "time": null,
+            "faults": null
+        },
+        "level2": {
+            "estate": null,
+            "time": null,
+            "faults": null
+        },
+        "level3": {
+            "estate": null,
+            "time": null,
+            "faults": null
+        }
+    }],
+    "map2": [{
+        "level1": {
+            "savedGame": null,
+            "estate": null,
+            "time": null,
+            "faults": null
+        },
+        "level2": {
+            "estate": null,
+            "time": null,
+            "faults": null
+        },
+        "level3": {
+            "estate": null,
+            "time": null,
+            "faults": null
+        }
+    }],
+    "map3": [{
+        "level1": {
+            "savedGame": null,
+            "estate": null,
+            "time": null,
+            "faults": null
+        },
+        "level2": {
+            "estate": null,
+            "time": null,
+            "faults": null
+        },
+        "level3": {
+            "estate": null,
+            "time": null,
+            "faults": null
+        }
+    }]
+}]}

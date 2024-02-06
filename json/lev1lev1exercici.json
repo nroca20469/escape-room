@@ -1,0 +1,190 @@
+[
+    {
+        "tabla1": {
+            "fila1": [3, 8, null],
+            "fila2": [2, 5, 4],
+            "fila3": [6, null, 7]
+        },
+        "tabla2": {
+            "fila1": [2, null, null],
+            "fila2": [7, 9, 1],
+            "fila3": [null, 3, 8]
+        },
+        "tabla3": {
+            "fila1": [5, 7, 9],
+            "fila2": [6, 3, null],
+            "fila3": [1, null, 4]
+        },
+        "tabla4": {
+            "fila1": [null, 3, 9],
+            "fila2": [5, 7, 2],
+            "fila3": [8, null, 6]
+        },
+        "tabla5": {
+            "fila1": [6, 8, 7],
+            "fila2": [3, null, 9],
+            "fila3": [1, null, 2]
+        },
+        "tabla6": {
+            "fila1": [4, null, 2],
+            "fila2": [8, 1, 6],
+            "fila3": [3, 9, null]
+        },
+        "tabla7": {
+            "fila1": [4, null, 8],
+            "fila2": [null, 2, 3],
+            "fila3": [7, 6, 5]
+        },
+        "tabla8": {
+            "fila1": [9, 7, null],
+            "fila2": [8, 1, 6],
+            "fila3": [null, null, 3]
+        },
+        "tabla9": {
+            "fila1": [2, null, 3],
+            "fila2": [7, 4, 5],
+            "fila3": [null, 8, 1]
+        }
+    },
+    {
+        "tabla1": {
+            "fila1": [9, 2, null],
+            "fila2": [7, 4, 1],
+            "fila3": [8, null, 3]
+        },
+        "tabla2": {
+            "fila1": [3, 1, null],
+            "fila2": [5, null, 6],
+            "fila3": [4, 7, 9]
+        },
+        "tabla3": {
+            "fila1": [null, 5, 7],
+            "fila2": [null, null, 8],
+            "fila3": [1, 2, 6]
+        },
+        "tabla4": {
+            "fila1": [2, null, 5],
+            "fila2": [null, 6, 9],
+            "fila3": [4, 7, 8]
+        },
+        "tabla5": {
+            "fila1": [1, 9, 7],
+            "fila2": [8, null, 4],
+            "fila3": [2, 6, 5]
+        },
+        "tabla6": {
+            "fila1": [8, 6, 4],
+            "fila2": [5, 7, null],
+            "fila3": [9, null, 3]
+        },
+        "tabla7": {
+            "fila1": [5, 9, 4],
+            "fila2": [6, null, null],
+            "fila3": [3, 8, null]
+        },
+        "tabla8": {
+            "fila1": [7, 8, 2],
+            "fila2": [9, null, 3],
+            "fila3": [null, 5, 1]
+        },
+        "tabla9": {
+            "fila1": [6, null, 1],
+            "fila2": [2, 8, 5],
+            "fila3": [null, 4, 9]
+        }
+    },
+    {
+        "tabla1": {
+            "fila1": [1, null, 5],
+            "fila2": [6, 9, null],
+            "fila3": [2, 8, 7]
+        },
+        "tabla2": {
+            "fila1": [2, 4, 6],
+            "fila2": [1, null, null],
+            "fila3": [null, 5, 9]
+        },
+        "tabla3": {
+            "fila1": [7, 8, 9],
+            "fila2": [2, 3, 5],
+            "fila3": [null, null, 4]
+        },
+        "tabla4": {
+            "fila1": [null, 1, 8],
+            "fila2": [4, 7, null],
+            "fila3": [9, 2, 6]
+        },
+        "tabla5": {
+            "fila1": [null, 9, 4],
+            "fila2": [8, null, 5],
+            "fila3": [7, 1, null]
+        },
+        "tabla6": {
+            "fila1": [3, 2, 7],
+            "fila2": [null, 9, 1],
+            "fila3": [4, 5, null]
+        },
+        "tabla7": {
+            "fila1": [7, null, null],
+            "fila2": [3, 4, 1],
+            "fila3": [8, 5, 2]
+        },
+        "tabla8": {
+            "fila1": [5, 3, null],
+            "fila2": [null, null, 2],
+            "fila3": [4, 6, 7]
+        },
+        "tabla9": {
+            "fila1": [8, 4, 2],
+            "fila2": [null, 7, 6],
+            "fila3": [9, null, 3]
+        }
+    },
+    {
+        "tabla1": {
+            "fila1": [9, null, 7],
+            "fila2": [null, 2, 6],
+            "fila3": [1, 3, 8]
+        },
+        "tabla2": {
+            "fila1": [1, 5, 2],
+            "fila2": [3, 8, 7],
+            "fila3": [null, null, 6]
+        },
+        "tabla3": {
+            "fila1": [3, null, null],
+            "fila2": [1, 4, 9],
+            "fila3": [null, 2, null]
+        },
+        "tabla4": {
+            "fila1": [3, 6, null],
+            "fila2": [2, 5, 4],
+            "fila3": [7, 8, 9]
+        },
+        "tabla5": {
+            "fila1": [null, 2, 4],
+            "fila2": [7, null, 8],
+            "fila3": [5, 6, null]
+        },
+        "tabla6": {
+            "fila1": [7, 8, 5],
+            "fila2": [6, 9, 1],
+            "fila3": [null, 3, 2]
+        },
+        "tabla7": {
+            "fila1": [null, 9, null],
+            "fila2": [4, 1, 3],
+            "fila3": [null, null, 2]
+        },
+        "tabla8": {
+            "fila1": [8, null, null],
+            "fila2": [2, 7, 9],
+            "fila3": [6, 4, 5]
+        },
+        "tabla9": {
+            "fila1": [2, 7, 4],
+            "fila2": [8, 5, null],
+            "fila3": [9, null, 3]
+        }
+    }       
+]

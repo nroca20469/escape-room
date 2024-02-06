@@ -1,0 +1,36 @@
+#container {
+    width: 60%;
+    margin-inline: 15%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    background-color: #6A381F;
+    padding: 5%;
+    color:#FFDDD2;
+    text-align: center;
+    border-radius: 7px;
+}
+
+/* #container div {
+    width: 40%;
+    height: 40%;
+} */
+
+#palabra1, #palabra2, #palabra3 {
+    margin-left: 5%;
+    width: 40%;
+    background-color: #FFDDD2;   
+    margin-block: 5%;
+    padding: 5%;
+    border-radius: 7px;
+
+}
+
+#container button {
+    padding: 10px;
+    margin: 5px;
+    background-color: #6A381F;
+    color: #FFDDD2;
+    border: 1px solid #FFDDD2;
+    border-radius: 7px;
+    font-size: 20px;
+}
