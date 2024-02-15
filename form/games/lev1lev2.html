@@ -6,6 +6,8 @@
     <title>Escape Room</title>
     <link rel="stylesheet" href="../../style.css">
     <link rel="stylesheet" href="../../css/game2.css">
+
+    
 </head>
 <body>
     <header>
@@ -18,17 +20,69 @@
         </span>
         <span id="admin">
             <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
-        </span>
+        </span>     
         <button type="button" id="logout"> Log out </button>
     </header>
 
 
-    <main id="container">
+    <main id="container">   
+
+        <table>
+            <tr>
+                <td> <div id="palabra1"></div></td>
+                <td> <div class="palabra1"></div> </td>
+                <td onclick="mostrarPista('palabra1');"> <img src="./../../iconos/lightbulb.svg" width="30"></img> </td>
+            </tr>
+
+            <tr>
+                <td> <div id="palabra2"></div></td>
+                <td> <div class="palabra2"></div> </td> 
+                <td onclick="mostrarPista('palabra2');"> <img  src="./../../iconos/lightbulb.svg" width="30"></img> </td>
+            </tr>
+
+            <tr>
+                <td> <div id="palabra3"></div></td>
+                <td> <div class="palabra3"></div> </td> 
+                <td onclick="mostrarPista('palabra3');"> <img src="./../../iconos/lightbulb.svg" width="30"></img> </td>
+            </tr>
+        </table>
+
+        <div id="palabras">
+            <div id="intentos">
+                <h2> Intentos </h2> 
+                <div class="pal1"></div>
+                <div class="pal2"></div>
+                <div class="pal3"></div>
+
+            </div>
+            <div id="correcto">
+                <h2> Correctas </h2>
+                <div id="correctas"></div>
+            </div>
+            
+        </div>
+
+        <div id="modal" class="close">
+            <div id="contenido-modal">
+                <p id="mensaje-modal"></p>
+
+                <div id="sure">
+                    <button id="okey" onclick="closeModal();"> Okey </button>
+                </div>
+            </div>
+        </div>
+
+        <div id="faltasIPuntuacion">
+            <h4 id="faltas">Faltas: <a>0</a></h4>
+            <h4 id="puntuacion">Puntuacion: <a>0</a></h4>
+            <h4 id="tiempo">Tiempo: <a>00:00:00</a></h4>
+        </div>
 
     </main>
-
+   
     <footer>
-        Hi
+        <button id="save"> Save </button>
+        <button id="check"> Check </button>
     </footer>
 
     <script src="../../js/lev1lev2.js"></script>

@@ -11,8 +11,8 @@ const lev3 = document.getElementById('lev3');
 function redirectPage(id) {
     console.log(id);
 
-    if(id == 'lev2') {
-        location.href = "../form/games/lev2lev1.html";
+    if(id == 'lev1') {
+        location.href = "../form/games/lev3lev1.html";
     } else if(id == 'lev2') {
         location.href = "../form/games/lev2lev2.html";
     } else if(id == 'lev3') {
@@ -35,7 +35,7 @@ function mirarUsuario() {
 
     if(id != null) {
             let gameEstate = (JSON.parse(localStorage.getItem(id))['gameEstate']);
-            let map2 = gameEstate[0]['map2'];
+            // let map2 = gameEstate[0]['map2'];
             let map3 = gameEstate[0]['map3'];
             if(map3[0]['level1']['estate'] == null || map3[0]['level1']['estate'] == "done" || map3[0]['level1']['estate'] == "intento" ) {
                lev1.className = "unblocked";

@@ -93,7 +93,7 @@ input.pista {
     color:orange !important;
 }
 
-#save, #check, #pista {
+#save, #check, #pista, #howToPlay {
     margin-top: 12px;
     /* margin-right: 30px; */
     font-size: 18px;

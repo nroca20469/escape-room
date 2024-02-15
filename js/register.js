@@ -33,6 +33,7 @@ function comprovarFormulario(e) {
             console.log('check inputs dintre' );
             let valEmail = validacioEmail(email);
             let validacioContrasenya = validacioContrasena(password);
+            console.log(password.value, repeatPassword.value);
             let contrasenyes = comprovarContrasenyes(password, repeatPassword);
             
             console.log(contrasenyes, valEmail, validacioContrasenya);

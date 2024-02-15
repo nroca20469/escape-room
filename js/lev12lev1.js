@@ -1,5 +1,5 @@
-import  {obtenerSudoku} from '../js/sudoku.js';  //Importamos la funcion que nos va a obtener el sudoku que vamos a utilizar(desde un json)
-
+import  {obtenerSudoku} from './sudoku.js';  //Importamos la funcion que nos va a obtener el sudoku que vamos a utilizar(desde un json)
+import {inicio, parar} from './tiempo.js';
 const inputs = document.querySelectorAll('input');  // Recogemos todos los inputs de la tabla para luego poder manipularlos y gardar 
 
 let jsonCorreccion;  //JSON con la correccion del sudoku actual
@@ -18,14 +18,8 @@ const faltasInput =  document.querySelector('#faltas a');
 const puntuacionInput =  document.querySelector('#puntuacion a');
 const tiempoInput =  document.querySelector('#tiempo a');
 
-//Constantes tiempo
-let Horas;
-let Minutos;
-let Segundos;
-let control;
-let horas=0;
-let minutos=0;
-let segundos=0;
+//Div con el nivel
+const nivel = document.getElementById('nivel');
 
 //Funcion para colocar los numeros en el sudoku
 function colocarNumeros(json) {  //Json que recorreremos para rellenar el sudoku por pantalla
@@ -305,74 +299,86 @@ function saveGame() {
     // let savedGame = JSON.stringify(gameState);  //Lo pasamos a string para luego mostrar en el json del usuario
 
     //Gaurdamos toda la informacion del usuario en un objeto para guardar la informacion
-    let user =  {
-        name: JSON.parse(localStorage.getItem(id))['name'],
-        username: JSON.parse(localStorage.getItem(id))['username'],
-        email: JSON.parse(localStorage.getItem(id))['email'],
-        estate: JSON.parse(localStorage.getItem(id))['estate'],
-        password: JSON.parse(localStorage.getItem(id))['password'],
-        userType: JSON.parse(localStorage.getItem(id))['userType'],
-        gameEstate: [{
-            "map1": [{
-                "level1": {
-                    "estate": 'intento',
-                    "time": tiempoInput.innerHTML,
-                    "faults": faltasInput.innerHTML,
-                    "pistas": JSON.parse(pista), 
-                    "savedGame": JSON.parse(gameState),
-                    "puntuacion": puntuacionInput.innerHTML
-                },
-                "level2": {
-                    "estate": null,
-                    "time": null,
-                    "faults": null
-                },
-                "level3": {
-                    "estate": null,
-                    "time": null,
-                    "faults": null
-                }
-            }],
-            "map2": [{
-                "level1": {
-                    "estate": null,
-                    "time": null,
-                    "faults": null,
-                    "savedGame": []
-                },
-                "level2": {
-                    "estate": null,
-                    "time": null,
-                    "faults": null
-                },
-                "level3": {
-                    "estate": null,
-                    "time": null,
-                    "faults": null
-                }
-            }],
-            "map3": [{
-                "level1": {
-                    "estate": null,
-                    "time": null,
-                    "faults": null,
-                    "savedGame": []
-                },
-                "level2": {
-                    "estate": null,
-                    "time": null,
-                    "faults": null
-                },
-                "level3": {
-                    "estate": null,
-                    "time": null,
-                    "faults": null
-                }
-            }]
-        }]
-    };
+    let usuario = JSON.parse(localStorage.getItem(id));
+    usuario.gameEstate.map.level = {
+        "estate": 'intento',
+        "time": tiempoInput.innerHTML,
+        "faults": faltasInput.innerHTML,
+        "pistas": JSON.parse(pista), 
+        "savedGame": JSON.parse(gameState),
+        "puntuacion": puntuacionInput.innerHTML
+    }
 
-    localStorage.setItem(id, JSON.stringify(user));  //Guardamos el usuario en el localStorage
+
+    // console.log(usuarioNivel1);
+    // let user =  {
+    //     name: JSON.parse(localStorage.getItem(id))['name'],
+    //     username: JSON.parse(localStorage.getItem(id))['username'],
+    //     email: JSON.parse(localStorage.getItem(id))['email'],
+    //     estate: JSON.parse(localStorage.getItem(id))['estate'],
+    //     password: JSON.parse(localStorage.getItem(id))['password'],
+    //     userType: JSON.parse(localStorage.getItem(id))['userType'],
+    //     gameEstate: [{
+    //         "map1": [{
+    //             "level1": {
+    //                 "estate": 'intento',
+    //                 "time": tiempoInput.innerHTML,
+    //                 "faults": faltasInput.innerHTML,
+    //                 "pistas": JSON.parse(pista), 
+    //                 "savedGame": JSON.parse(gameState),
+    //                 "puntuacion": puntuacionInput.innerHTML
+    //             },
+    //             "level2": {
+    //                 "estate": null,
+    //                 "time": null,
+    //                 "faults": null
+    //             },
+    //             "level3": {
+    //                 "estate": null,
+    //                 "time": null,
+    //                 "faults": null
+    //             }
+    //         }],
+    //         "map2": [{
+    //             "level1": {
+    //                 "estate": null,
+    //                 "time": null,
+    //                 "faults": null,
+    //                 "savedGame": []
+    //             },
+    //             "level2": {
+    //                 "estate": null,
+    //                 "time": null,
+    //                 "faults": null
+    //             },
+    //             "level3": {
+    //                 "estate": null,
+    //                 "time": null,
+    //                 "faults": null
+    //             }
+    //         }],
+    //         "map3": [{
+    //             "level1": {
+    //                 "estate": null,
+    //                 "time": null,
+    //                 "faults": null,
+    //                 "savedGame": []
+    //             },
+    //             "level2": {
+    //                 "estate": null,
+    //                 "time": null,
+    //                 "faults": null
+    //             },
+    //             "level3": {
+    //                 "estate": null,
+    //                 "time": null,
+    //                 "faults": null
+    //             }
+    //         }]
+    //     }]
+    // };
+
+    localStorage.setItem(id, JSON.stringify(usuario));  //Guardamos el usuario en el localStorage
 }
 
 //Funcion para comprovar si el juego esta acabado
@@ -397,42 +403,9 @@ function comprovarSiJuegoAcabado() {
     }
 }
 
-function inicio() {
-    control = setInterval(cronometro, 1000);   
-}
-
-function parar() {
-    clearInterval(control);
-}
-
-function cronometro() {
-    segundos++;
-		
-    if (segundos == 59) {
-        segundos = -1;
-    }
-    if(segundos == 0) {
-        minutos++;
-		// Minutos = minutos;
-    }
-    if (minutos == 59) {
-		minutos = -1;
-	}
-	if ( (segundos == 0)&&(minutos == 0) ) {
-		horas ++;
-		// Horas = horas;
-	} 
-
-    Horas = (horas > 10) ? horas : (horas < 10 && horas > 0) ? "0" + horas : "00";
-    Minutos = (minutos > 10) ? minutos : (minutos < 10 && minutos > 0) ? "0" + minutos : "00";
-    Segundos = (segundos > 10) ? segundos : (segundos < 10 && segundos > 0) ? "0" + segundos : "00";
-
-    tiempoInput.innerHTML = Horas + ":" + Minutos + ":" + Segundos;
-}
 
 document.getElementById('check').addEventListener('click', () => {  //Del boton de comprovar
     checkNumeros();  //Lo mandamos al checkNumeros, para que esta funcion lo compruebe
-
 
     comprovarSiJuegoAcabado();
 });
@@ -540,8 +513,8 @@ window.addEventListener('load', ()=> {
             }
         } 
 
-        jsonSudoku = obtenerSudoku(1,random)['jsonSudoku'];         //Json de la jugada
-        jsonCorreccion = obtenerSudoku(1,random)['correccion'];     //Josn de la correccion
+        jsonSudoku = obtenerSudoku(nivel.innerHTML,random)['jsonSudoku'];         //Json de la jugada
+        jsonCorreccion = obtenerSudoku(nivel.innerHTML,random)['correccion'];     //Josn de la correccion
         jsonOriginal = jsonSudoku;                                  //El json original sera el json Sudoku(ya que sera el json que luego vamos a usar para comparar)
         faltas = 0;
         tiempoInput.innerHTML = "00:00:00"; //Cronometro a 0

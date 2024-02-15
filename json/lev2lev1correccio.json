@@ -49,47 +49,47 @@
     {
         "tabla1": {
             "fila1": [3, 8, 9],
-            "fila2": [null, null, 2],
-            "fila3": [null, null, 6]
+            "fila2": [5, 7, 2],
+            "fila3": [1, 4, 6]
         },
         "tabla2": {
-            "fila1": [null, 2, null],
-            "fila2": [null, 3, null],
-            "fila3": [null, null, null]
+            "fila1": [1, 2, 4],
+            "fila2": [6, 3, 8],
+            "fila3": [7, 5, 9]
         },
         "tabla3": {
-            "fila1": [6, null, 7],
+            "fila1": [6, 8, 7],
             "fila2": [1, 4, 9],
-            "fila3": [null, 2, null]
+            "fila3": [3, 2, 8]
         },
         "tabla4": {
-            "fila1": [4, 1, null],
-            "fila2": [null, 9, 3],
-            "fila3": [null, 6, 8]
+            "fila1": [4, 1, 5],
+            "fila2": [2, 9, 3],
+            "fila3": [7, 6, 8]
         },
         "tabla5": {
-            "fila1": [null, 8, null],
-            "fila2": [5, null, 6],
-            "fila3": [null, 4, null]
+            "fila1": [3, 8, 2],
+            "fila2": [5, 7, 6],
+            "fila3": [9, 4, 1]
         },
         "tabla6": {
-            "fila1": [7, 9, null],
-            "fila2": [8, 1, null],
-            "fila3": [null, 3, 2]
+            "fila1": [7, 9, 6],
+            "fila2": [8, 1, 4],
+            "fila3": [5, 3, 2]
         },
         "tabla7": {
-            "fila1": [null, 5, null],
+            "fila1": [8, 5, 4],
             "fila2": [6, 3, 7],
-            "fila3": [9, null, 1]
+            "fila3": [9, 2, 1]
         },
         "tabla8": {
-            "fila1": [null, null, null],
-            "fila2": [null, 9, null],
-            "fila3": [null, 6, null]
+            "fila1": [2, 7, 1],
+            "fila2": [4, 9, 5],
+            "fila3": [8, 6, 3]
         },
         "tabla9": {
-            "fila1": [9, null, null],
-            "fila2": [2, null, null],
+            "fila1": [9, 6, 3],
+            "fila2": [2, 8, 1],
             "fila3": [4, 7, 5]
         }
     },

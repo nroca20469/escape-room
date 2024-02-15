@@ -1,7 +1,12 @@
+//Importar lev1
 import lev1 from '../../json/lev1lev1exercici.json' assert { type: 'json' };
 import lev1Correccion from '../../json/lev1lev1correccio.json' assert { type: 'json' };
 
-// import lev2 from '../../json/lev3lev1exericis.json' assert { type: 'json' };
+//Importar lev2
+import lev2 from '../../json/lev2lev1exercici.json' assert { type: 'json' };
+import lev2Correccion from '../../json/lev2lev1correccio.json' assert { type: 'json' };
+
+//Importar lev3
 import lev3 from '../../json/lev3lev1exercici.json' assert { type: 'json' };
 import lev3Correccion from '../../json/lev3lev1correccio.json' assert { type: 'json' };
 
@@ -9,18 +14,18 @@ import lev3Correccion from '../../json/lev3lev1correccio.json' assert { type: 'j
 export {obtenerSudoku};
 function obtenerSudoku(level, index) {
     console.log('HI');
-    if(level === 1)  {
+    if(level === 'lev1')  {
         let sud = {jsonSudoku: lev1[index], correccion: lev1Correccion[index]}
         console.log(sud);
         return sud;
-    // } else if(level === 3) {
-    //     console.log(lev2);
-    //     let sud = {jsonSudoku: lev1[index], correccion: lev1Correccion[index]}
-    //     return sud;
-        
-    // } else if(level === 3) {
-    //     console.log(lev3);
     }
+
+    if(level === 'lev2') {
+        let sud = {jsonSudoku: lev2[index], correccion: lev2Correccion[index]}
+        console.log(sud);
+        return sud;
+    }
+
     if(level === 3) {
 
         return function (quadricula) {

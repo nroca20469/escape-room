@@ -10,21 +10,18 @@
     border-radius: 7px;
 }
 
-/* #container div {
-    width: 40%;
-    height: 40%;
-} */
-
-#palabra1, #palabra2, #palabra3 {
-    margin-left: 5%;
-    width: 40%;
-    background-color: #FFDDD2;   
-    margin-block: 5%;
-    padding: 5%;
-    border-radius: 7px;
-
+table {
+    border-spacing: 20px;
+    width: 100%;
 }
 
+td {
+    width: 45%;
+    background-color: #FFDDD2;
+    border-radius: 7px;
+    /* border-spacing: 5px; */
+}
+   
 #container button {
     padding: 10px;
     margin: 5px;
@@ -33,4 +30,97 @@
     border: 1px solid #FFDDD2;
     border-radius: 7px;
     font-size: 20px;
+    /* display: inline-block; */
+}
+#btnLetra:hover {
+    background-color: #9C9990;
+    color: #6A381F;
+
+}
+
+.correcta {
+    background-color: aquamarine;
+}
+
+#thumbUp {
+    filter: invert(49%) sepia(99%) saturate(400%) hue-rotate(62deg) brightness(101%) contrast(86%);  /* Darle el color verde */
+}
+
+/* MODAL */
+#modal.close {
+    display: none; /* Por defecto, estará oculto */
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Se situará por encima de otros elementos de la página*/
+    padding-top: 200px; /* El contenido estará situado a 200px de la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Algura completa */
+    overflow: auto; /* Se activará el scroll si es necesario */
+    background-color: rgba(0,0,0,0.5); /* Color negro con opacidad del 50% */
+    text-align: center;
+}
+
+#modal.open {
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Se situará por encima de otros elementos de la página*/
+    padding-top: 200px; /* El contenido estará situado a 200px de la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Algura completa */
+    overflow: auto; /* Se activará el scroll si es necesario */
+    background-color: rgba(0,0,0,0.5); /* Color negro con opacidad del 50% */
+    text-align: center;
+    
+}
+
+#modal.open #contenido-modal {
+    position: relative; /* Relativo con respecto al contenedor -modal- */
+    background-color: #9C9990;
+    margin: auto; /* Centrada */
+    padding: 40px;
+    width: 60%;
+    height: 25%;
+    border-radius: 15px;
+    color: #041F1E;
+    font-size: 20px;
+    justify-content: center;
+}
+
+#modal.open #contenido-modal button {
+    /* margin-bottom: 20px; */
+    font-family: 'Kalam', cursive;
+    
+    
+    font-size: 18px;
+    padding: 10px;
+    margin-inline: 10px;
+    border: 1px solid #9C9990;
+    border-radius: 10px;
+    background-color: #6A381F;
+    color:#9C9990;
+}
+
+
+p {
+    font-family: 'Sevillana', cursive;
+    margin-bottom: 10px;
+}
+
+footer {
+    text-align: center;
+}
+
+#save, #check, #pista, #howToPlay {
+    margin-top: 12px;
+    /* margin-right: 30px; */
+    font-size: 18px;
+    padding: 10px;
+    margin-inline: 10px;
+    /* float: right; */
+    border: 1px solid #FFDDD2;
+    border-radius: 10px;
+    background-color: #6A381F;
+    color:#FFDDD2;
 }

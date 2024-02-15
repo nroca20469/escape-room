@@ -7,7 +7,7 @@
         },
         "tabla2": {
             "fila1": [1, null, null],
-            "fila2": [5, null, null],
+            "fila2": [5, 6, 8],
             "fila3": [7, null, null]
         },
         "tabla3": {
@@ -23,7 +23,7 @@
         "tabla5": {
             "fila1": [4, null, null],
             "fila2": [null, null, null],
-            "fila3": [null, null, 3]
+            "fila3": [null, 7, 3]
         },
         "tabla6": {
             "fila1": [9, 8, 7],
@@ -37,8 +37,8 @@
         },
         "tabla8": {
             "fila1": [null, null, 1],
-            "fila2": [null, null, 7],
-            "fila3": [null, null, 6]
+            "fila2": [2, null, 7],
+            "fila3": [null, 5, 6]
         },
         "tabla9": {
             "fila1": [null, 3, null],
@@ -54,8 +54,8 @@
         },
         "tabla2": {
             "fila1": [null, 2, null],
-            "fila2": [null, 3, null],
-            "fila3": [null, null, null]
+            "fila2": [6, 3, null],
+            "fila3": [null, null, 9]
         },
         "tabla3": {
             "fila1": [6, null, 7],
@@ -83,9 +83,9 @@
             "fila3": [9, null, 1]
         },
         "tabla8": {
-            "fila1": [null, null, null],
-            "fila2": [null, 9, null],
-            "fila3": [null, 6, null]
+            "fila1": [null, null, null],    
+            "fila2": [4, 9, null],
+            "fila3": [null, 6, 3]
         },
         "tabla9": {
             "fila1": [9, null, null],
@@ -116,7 +116,7 @@
         },
         "tabla5": {
             "fila1": [null, null, 8],
-            "fila2": [null, null, null],
+            "fila2": [null, 7, null],
             "fila3": [2, null, null]
         },
         "tabla6": {
@@ -163,7 +163,7 @@
         },
         "tabla5": {
             "fila1": [1, null, 6],
-            "fila2": [9, null, 7],
+            "fila2": [9, 5, 7],
             "fila3": [2, null, 4]
         },
         "tabla6": {

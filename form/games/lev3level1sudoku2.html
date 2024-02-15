@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- <title>Escape Room</title> -->
-    <link rel="stylesheet" href="../../style.css">
+    <link rel="stylesheet" href="./../../style.css">
     <link rel="stylesheet" href="../../css/game1.css">
+
 </head>
 <body>
     <header>
@@ -16,12 +17,15 @@
             <a href="../form/login.html"><button type="button"> Log in </button></a>
             <a href="../form/register.html"><button type="button"> Register </button></a>
         </span>
+        <span id="admin">
+            <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+        </span>
         <button type="button" id="logout"> Log out </button>
     </header>
 
-    <div id="nivel" style="display: none">lev1</div>
 
     <main id="container">
+        <h2>Quadricula 2 <p id="quadricula" style="display: none;">quadricula2</p></h2> <br>
         <div>
             <table id="table1">
                 <tr>
@@ -178,39 +182,16 @@
             </table>
 
         </div>
-            
-        <div id="modal" class="close">
-            <div id="contenido-modal">
-                <p id="mensaje-modal"></p>
-                <button id="next-game"> Next Game </button>
-                <button id="retryGame"> Retry Game </button>
-
-                <div id="sure">
-                    <p>Are you sure</p><br>
-                    <button id="yesSure"> Yes </button> 
-                    <button id="noSure"> No </button>
-                </div>
-            </div>
-        </div>
-
-        <div id="faltasIPuntuacion">
-            <h4 id="faltas">Faltas: <a></a></h4>
-            <h4 id="puntuacion">Puntuacion: <a></a></h4>
-            <h4 id="tiempo">Tiempo: <a></a></h4>
-        </div>
-        <!-- </input> -->
     </main>
 
     <footer>
-        <button id="howToPlay"> How to play? </button>
-        <button id="save"> Save </button>
-        <button id="check"> Check </button>
-        <button id="pista"> Pista </button>
+        <button id="save">Save</button>
+        <button id="check">Check</button>
     </footer>
-    <script type="module" src="../../js/sudoku.js"> </script>
-    <script type="module" src="../../js/tiempo.js"> </script>
-    <script type="module" src="../../js/lev12lev1.js"> </script>
-    <script src="../../js/howToPlay.js"></script>
-    <script src="../../js/logout.js"> </script>
+
+
+    <!-- <script type="module" src="./../../js/sudoku.js"></script> -->
+    <script type="module" src="../../js/lev3lev11.js"></script>
+    <script src="../../js/logout.js"></script>
 </body>
 </html>

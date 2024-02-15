@@ -104,3 +104,27 @@ HECHO:
 
 POR HACER:
 - Creacion de puntuacion segun tiempo(actualizar, guardar y extraer al informacion)
+
+
+07/02/2024(Tarde)
+HECHO:
+- Creacion del juego lev1 lev2(mostrar por pantalla los espacion donde se guardan los datos)
+- Recoger los datos de la letra y canviar de div
+- Mirar de no borrar todas las letras(como hacer que vuelvan al otro div de vuelta)
+
+POR HACER:
+- Comparar si las letras estan en ordern i mirar si estan correctas
+- Poner las pistas 
+
+15/02/2024(Mañana)
+HECHO:
+- Arreglado un problema con lev1lev2 de correccion de error(si borrabas el 1o, los demas no funcionaban, pero si borrabas antes el 2o o 3o o todos a la vez, no daban problemas).
+- Puntuacion + Faltas para mostrar por pantalla y calculador(Ya acabado)
+- Actualizar para guardada partida
+
+POR HACER: 
+- En lev1lev2
+    - Guardar punto de partida
+    - Boton de reiniciar partida
+    - Actualizacion por partida guardada
+    - Temporizador
