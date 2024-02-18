@@ -11,7 +11,7 @@
         "fila2": {
             "cuadrado1": ["border-left", "border-bottom"],
             "cuadrado2": ["border-right"],
-            "cuadrado3": ["border-right"],
+            "cuadrado3": ["border-right", "border-left"],
             "cuadrado4": ["border-right"],
             "cuadrado5": [],
             "cuadrado6": ["border-right"]
@@ -48,5 +48,56 @@
             "cuadrado5": ["border-right"],
             "cuadrado6": ["border-right", "border-bottom"]
         }
+    },
+    {
+        "fila1": {
+            "cuadrado1": ["border-left", "border-top"],
+            "cuadrado2": ["border-top"],
+            "cuadrado3": ["border-right", "border-top"],
+            "cuadrado4": ["border-top", "border-left"],
+            "cuadrado5": ["border-top"],
+            "cuadrado6": ["border-top", "border-right"]
+        },
+        "fila2": {
+            "cuadrado1": ["border-left", "border-bottom"],
+            "cuadrado2": ["border-right", "border-top"],
+            "cuadrado3": ["border-right"],
+            "cuadrado4": ["border-left"],
+            "cuadrado5": ["border-left", "border-top"],
+            "cuadrado6": ["border-right", "border-top"]
+        },
+        "fila3": {
+            "cuadrado1": ["border-bottom"],
+            "cuadrado2": ["border-bottom", "border-right"],
+            "cuadrado3": ["border-right"],
+            "cuadrado4": ["border-bottom", "border-left"],
+            "cuadrado5": ["border-right"],
+            "cuadrado6": ["border-right"]
+        },
+        "fila4": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-bottom"],
+            "cuadrado3": ["border-bottom", "border-right"],
+            "cuadrado4": ["border-left"],
+            "cuadrado5": ["border-bottom", "border-right"],
+            "cuadrado6": ["border-right"]
+        },
+        "fila5": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-bottom", "border-left"],
+            "cuadrado3": ["border-bottom"],
+            "cuadrado4": ["border-right"],
+            "cuadrado5": [],
+            "cuadrado6": ["border-right"]
+        },
+        "fila6": {
+            "cuadrado1": ["border-left", "border-bottom"],
+            "cuadrado2": ["border-bottom"],
+            "cuadrado3": ["border-bottom"],
+            "cuadrado4": ["border-bottom", "border-right"],
+            "cuadrado5": ["border-right"],
+            "cuadrado6": ["border-right", "border-bottom"]
+        }
     }
+
 ]
