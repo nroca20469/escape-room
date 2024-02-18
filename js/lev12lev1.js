@@ -1,5 +1,4 @@
 import  {obtenerSudoku} from './sudoku.js';  //Importamos la funcion que nos va a obtener el sudoku que vamos a utilizar(desde un json)
-import {inicio, parar} from './tiempo.js';
 const inputs = document.querySelectorAll('input');  // Recogemos todos los inputs de la tabla para luego poder manipularlos y gardar 
 
 let jsonCorreccion;  //JSON con la correccion del sudoku actual
@@ -9,9 +8,18 @@ let inputColocado = 0;
 let faltas = 0;
 let puntuacion = 0;
 
+//Variables de tiempo
+let Horas;
+let Minutos;
+let Segundos;
+let control;
+let horas=0;
+let minutos=0;
+let segundos=0;
+
 // Botones de reiniciar juego/continuar al siguente juego
 const btnNextGame = document.getElementById('next-game');
-const btnRetryGame = document.getElementById('retryGame')
+const btnRetryGame = document.getElementById('retryGame');
 
 //Faltas + Puntuacion
 const faltasInput =  document.querySelector('#faltas a');
@@ -49,9 +57,10 @@ function colocarNumerosFila(json, numeroTabla, fila, tabla, filaNumero) {
     let pistas; //Donde guardareos el array de pistas
 
     if (inputsJSON != null) { //Si el de inputJson(pistas en crudo) no esta vacio
-        pistas = JSON.parse(inputsJSON);  //Pasamis a JSON
-       
-       for( let i = 0; i < pistas.pistas.length; i++) {  //Recorrremos pistas para saber si estamos/si hay algo
+
+        pistas = inputsJSON[0]; //Passamos la informacion de las pistas a la variable de pistas
+
+       for( let i = 0; i < pistas.length; i++) {  //Recorrremos pistas para saber si estamos/si hay algo
             if(pistas.pistas[i].inputIndex == inputColocado) {  //Si el indice guaradao es el mismo que en el que estamos
 
                 inputs[pistas.pistas[i].inputIndex].value = pistas.pistas[i].value;      //Le damos el valor que tenga en el json guardado
@@ -267,7 +276,7 @@ function saveGame() {
         }         
     }); 
 
-    let pista = '{"pistas": [';
+    let pista = '[';
     let numPista = 0;
     inputs.forEach((input, index) => {
 
@@ -290,9 +299,9 @@ function saveGame() {
         }
     })
 
-    pista += "]}";
+    pista += "]";
 
-    pista = JSON.stringify(pista);
+    // pista = JSON.stringify(pista);
 
     // Guardamos todos los arrays en una variable par poderla luego guardar en el estado del juego
     let gameState = '{ "saved":  ' + jsonSudokuToSave + ', "correccion":  ' + JSON.stringify(jsonCorreccion) + ', "original": ' + JSON.stringify(jsonOriginal) + '}';
@@ -300,7 +309,7 @@ function saveGame() {
 
     //Gaurdamos toda la informacion del usuario en un objeto para guardar la informacion
     let usuario = JSON.parse(localStorage.getItem(id));
-    usuario.gameEstate.map.level = {
+    usuario.gameEstate[0].map1[0].level1 = {
         "estate": 'intento',
         "time": tiempoInput.innerHTML,
         "faults": faltasInput.innerHTML,
@@ -377,8 +386,9 @@ function saveGame() {
     //         }]
     //     }]
     // };
-
+    console.log(id);
     localStorage.setItem(id, JSON.stringify(usuario));  //Guardamos el usuario en el localStorage
+    console.log(JSON.parse(localStorage.getItem(id)).gameEstate[0].map1[0].level1);
 }
 
 //Funcion para comprovar si el juego esta acabado
@@ -401,6 +411,40 @@ function comprovarSiJuegoAcabado() {
         console.log('CORRECTOS');
         parar();
     }
+}
+
+function inicio() {
+    control = setInterval(cronometro, 1000);   
+}
+
+function parar() {
+    clearInterval(control);
+}
+
+
+function cronometro() {
+    segundos++;
+		
+    if (segundos == 59) {
+        segundos = -1;
+    }
+    if(segundos == 0) {
+        minutos++;
+		// Minutos = minutos;
+    }
+    if (minutos == 59) {
+		minutos = -1;
+	}
+	if ( (segundos == 0)&&(minutos == 0) ) {
+		horas ++;
+		// Horas = horas;
+	} 
+
+    Horas = (horas > 10) ? horas : (horas < 10 && horas > 0) ? "0" + horas : "00";
+    Minutos = (minutos > 10) ? minutos : (minutos < 10 && minutos > 0) ? "0" + minutos : "00";
+    Segundos = (segundos > 10) ? segundos : (segundos < 10 && segundos > 0) ? "0" + segundos : "00";
+
+    document.querySelector('#tiempo a').innerHTML = Horas + ":" + Minutos + ":" + Segundos;
 }
 
 
@@ -467,7 +511,7 @@ btnNextGame.addEventListener('click', ()=> {
     location.href = './lev1lev2.html'; //Change to the next level
 })
 
-btnRetryGame.addEventListener('click', (e) => {
+btnRetryGame.addEventListener(' ', (e) => {
     document.getElementById('sure').style.display = "block";
 });
 
@@ -488,15 +532,17 @@ document.getElementById('yesSure').addEventListener('click', () => {
     location.reload;
 });
 
-window.addEventListener('load', ()=> {
+window.addEventListener('load', () => {
     let jsonSudoku;//Para guardar el json de sudoku
 
     //Check if a game is already savevd
     for(let i = 0; i < localStorage.length; i++) {
         if(JSON.parse(localStorage.getItem(localStorage.key(i)))['estate'] == true) {
-            id=localStorage.key(i);
+            id = localStorage.key(i);
         }
     }
+
+    console.log(id);
 
     //Array of the saved game
     let savedGame = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1']['savedGame'];
