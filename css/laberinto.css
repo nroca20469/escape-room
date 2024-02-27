@@ -1,0 +1,36 @@
+/* Contenedor principal del laberinto */
+#laberinto {
+    display: grid;
+    column-gap: 0;
+    row-gap: 0;
+    width: 60%;
+    height: 100%;
+    margin-top: 10%;
+    margin-bottom: 5%;
+}
+
+/* Para alinear las faltas, puntuacion y tiempo a la altura del laberinto */
+main {
+    text-align: center;
+}
+
+/* Divs cuadrados del laberinto */
+#fromLaberinto {
+    width: 30px;
+    height: 30px;
+    padding: 1px;
+}
+
+/* Girar la imagen del muñeco segun la direccion */
+img.recto {
+    -webkit-transform: scaleX(-1);
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+
+/* Mostrar el final del laberinto */
+.final {
+    background-color: tomato;
+}
+

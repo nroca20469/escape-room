@@ -1,0 +1,114 @@
+[
+    {
+        "titulo": "Jugando hasta el amanecer",
+        "enunciado": "Vas a casa de tu mejor amigo para echar unas partida 1v1 en un juego de lucha de la Play Station 5. <br><br> Cada vez que ganas sumas 2 punto y cada vez que pierdes restas 1 punto. Igual que tu amigo. <br><br> Cuado ya amanecia, habias ganado 3 partidas y tu amigo tenia 3 puntos. <br><br> ¿Cuantas partidas jugasteis durante la noche?<br>",
+        "solucion": "9",
+        "respuestas": {
+            "a":"6",
+            "b":"9",
+            "c":"3"
+        },
+        "pista": " Tus puntos son negativos(-3), teniendo en cuenta esto. Piensa que tus negativos mas los positivos de tu amigo y la diferencia entre estos dos "
+
+    },
+    {
+        "titulo": "Continúa la serie",
+        "enunciado": " 2, 4, 12, 48, 240, (?)",
+        "solucion": "1440", 
+        "respuestas": {
+            "a":"840",
+            "b":"480",
+            "c":"1440"
+        },
+        "pista": "Los numeros se van multiplicando por (x+1)"
+    },
+    {
+        "titulo": "Nuevo teléfono móvil",
+        "enunciado": "Un padre compra a sus tres hijos el mismo teléfono móvil, dende en las especificaciones viene algo muy curioso: <br><br>  'El teléfono pesa 40 gramos mas que la mitad de su propiio peso' <br><br> ¿Quanto pesaran los tres móviles juntos?",
+        "solucion": "240",
+        "respuestas": {
+            "a":"240",
+            "b":"120",
+            "c":"360"
+        },
+        "pista": "0.5X + 40gr = X <br> X = ? <br> ? * 3"
+    },
+    {
+        "titulo": "La cosecha de la sandía",
+        "enunciado": "Alfredo contrata a 5 jornaleros para la recogida de sus sandías, de forma que los 5 hombres recogen 5 sandías cada 5 minutos. <br><br> ¿Cuantos hombres harian falta para recoger 500 sandías en 500 minutos?",
+        "solucion": "5",
+        "respuestas": {
+            "a":"25",
+            "b":"100",
+            "c":"5"
+        },
+        "pista": "Observa el ritmo de los jornaleros, teniendo en cuenta que no disminuyen ni aceleran el ritmo de trabajo"
+    },
+    {
+        "titulo": "Videojuegos Online",
+        "enunciado": "Un reciente estudio afirma que 2/3 partes de los niños(varones) juegan videojuegos online con las 3/5 partes de las niñas(chicas). Estos videojuego se juegan enfrentando a un unico niño con una única niña, uno a uno. <br><br> ¿Que proporción hay de niños y niñas que no juegan a videojugos(Suponinedo que son 100 niños(chicos)?",
+        "solucion": "11/30 o 36,67%",
+        "respuestas": {
+            "a":"1/5 o 25,00% ",
+            "b":"11/30 o 36,67%",
+            "c":"3/10 o 33%"
+        },
+        "pista": "66(2/3 de niños) niños de 100, por lo cual hay 44(3/5 de niños) de 110 niñas. <br> Suma los que sobran de esos numeros<br><br> 110 - 44 = X <br> 100 - 66 = Y <br> (Y + X)/(100+110). <br><br> Simplifica esta fraccion, division a fraccion, o dividelo."
+    },
+    {
+        "titulo": "Continúa la serie",
+        "enunciado": "342708, 32878, 3020, 115, (?)",
+        "solucion": "95",
+        "respuestas": {
+            "a":"3",
+            "b":"95",
+            "c":"118"
+        },
+        "pista": "Cuenta los numeros"
+    },
+    {
+        "titulo": "Continua la serie",
+        "enunciado": "Que tres numeros siguen a esta serie? <br><br> 2, 9, 6, 7, 18, 5, (?), (?), (?)",
+        "solucion": "54, 3, 168",
+        "respuestas": {
+            "a":"54, 3, 168",
+            "b":"50, 2, 100",
+            "c":"15, 4, 18"
+        }, 
+        "pista": "Son dos series intercaladas"
+    },
+    {
+        "titulo": "Aburrida lectura",
+        "enunciado": "Cuando empiezas a leer tu siguiente libro de 240 páginas, avanzas a un ritmo de 12 páginas leídas durante los 5 primeros días. Luego empieza a aburrirte, te cansas y lees una pagina menos durante 10 días, y después basjas el ritmo a otra página menos hasta acabar el libro. <br><br> ¿Cuántos días tardas en acabarlo?",
+        "solucion": "22",
+        "respuestas": {
+            "a":"22",
+            "b":"20",
+            "c":"15"
+        },
+        "pista": "(12 * 5) + (11 * 10) + (10 * X) = 240 <br><br> X=? Solucion: 10 + 5 + X"
+
+    },
+    {
+        "titulo": "Mi gestión financiera",
+        "enunciado": "Si tienes una tercera parte de tu dinero en el banco, una cuarta parte en fondos de inversion, una quinta parte en criptomonedas y 10.000€ en efectivo. <br><br> ¿Cuanto dinero tienes en fondos de inversión?",
+        "solucion": "11.538",
+        "respuestas": {
+            "a":"15.000",
+            "b":"11.538",
+            "c":"10.255"
+        },
+        "pista": "(1/3 + 1/4 + 1/5)X + 10.000 = X <br><br> X = 10.000 + 0.7833X <br><br>  X = ?  <br>  X/4 = ??" 
+    },
+    {
+        "titulo": "Cuadro numérico",
+        "enunciado": "<img src='./../../img/cuadroNumerico.png' style='width: 60%'>  <br><br> ¿Que valor tiene el interrogante(?)?",
+        "solucion": "7",
+        "respuestas": {
+            "a":"7",
+            "b":"9",
+            "c":"5"
+        },
+        "pista": "1º + 2º - 3º = 4º( 4º = ? )"
+    }
+]

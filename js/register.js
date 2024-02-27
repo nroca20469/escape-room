@@ -15,7 +15,7 @@ let userType = null;
 function comprovarFormulario(e) {
     e.preventDefault();
     if(comprovarInputs([userName, username, email, password, repeatPassword]) == 5) {
-        console.log('Comprovar inputs dintre' );
+
         if(document.getElementById('admin').checked) {
             userType = 'admin';
         } else if(document.getElementById('user').checked) {
@@ -30,24 +30,18 @@ function comprovarFormulario(e) {
         let checkPassword = comprovarLongitud(password, 6, 18);
 
         if(checkUserName && checkEmail && checkPassword && checkUsername) {
-            console.log('check inputs dintre' );
+
             let valEmail = validacioEmail(email);
-            let validacioContrasenya = validacioContrasena(password);
-            console.log(password.value, repeatPassword.value);
+            let validacioContrasenya = true;//validacioContrasena(password);
             let contrasenyes = comprovarContrasenyes(password, repeatPassword);
             
-            console.log(contrasenyes, valEmail, validacioContrasenya);
             if(contrasenyes && valEmail && validacioContrasenya) {
-                console.log('Comprovar contrasenyes dintre' );
+               
                 if(userType != null) {
-                    console.log('Comprovar usertype dintre' );
-                    console.log(comprovarExistencia());
+
                     if(comprovarExistencia() == false){
-                        console.log('Comprovar existencia dintre' );
                         registrarUsuari();
-                    } else {
-                        console.log('Nombre de usuario existente');
-                    }
+                    } 
                     
                 }
             }
@@ -57,7 +51,6 @@ function comprovarFormulario(e) {
 }
 
 function comprovarExistencia() {
-    // console.log(localStorage.getItem(username.value));
     let id; 
     for(let i = 0; i < localStorage.length; i++) {
         if(JSON.parse(localStorage.getItem(localStorage.key(i)))['username'] == username.value) {
@@ -202,9 +195,6 @@ function registrarUsuari() {
     };
 
    localStorage.setItem(localStorage.length, JSON.stringify(jsonUsuario));  //Si una de las dos es diferete, actualizamos
-
-
-    console.log('user registered');
    
     if(userType == 'user') {
         location.href = '../index.html';

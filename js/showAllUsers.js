@@ -2,25 +2,21 @@ const container = document.getElementById('container');
 
 function onLoad(e)  {
     e.preventDefault();
-    // console.log('Hi');
     container.innerHTML = '<div id="usuarios">';
 
     
     for(let i = 0; i < localStorage.length; i++) {
         let usuario = JSON.parse(localStorage.getItem(localStorage.key(i)));
+
         if((usuario['estate'] == true) || (usuario['estate'] == false)){
-            // console.log('And hello from the other side');
-            // console.log(usuario);
             maketacion(usuario, i);
         } 
     }
 }
 
 function maketacion(usuario, id) {
-    // console.log('Maketacions');  
-    let gameStateMap1Level1 = usuario['gameEstate'][0]['map1'][0]['level1'];
-    // console.log(gameStateMap1Level1);
-    let gameState = usuario['gameEstate'][0];
+    // let gameStateMap1Level1 = usuario['gameEstate'][0]['map1'][0]['level1'];
+    // let gameState = usuario['gameEstate'][0];
 
     container.innerHTML += `
         <div id="${usuario['username']}" class="usuario"> 
@@ -38,7 +34,6 @@ function maketacion(usuario, id) {
 
     container.innerHTML = container.innerHTML + '<div id="verInformacion">  </div>';
     document.getElementById('verInformacion').style.display = "none";
-    // console.log(document.querySelector('.update'));
     document.querySelector('.update').style.display = "none";
 }
 
@@ -56,9 +51,6 @@ function verInformacion(e, id) {
     rellenarDivInformacion(divInformacion, 'level2', mapX);
     rellenarDivInformacion(divInformacion, 'level3', mapX);
 
-    // console.log(mapX);
-    // console.log(e.id);
-    // console.log(id);
 }
 
 function rellenarDivInformacion(divInformacion, level, mapX) {

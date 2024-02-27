@@ -21,17 +21,15 @@ FUENTES:
 /* @import url('https://fonts.googleapis.com/css2?family=Grape+Nuts&display=swap'); /* Botones */
 /* @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@700&display=swap'); */
     
-
+/* Quitamos padding y margin predefinido */
 * {
     margin: 0 auto;
     padding: 0;
 }
 
-
+/* Damos al body un background */
 body{
-    /* padding-bottom: 20px; */
     background-color: #9C9990;
-
 }
 
 /* HEADER */
@@ -39,26 +37,22 @@ header {
     padding-left: 20px;
     height: 125px;
     background-color: #6A381F;
-
 }
 
+/* La letra y la imagen del header */
 header h3, header img{
     height: 75px;
     float: left;
-    color: #FFDDD2;
-    
+    color: #FFDDD2; 
 }
 
-h3, h2 {
-    padding-top: 45px;
-    font-family: 'Rubik Burned', system-ui;
-}
-
+/* Imagenes del header */
 header img {
     padding: 25px;
     color: #fff;
 }
 
+/* Botones del header */
 header button {
     margin-top: 40px;
     margin-right: 30px;
@@ -73,14 +67,15 @@ header button {
 
 header button:hover {
     background-color: #FFDDD2;
-    color: #6A381F;
-    
+    color: #6A381F;    
 }
 
+/* Esconder el boton de logout(No todos lo ven) */
 #logout {
     display: none;
 }
 
+/* FOOTER */
 footer {
     /* margin-top: 20px; */
     height: 70px;
@@ -88,5 +83,89 @@ footer {
     position:sticky;
     width: 100%;
     bottom: 0;
+    text-align: center;
 }
 
+/* Titulos generales */
+h3, h2 {
+    padding-top: 45px;
+    font-family: 'Rubik Burned', system-ui;
+}
+
+/* Botones del footer */
+footer button {
+    margin-top: 12px;
+    font-size: 18px;
+    padding: 10px;
+    margin-inline: 10px;
+    text-align: center;
+    border: 1px solid #FFDDD2;
+    border-radius: 10px;
+    background-color: #6A381F;
+    color:#FFDDD2;
+}
+
+/* Boton de pista hacia la derecha del footer */
+#pista{
+    float: right;
+    margin-right: 5%;
+}
+
+/* Para la imagen del laberinto, damos un background para que sepan donde se encuentran */
+.actual img {
+    background-color: greenyellow;
+
+}
+
+/* MODAL */
+#modal.close {
+    display: none; /* Por defecto, estará oculto */
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Se situará por encima de otros elementos de la página*/
+    padding-top: 200px; /* El contenido estará situado a 200px de la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Algura completa */
+    overflow: auto; /* Se activará el scroll si es necesario */
+    background-color: rgba(0,0,0,0.5); /* Color negro con opacidad del 50% */
+    text-align: center;
+}
+
+#modal.open {
+    position: fixed; /* Posición fija */
+    z-index: 1; /* Se situará por encima de otros elementos de la página*/
+    padding-top: 200px; /* El contenido estará situado a 200px de la parte superior */
+    left: 0;
+    top: 0;
+    width: 100%; /* Ancho completo */
+    height: 100%; /* Algura completa */
+    overflow: auto; /* Se activará el scroll si es necesario */
+    background-color: rgba(0,0,0,0.5); /* Color negro con opacidad del 50% */
+    text-align: center;
+    
+}
+
+#modal.open #contenido-modal {
+    position: relative; /* Relativo con respecto al contenedor -modal- */
+    background-color: #9C9990;
+    margin: auto; /* Centrada */
+    padding: 40px;
+    width: 60%;
+    height: 40%;
+    border-radius: 15px;
+    color: #041F1E;
+    font-size: 20px;
+    justify-content: center;
+}
+
+#modal.open #contenido-modal button {
+    font-family: 'Kalam', cursive;    
+    font-size: 18px;
+    padding: 10px;
+    margin-inline: 10px;
+    border: 1px solid #9C9990;
+    border-radius: 10px;
+    background-color: #6A381F;
+    color:#9C9990;
+}

@@ -6,21 +6,21 @@
         "fila4": ["./../../iconos/house-add-fill.svg", "+", "./../../iconos/lock-fill.svg", "*", "./../../iconos/bank2.svg", "=", "?"]
     },
         {
-        "fila1": [null, null, null, "=", null],
-        "fila2": [null, null, null, "=", null],
-        "fila3": [null, null, null, "=", null],
-        "fila4": [null, null, null, "=", null] 
+        "fila1": ["./../../iconos/bank2.svg", "+", "./../../iconos/bank2.svg", "=", 12],
+        "fila2": ["./../../iconos/bank2.svg", "+", "./../../iconos/house-add-fill.svg", "=", 9],
+        "fila3": ["./../../iconos/house-add-fill.svg", "+", "./../../iconos/lock-fill.svg", "=", 11],
+        "fila4": ["./../../iconos/lock-fill.svg", "+", "./../../iconos/bank2.svg", "=", "?"] 
     },
     {
-        "fila1": [null, null, null, "=", null],
-        "fila2": [null, null, null, "=", null],
-        "fila3": [null, null, null, "=", null],
-        "fila4": [null, null, null, "=", null]
+        "fila1": ["./../../iconos/bank2.svg", "+", "./../../iconos/bank2.svg", "+", "./../../iconos/bank2.svg", "=", 45],
+        "fila2": ["./../../iconos/house-add-fill.svg", "+", "./../../iconos/house-add-fill.svg", "+", "./../../iconos/bank2.svg", "=", 23],
+        "fila3": ["./../../iconos/house-add-fill.svg", "+", "./../../iconos/lock-fill.svg", "+", "./../../iconos/lock-fill.svg", "=", 10],
+        "fila4": ["./../../iconos/lock-fill.svg", "+", "./../../iconos/house-add-fill.svg", "+", "./../../iconos/house-add-fill.svg", "*", "./../../iconos/bank2.svg", "=", "?"]
     },
     {
-        "fila1": [null, null, null, "=", null],
-        "fila2": [null, null, null, "=", null],
-        "fila3": [null, null, null, "=", null],
-        "fila4": [null, null, null, "=", null]
+        "fila1": ["./../../iconos/bank2.svg", "+", "./../../iconos/bank2.svg", "+", "./../../iconos/bank2.svg", "=", 30],
+        "fila2": ["./../../iconos/bank2.svg", "+", "./../../iconos/house-add-fill.svg", "+", "./../../iconos/house-add-fill.svg", "=", 18],
+        "fila3": ["./../../iconos/house-add-fill.svg", "-", "./../../iconos/lock-fill.svg", "=", 2],
+        "fila4": ["./../../iconos/house-add-fill.svg", "+", "./../../iconos/lock-fill.svg", "+", "./../../iconos/bank2.svg", "=", "?"]
     }
 ]

@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> All Users </title>
+    <!-- STYLE -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/showAllUsers.css">
 </head>
@@ -12,22 +13,25 @@
         <a href="../index.html"><img src="../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
         <a href="../index.html"><h3>The Escape Room Game</h3></a>
 
-        <span id="buttonsLogInRegister">
+        <span id="buttonsLogInRegister"> <!-- Botones de registro y login -->
             <a href="../form/login.html"><button type="button"> Log in </button></a>
             <a href="../form/register.html"><button type="button"> Register </button></a>
         </span>
-        <button type="button" id="logout"> Log out </button>
+        <span id="admin">  <!-- Solo lo vera el administrador -->
+            <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+        </span> 
+        <button type="button" id="logout"> Log out </button>  <!-- Boton de logout -->
     </header>
 
 
     <main id="container">
-        
+        <!-- Donde se mostrara la informacion pasada desde JS -->
     </main>
 
     <footer>
-        Hi
     </footer>
 
+    <!-- Script de JS -->
     <script src="../js/showAllUsers.js"></script>
     <script src="../js/logout.js"></script>
 </body>

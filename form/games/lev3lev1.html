@@ -1,48 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=.0">
-    <!-- <title>Escape Room</title> -->
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../../css/game1lev3.css">
-</head> 
-<body>
-    <header>
-        <a href="../../index.html"><img src="../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
-        <a href="../../index.html"><h3>The Escape Room Game</h3></a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=.0">
+        <title>Escape Room</title>
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="../../css/game1lev3.css">
+    </head>
 
-        <span id="buttonsLogInRegister">
-            <a href="../form/login.html"><button type="button"> Log in </button></a>
-            <a href="../form/register.html"><button type="button"> Register </button></a>
-        </span>
-        <button type="button" id="logout"> Log out </button>
-    </header>
+    <body>
+        <header>
+            <a href="./../../index.html"><img src="../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
+            <a href="./../../index.html"><h3>The Escape Room Game</h3></a>
 
+            <span id="buttonsLogInRegister">  <!-- Botones de login i register -->
+                <a href="./../../form/login.html"><button type="button"> Log in </button></a>
+                <a href="./../../form/register.html"><button type="button"> Register </button></a>
+            </span>
+            <span id="admin">   <!-- Solo lo vera el administrador -->
+                <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+            </span> 
+            <button type="button" id="logout"> Log out </button>  <!-- Boton de logout -->
+        </header>
 
-    <main id="container">
+        <main id="container">
+            <!-- Mapeamos la imagen del sudoku -->
+            <img src="./../../img/lev3lev1/1.png" id="imgSudoku" style="width: 726px; max-width: 100%; height: auto;" alt="" usemap="#map" />
+            <map name="map">
+                <area shape="rect" coords="11, 9, 320, 310"  href="./lev3level1sudoku1.html" />
+                <area shape="rect" coords="418, 8, 719, 310" href="./lev3level1sudoku2.html" />
+                <area shape="rect" coords="214, 210, 519, 516" href="./lev3level1sudoku3.html" />
+                <area shape="rect" coords="11, 413, 317, 715" href="./lev3level1sudoku4.html" />
+                <area shape="rect" coords="419, 412, 722, 717" href="./lev3level1sudoku5.html" />  
+            </map>
 
-        <!-- <!-- <img src="./../../img/samurai Sudoku .png" alt="Workplace" usemap="#workmap" width="100%"> -->
+            <!-- Modal -->
+            <div id="modal" class="close">
+                <div id="contenido-modal">
+                    <p id="mensaje-modal"></p>
+                </div>
+            </div>
+        </main>
 
-        <img src="./../../img/lev3lev1/1.png" id="imgSudoku" style="width: 726px; max-width: 100%; height: auto;" alt="" usemap="#map" />
-        <map name="map">
-            <area shape="rect" coords="11, 9, 320, 310"  href="./lev3level1sudoku1.html" />
-            <area shape="rect" coords="418, 8, 719, 310" href="./lev3level1sudoku2.html" />
-            <area shape="rect" coords="214, 210, 519, 516" href="./lev3level1sudoku3.html" />
-            <area shape="rect" coords="11, 413, 317, 715" href="./lev3level1sudoku4.html" />
-            <area shape="rect" coords="419, 412, 722, 717" href="./lev3level1sudoku5.html" />  
-        </map>
-       
-    </main>
+        <footer>
+            <button id="save">Save</button>
+            <button id="check">Check</button>
+            <a href="./lev3lev2.html"><button id="next"> Next Game </button></a>
+        </footer>
 
-    <footer>
-        <button id="save">Save</button>
-        <button id="check">Check</button>
-    </footer>
-
-    <!-- </script> -->
-    <script type="module" src="../../js/sudoku.js"></script>
-    <script type="module" src="../../js/lev3lev1.js"> </script>
-    <script src="../../js/logout.js"></script>
-</body>
+        <!-- Script JS -->
+        <script type="module" src="../../js/sudoku.js"></script>
+        <script type="module" src="../../js/lev3lev1.js"> </script>
+        <script src="../../js/logout.js"></script>
+    </body>
 </html>

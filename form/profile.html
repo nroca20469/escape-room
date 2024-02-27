@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escape Room</title>
+    <!-- STYLE -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/profile.css">
 </head>
@@ -12,18 +13,17 @@
         <a href="../index.html"><img src="../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
         <a href="../index.html"><h3>The Escape Room Game</h3></a>
 
-        <span id="buttonsLogInRegister">
+        <span id="buttonsLogInRegister"> <!-- Botones de registro y login -->
             <a href="../form/login.html"><button type="button"> Log in </button></a>
             <a href="../form/register.html"><button type="button"> Register </button></a>
         </span>
-        <span id="admin">
+        <span id="admin">  <!-- Solo lo vera el administrador -->
             <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
-        </span>
-        <a href="./profile.html"><button type="button"> View Profile </button></a>
-        <button type="button" id="logout"> Log out </button>
+        </span> 
+        <button type="button" id="logout"> Log out </button>  <!-- Boton de logout -->
     </header>
 
-
+    <!-- Mostrar toda la informacion del usuario(desde JS) -->
     <main id="container">
         <div id="usuario"></div>
         <div id="updateUser"></div>
@@ -34,9 +34,9 @@
     </main>
 
     <footer>
-        
     </footer>
 
+    <!-- Scripts de JS -->
     <script src="../js/profile.js"></script>
     <script src="../js/logout.js"></script>
 </body>

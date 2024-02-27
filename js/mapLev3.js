@@ -9,14 +9,11 @@ const lev3 = document.getElementById('lev3');
 
 
 function redirectPage(id) {
-    console.log(id);
 
     if(id == 'lev1') {
         location.href = "../form/games/lev3lev1.html";
     } else if(id == 'lev2') {
-        location.href = "../form/games/lev2lev2.html";
-    } else if(id == 'lev3') {
-        location.href = "../form/games/lev2lev3.html";
+        location.href = "../form/games/lev3lev2.html";
     }
 }
 
@@ -33,7 +30,7 @@ function mirarUsuario() {
         }
     }
 
-    if(id != null) {
+    if(id) {
             let gameEstate = (JSON.parse(localStorage.getItem(id))['gameEstate']);
             // let map2 = gameEstate[0]['map2'];
             let map3 = gameEstate[0]['map3'];
@@ -43,7 +40,6 @@ function mirarUsuario() {
                lev1.className = "blocked";
             }
             if((map3[0]['level1']['estate'] == "done" && map3[0]['level2']['estate'] == null) || map3[0]['level2']['estate'] == "done" ) {
-                // console.log(lev2.className);
                 if(map3[0]['level2']['estate'] == "done") {
                     lev2.className = "done";
                 } else {
@@ -52,19 +48,11 @@ function mirarUsuario() {
             } else {
                 lev2.className = "blocked";
             }   
-            if((map3[0]['level1']['estate'] == "done" && map3[0]['level2']['estate'] == 'done'  && map3[0]['level3']['estate'] == null) || map3[0]['level3']['estate'] == "done" ) {
-                // console.log(lev2.className);
-                if(map3[0]['level3']['estate'] == "done") {
-                    lev3.classNmae = "done";
-                } else {
-                    lev3.className = "unblocked";
-                }
-            } else {
-                lev3.className = "blocked";
-            }
-   
 
-    }
+        } else {
+            lev1.className = "unblocked";
+            lev2.className = "blocked"
+        }
 }
 
 container.addEventListener('click', (e) => {
@@ -76,9 +64,8 @@ container.addEventListener('click', (e) => {
     } else if(e.target.parentNode.className == "blocked"){ //Si el div/boton esta en estado "blocked" aparecera un mensaje de error
         document.getElementById('aviso').innerText = 'Tienes que superar los niveles anteriores para poder acceder a este';
         document.getElementById('aviso').style.display = 'block';
-
-        console.log('Tienes que superar los niveles anteriores para poder acceder a este');
     }
+
 });
 
 window.addEventListener('load', actualizacionClases);

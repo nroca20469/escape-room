@@ -1,8 +1,26 @@
 [
     {
-        "./../../iconos/house-add-fill.svg": "5",
-        "./../../iconos/bank2.svg": "10",
-        "./../../iconos/lock-fill.svg": "2",
+        "./../../iconos/house-add-fill.svg": 5,
+        "./../../iconos/bank2.svg": 10,
+        "./../../iconos/lock-fill.svg": 1,
         "solucion": 15
+    }, 
+    {
+        "./../../iconos/bank2.svg": 6,
+        "./../../iconos/house-add-fill.svg": 3,
+        "./../../iconos/lock-fill.svg": 8,
+        "solucion": 14
+    },
+    {
+        "./../../iconos/bank2.svg": 15,
+        "./../../iconos/house-add-fill.svg": 4,
+        "./../../iconos/lock-fill.svg": 3,
+        "solucion": 67
+    },
+    {
+        "./../../iconos/bank2.svg": 10,
+        "./../../iconos/house-add-fill.svg": 4,
+        "./../../iconos/lock-fill.svg": 2,
+        "solucion": 16
     }
 ]

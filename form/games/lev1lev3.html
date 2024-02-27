@@ -1,82 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escape Room</title>
-    <link rel="stylesheet" href="./../../style.css">
-    <link rel="stylesheet" href="./../../css/game2.css">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Escape Room</title>
+        <!-- STYLE -->
+        <link rel="stylesheet" href="./../../style.css">
+        <link rel="stylesheet" href="./../../css/game2.css">
 
-    <style>
-        #tabla {
-            /* border: 1px solid black; */
+        <!-- Style especifico de esta pagina -->
+        <style>
+            td {
+                width: auto;
+                height: auto;
+                background-color: transparent;
+                color:antiquewhite;
+            }
 
-        }
-        td {
-            width: auto;
-            height: auto;
-            background-color: transparent;
-            color:antiquewhite;
-        }
+            img:not('#logo') {
+                filter: invert(67%) sepia(5%) saturate(446%) hue-rotate(8deg) brightness(91%) contrast(88%);
+                margin-inline: 1%;
+            }
+        </style>    
+    </head>
 
-        img {
-            color:antiquewhite;
-        }
-    </style>
-    
-</head>
-<body>
-    <header>
-        <a href="../../index.html"><img src="../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
-        <a href="../../index.html"><h3>The Escape Room Game</h3></a>
+    <body>
+        <header>
+            <a href="./../../index.html"><img src="../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px" id="logo"></a>
+            <a href="./../../index.html"><h3>The Escape Room Game</h3></a>
 
-        <span id="buttonsLogInRegister">
-            <a href="../../form/login.html"><button type="button"> Log in </button></a>
-            <a href="../../form/register.html"><button type="button"> Register </button></a>
-        </span>
-        <span id="admin">
-            <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
-        </span>     
-        <button type="button" id="logout"> Log out </button>
-    </header>
+            <span id="buttonsLogInRegister">   <!-- Botones de login i register -->
+                <a href="./../../form/login.html"><button type="button"> Log in </button></a>
+                <a href="./../../form/register.html"><button type="button"> Register </button></a>
+            </span>
+            <span id="admin">  <!-- Solo lo vera el administrador -->
+                <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+            </span> 
+            <button type="button" id="logout"> Log out </button>  <!-- Boton de logout -->
+        </header>
 
-    <div id="container">
+        <main id="container">
+            <!-- Tabla con filas -->
+            <table id="tabla">
+                <tr id="fila1"> </tr>
+                <tr id="fila2"> </tr>
+                <tr id="fila3"> </tr>
+                <tr id="fila4"> </tr>
+            </table>
+            
+            <!-- Div de respuestas(numeros) -->
+            <div id="respuestas">
+                <h3> Respuestas </h3>
+            </div>
 
-        <table id="tabla">
-            <tr id="fila1"> </tr>
-            <tr id="fila2"> </tr>
-            <tr id="fila3"> </tr>
-            <tr id="fila4"> </tr>
-        </table>
-    
-        <div id="respuestas">
-            <h3> Respuestas </h3>
-        </div>
+            <!-- Modal -->
+            <div id="modal" class="close">
+                <div id="contenido-modal">
+                    <p id="mensaje-modal"></p>
 
-        <div id="modal" class="close">
-            <div id="contenido-modal">
-                <p id="mensaje-modal"></p>
-
-                <div id="sure">
-                    <button id="okey" onclick="closeModal();"> Okey </button>
+                    <div id="sure">
+                        <button id="okey" onclick="closeModal();"> Okey </button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="faltasIPuntuacion">
-            <h4 id="faltas">Faltas: <a>0</a></h4>
-            <h4 id="puntuacion">Puntuacion: <a>0</a></h4>
-            <h4 id="tiempo">Tiempo: <a>00:00:00</a></h4>
-        </div>
+            <!-- Ver el estado de la partida(faltas, pntuacion & tiempo) -->
+            <div id="faltasIPuntuacion">
+                <h4 id="faltas">Faltas: <a>0</a></h4>
+                <h4 id="puntuacion">Puntuacion: <a>0</a></h4>
+                <h4 id="tiempo">Tiempo: <a>00:00:00</a></h4>
+            </div>
+        </main>
 
-    </main>
+        <footer>
+            <button id="save"> Save </button>
+            <button id="check"> Check </button>
+            <button id="howToPlay"> How to play? </button>
+            <button id="pista"> Pista </button>
+            <a href="./lev2lev1.html"><button id="next"> Next Game </button></a>
+        </footer>
 
-    <footer>
-        <button id="save"> Save </button>
-        <button id="check"> Check </button>
-    </footer>
-
-<script type="module" src="../../js/lev1lev3.js"></script>
-<script src="../../js/logout.js"></script>
-</body>
+        <!-- scripts de JS -->
+        <script type="module" src="../../js/lev1lev3.js"></script>
+        <script src="../../js/logout.js"></script>
+        <script src="./../../js/howToPlay.js"></script>
+        <script type="module" src="./../../js/tiempo.js"></script>
+    </body>
 </html>

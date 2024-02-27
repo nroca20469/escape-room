@@ -128,3 +128,11 @@ POR HACER:
     - Boton de reiniciar partida
     - Actualizacion por partida guardada
     - Temporizador
+
+
+
+
+24/2/2024 
+HECHO:
+- Correccion de errores 
+- How to play "botones"

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title> Log in </title>
+    <!-- STYLE -->
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../css/formulario.css">
 </head>
@@ -13,36 +14,38 @@
         <a href="../index.html"><img src="../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
         <a href="../index.html"><h3>The Escape Room Game</h3></a>
 
-        <span id="buttonsLogInRegister">
+        <span id="buttonsLogInRegister"> <!-- Botones de registro y login -->
             <a href="../form/login.html"><button type="button"> Log in </button></a>
             <a href="../form/register.html"><button type="button"> Register </button></a>
         </span>
-        <button type="button" id="logout"> Log out </button>
-     </header>
-
+        <span id="admin">  <!-- Solo lo vera el administrador -->
+            <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+        </span> 
+        <button type="button" id="logout"> Log out </button>  <!-- Boton de logout -->
+    </header>
 
     <main id="container"  class="login">
-        <h2> Log in </h2>
+        <h2> Log in </h2> <!-- Titulo de la pagina--> 
         <div id="form">
-            <div>
+            <div> <!-- Username -->
                 <label for="username" id="username"> Username </label>
                 <input type="text" name="username" id="usernameInput">
             </div>
-            <div>
+            <div> <!-- Password -->
                 <label for="password" id="password"> Password </label>
                 <input type="password" name="password" id="passwordInput">
             </div>
             <div>
-                <button type="button" id="login"> Log In </button>
+                <button type="button" id="login"> Log In </button>  <!-- Boton para inciar session -->
             </div>
-            <div id="mensaje"></div>
+            <div id="mensaje"></div>     <!-- Para mostrar en error en caso de error -->
         </div>
     </main>
 
     <footer>
-        Hi
     </footer>
 
+    <!-- Scripts de JS -->
     <script src="../js/logout.js"></script>
     <script src="../js/login.js"></script>
 </body>

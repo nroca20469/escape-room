@@ -11,7 +11,6 @@ const lev3 = document.getElementById('lev3');
 
 
 function redirectPage(id) {
-    console.log(id);
 
     if(id == 'lev1') {
         location.href = "../form/games/lev1lev1.html";
@@ -36,34 +35,37 @@ function mirarUsuario() {
     }
 
     if(id != null) {
-            let gameEstate = (JSON.parse(localStorage.getItem(id))['gameEstate']);
-        
-            let map1 = gameEstate[0]['map1'];
-            if(map1[0]['level1']['estate'] == null || map1[0]['level1']['estate'] == "done" || map1[0]['level1']['estate'] == "intento") {
-                lev1.className = "unblocked";
-            } 
-            if((map1[0]['level1']['estate'] == "done" && map1[0]['level2']['estate'] == null) || map1[0]['level2']['estate'] == "intento" ) {
-                // console.log(lev2.className);
-                if(map1[0]['level2']['estate'] == "done") {
-                    lev2.className = "done";
-                } else {
-                    lev2.className = "unblocked";
-                }
-            } else {
-                lev2.className = "blocked";
-            }   
-            if((map1[0]['level1']['estate'] == "done" && map1[0]['level2']['estate'] == 'done'  && map1[0]['level3']['estate'] == null) || map1[0]['level3']['estate'] == "done" ) {
-                // console.log(lev2.className);
-                if(map1[0]['level3']['estate'] == "done") {
-                    lev3.classNmae = "done";
-                } else {
-                    lev3.className = "unblocked";
-                }
-            } else {
-                lev3.className = "blocked";
-            }
-   
+        let gameEstate = (JSON.parse(localStorage.getItem(id))['gameEstate']);
+    
+        let map1 = gameEstate[0]['map1'];
+        if(map1[0]['level1']['estate'] == null || map1[0]['level1']['estate'] == "done" || map1[0]['level1']['estate'] == "intento") {
+            lev1.className = "unblocked";
+        } 
+        if((map1[0]['level1']['estate'] == "done" && map1[0]['level2']['estate'] == null) || map1[0]['level2']['estate'] == "intento" ) {
 
+            if(map1[0]['level2']['estate'] == "done") {
+                lev2.className = "done";
+            } else {
+                lev2.className = "unblocked";
+            }
+
+        } else {
+            lev2.className = "blocked";
+        }   
+        if((map1[0]['level1']['estate'] == "done" && map1[0]['level2']['estate'] == 'done'  && map1[0]['level3']['estate'] == null) || map1[0]['level3']['estate'] == "done" ) {
+            
+            if(map1[0]['level3']['estate'] == "done") {
+                lev3.classNmae = "done";
+            } else {
+                lev3.className = "unblocked";
+            }
+
+        } else {
+            lev3.className = "blocked";
+        }
+
+    } else {
+        lev1.className = "unblocked";
     }
 }
 
@@ -77,7 +79,6 @@ container.addEventListener('click', (e) => {
         document.getElementById('aviso').innerText = 'Tienes que superar los niveles anteriores para poder acceder a este';
         document.getElementById('aviso').style.display = 'block';
 
-        console.log('Tienes que superar los niveles anteriores para poder acceder a este');
     }
 });
 

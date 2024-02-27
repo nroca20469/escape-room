@@ -1,4 +1,6 @@
 import  {obtenerSudoku} from './sudoku.js';  //Importamos la funcion que nos va a obtener el sudoku que vamos a utilizar(desde un json)
+import { parar } from './tiempo.js';
+
 const inputs = document.querySelectorAll('input');  // Recogemos todos los inputs de la tabla para luego poder manipularlos y gardar 
 
 let jsonCorreccion;  //JSON con la correccion del sudoku actual
@@ -7,15 +9,6 @@ let id;              //ID del usuario
 let inputColocado = 0;
 let faltas = 0;
 let puntuacion = 0;
-
-//Variables de tiempo
-let Horas;
-let Minutos;
-let Segundos;
-let control;
-let horas=0;
-let minutos=0;
-let segundos=0;
 
 // Botones de reiniciar juego/continuar al siguente juego
 const btnNextGame = document.getElementById('next-game');
@@ -52,24 +45,21 @@ function colocarNumerosFila(json, numeroTabla, fila, tabla, filaNumero) {
     let filaTabla = tabla.childNodes[1].childNodes[filaNumero*2];   //Fila de la tabla de la pantalla
     let filaCorreccion = jsonCorreccion[numeroTabla][fila];         //Fila de la tabla de correccion(para comparar si es correcto o incorrecto)
     let filaOriginal = jsonOriginal[numeroTabla][fila];             //Fila del json original
+    let inputsJSON = null;
+    if(id != null) {
+        if(nivel.innerHTML == 'lev1') {
+            inputsJSON = JSON.parse(localStorage.getItem(id)).gameEstate[0].map1[0].level1.pistas;
+        } else {
+            inputsJSON = JSON.parse(localStorage.getItem(id)).gameEstate[0].map2[0].level1.pistas;
+        }
+    }
    
-    let inputsJSON = JSON.parse(localStorage.getItem(id)).gameEstate[0].map1[0].level1.pistas;
     let pistas; //Donde guardareos el array de pistas
 
     if (inputsJSON != null) { //Si el de inputJson(pistas en crudo) no esta vacio
 
         pistas = inputsJSON[0]; //Passamos la informacion de las pistas a la variable de pistas
 
-       for( let i = 0; i < pistas.length; i++) {  //Recorrremos pistas para saber si estamos/si hay algo
-            if(pistas.pistas[i].inputIndex == inputColocado) {  //Si el indice guaradao es el mismo que en el que estamos
-
-                inputs[pistas.pistas[i].inputIndex].value = pistas.pistas[i].value;      //Le damos el valor que tenga en el json guardado
-                inputs[pistas.pistas[i].inputIndex].readOnly = true;          //I decimos que no pueda editarlo
-                inputs[pistas.pistas[i].inputIndex].className = 'pista';   //El numero sera correcto i aparecera en verde
-                inputs[pistas.pistas[i].inputIndex].type = "none";            //No le damos tipo
-
-            }
-       }
     }
 
     for(let i = 0; i < filaJson.length; i++){  //Recorremos la fila
@@ -110,6 +100,19 @@ function colocarNumerosFila(json, numeroTabla, fila, tabla, filaNumero) {
 
         input.style.textAlign = "center";  // I mostramos el numero centrado en el medio del input
         inputColocado++;
+
+        if(pistas != null) {
+            for( let i = 0; i < inputsJSON.length; i++) {  //Recorrremos pistas para saber si estamos/si hay algo
+
+                if(inputsJSON[i]['inputIndex'] == inputColocado) {  //Si el indice guaradao es el mismo que en el que estamos
+    
+                    inputs[inputsJSON[i]['inputIndex']].value = inputsJSON[i]['value'];      //Le damos el valor que tenga en el json guardado
+                    inputs[inputsJSON[i]['inputIndex']].readOnly = true;          //I decimos que no pueda editarlo
+                    inputs[inputsJSON[i]['inputIndex']].className = 'pista';   //El numero sera correcto i aparecera en verde
+                    inputs[inputsJSON[i]['inputIndex']].type = "none";            //No le damos tipo
+                }
+           }
+        }
     }
 }
 
@@ -281,7 +284,6 @@ function saveGame() {
     inputs.forEach((input, index) => {
 
         if(input.className == "pista") {
-            console.log("pista");
             
             if(numPista == 0) {
                 pista += "{" +
@@ -308,94 +310,36 @@ function saveGame() {
     // let savedGame = JSON.stringify(gameState);  //Lo pasamos a string para luego mostrar en el json del usuario
 
     //Gaurdamos toda la informacion del usuario en un objeto para guardar la informacion
-    let usuario = JSON.parse(localStorage.getItem(id));
-    usuario.gameEstate[0].map1[0].level1 = {
-        "estate": 'intento',
-        "time": tiempoInput.innerHTML,
-        "faults": faltasInput.innerHTML,
-        "pistas": JSON.parse(pista), 
-        "savedGame": JSON.parse(gameState),
-        "puntuacion": puntuacionInput.innerHTML
+    let usuario;
+    if(nivel.innerHTML == 'lev1') {
+        usuario = JSON.parse(localStorage.getItem(id));
+        usuario.gameEstate[0].map1[0].level1 = {
+            "estate": 'intento',
+            "time": tiempoInput.innerHTML,
+            "faults": faltasInput.innerHTML,
+            "pistas": JSON.parse(pista), 
+            "savedGame": JSON.parse(gameState),
+            "puntuacion": puntuacionInput.innerHTML
+        }
+    } else {
+        usuario = JSON.parse(localStorage.getItem(id));
+        usuario.gameEstate[0].map2[0].level1 = {
+            "estate": 'intento',
+            "time": tiempoInput.innerHTML,
+            "faults": faltasInput.innerHTML,
+            "pistas": JSON.parse(pista), 
+            "savedGame": JSON.parse(gameState),
+            "puntuacion": puntuacionInput.innerHTML
+        }
     }
 
-
-    // console.log(usuarioNivel1);
-    // let user =  {
-    //     name: JSON.parse(localStorage.getItem(id))['name'],
-    //     username: JSON.parse(localStorage.getItem(id))['username'],
-    //     email: JSON.parse(localStorage.getItem(id))['email'],
-    //     estate: JSON.parse(localStorage.getItem(id))['estate'],
-    //     password: JSON.parse(localStorage.getItem(id))['password'],
-    //     userType: JSON.parse(localStorage.getItem(id))['userType'],
-    //     gameEstate: [{
-    //         "map1": [{
-    //             "level1": {
-    //                 "estate": 'intento',
-    //                 "time": tiempoInput.innerHTML,
-    //                 "faults": faltasInput.innerHTML,
-    //                 "pistas": JSON.parse(pista), 
-    //                 "savedGame": JSON.parse(gameState),
-    //                 "puntuacion": puntuacionInput.innerHTML
-    //             },
-    //             "level2": {
-    //                 "estate": null,
-    //                 "time": null,
-    //                 "faults": null
-    //             },
-    //             "level3": {
-    //                 "estate": null,
-    //                 "time": null,
-    //                 "faults": null
-    //             }
-    //         }],
-    //         "map2": [{
-    //             "level1": {
-    //                 "estate": null,
-    //                 "time": null,
-    //                 "faults": null,
-    //                 "savedGame": []
-    //             },
-    //             "level2": {
-    //                 "estate": null,
-    //                 "time": null,
-    //                 "faults": null
-    //             },
-    //             "level3": {
-    //                 "estate": null,
-    //                 "time": null,
-    //                 "faults": null
-    //             }
-    //         }],
-    //         "map3": [{
-    //             "level1": {
-    //                 "estate": null,
-    //                 "time": null,
-    //                 "faults": null,
-    //                 "savedGame": []
-    //             },
-    //             "level2": {
-    //                 "estate": null,
-    //                 "time": null,
-    //                 "faults": null
-    //             },
-    //             "level3": {
-    //                 "estate": null,
-    //                 "time": null,
-    //                 "faults": null
-    //             }
-    //         }]
-    //     }]
-    // };
-    console.log(id);
     localStorage.setItem(id, JSON.stringify(usuario));  //Guardamos el usuario en el localStorage
-    console.log(JSON.parse(localStorage.getItem(id)).gameEstate[0].map1[0].level1);
 }
 
 //Funcion para comprovar si el juego esta acabado
 function comprovarSiJuegoAcabado() {
     let lengthInputs = inputs.length;
     let correctos = 0;
-    console.log(lengthInputs);
 
     inputs.forEach((componente, index) => {
         if(componente.className == 'estatico' || componente.className == 'correcto' || componente.className == "pista") {
@@ -403,50 +347,13 @@ function comprovarSiJuegoAcabado() {
         } 
 
     })
-   console.log(correctos);
 
     if(correctos == lengthInputs) {
         document.getElementById('modal').className = "open";
         document.getElementById('sure').style.display = "none";
-        console.log('CORRECTOS');
         parar();
     }
 }
-
-function inicio() {
-    control = setInterval(cronometro, 1000);   
-}
-
-function parar() {
-    clearInterval(control);
-}
-
-
-function cronometro() {
-    segundos++;
-		
-    if (segundos == 59) {
-        segundos = -1;
-    }
-    if(segundos == 0) {
-        minutos++;
-		// Minutos = minutos;
-    }
-    if (minutos == 59) {
-		minutos = -1;
-	}
-	if ( (segundos == 0)&&(minutos == 0) ) {
-		horas ++;
-		// Horas = horas;
-	} 
-
-    Horas = (horas > 10) ? horas : (horas < 10 && horas > 0) ? "0" + horas : "00";
-    Minutos = (minutos > 10) ? minutos : (minutos < 10 && minutos > 0) ? "0" + minutos : "00";
-    Segundos = (segundos > 10) ? segundos : (segundos < 10 && segundos > 0) ? "0" + segundos : "00";
-
-    document.querySelector('#tiempo a').innerHTML = Horas + ":" + Minutos + ":" + Segundos;
-}
-
 
 document.getElementById('check').addEventListener('click', () => {  //Del boton de comprovar
     checkNumeros();  //Lo mandamos al checkNumeros, para que esta funcion lo compruebe
@@ -469,7 +376,6 @@ document.getElementById('pista').addEventListener('click', ()=> {
     }
 
     let inputAColocar = inputs[rand];
-    console.log(inputAColocar);
 
     //Buscar de que tabla, fila i input es
     let fila=1;
@@ -484,10 +390,6 @@ document.getElementById('pista').addEventListener('click', ()=> {
         }
     }  //Esto nos sacara en que tabla, fila y indice estara el input, para luego poderlo guardar
 
-    console.log('Tabla: ' + tabla);
-    console.log("Fila: " + fila);
-    console.log('Input: ' + rand);
-
     //Recoger del json correccion i colocarlo en el input
     inputAColocar.value = jsonCorreccion['tabla'+tabla]['fila'+fila][rand];  //Darle un valor
     inputAColocar.className = "pista";  //Cambiar el nombre a pista
@@ -499,19 +401,36 @@ document.getElementById('pista').addEventListener('click', ()=> {
     puntuacion -= 50;
     puntuacionInput.innerHTML = puntuacion;
 
-
-    console.log(inputAColocar);
 })
 
 btnNextGame.addEventListener('click', ()=> {
-    saveGame(); //Save the game
-    let usuario = JSON.parse(localStorage.getItem(id));
-    usuario.gameEstate[0].map1[0].level1.estate = 'done';
-    localStorage.setItem(id, JSON.stringify(usuario));  //Save estate of the game
-    location.href = './lev1lev2.html'; //Change to the next level
+
+    //Coger nivel
+    let nivel = nivel.innerHTML;
+
+    if(id) {
+        saveGame(); //Save the game
+        let usuario = JSON.parse(localStorage.getItem(id));
+        if(nivel == 'lev1') {
+            usuario.gameEstate[0].map1[0].level1.estate = 'done';
+        } else if(nivel == 'lev2') {
+            usuario.gameEstate[0].map2[0].level1.estate = 'done';
+        }
+        
+        localStorage.setItem(id, JSON.stringify(usuario));  //Save estate of the game
+
+        //Change to the next level
+        if(nivel == 'lev1') {
+            location.href = './lev1lev2.html';
+        } else if(nivel == 'lev2') {
+            location.href = "./lev2lev2.html"
+        }
+        
+    }
+    
 })
 
-btnRetryGame.addEventListener(' ', (e) => {
+btnRetryGame.addEventListener('click', (e) => {
     document.getElementById('sure').style.display = "block";
 });
 
@@ -521,15 +440,27 @@ document.getElementById('noSure').addEventListener('click', () => {
 
 document.getElementById('yesSure').addEventListener('click', () => {
     let usuario = JSON.parse(localStorage.getItem(id));
-    let level1 = usuario.gameEstate[0].map1[0].level1;
+    if(nivel.innerText == 'lev1') {
+        let level1 = usuario.gameEstate[0].map1[0].level1;
+        level1.faults = null;
+        level1.pistas = null;
+        level1.savedGame = null;
+        level1.time = null;
 
-    level1.faults = null;
-    level1.pistas = null;
-    level1.savedGame = null;
-    level1.time = null;
+        localStorage.setItem(id, JSON.stringify(usuario));
+        location.reload;
+    } else {
+        let level1 = usuario.gameEstate[0].map2[0].level1;
+        level1.faults = null;
+        level1.pistas = null;
+        level1.savedGame = null;
+        level1.time = null;
 
-    localStorage.setItem(id, JSON.stringify(usuario));
-    location.reload;
+        localStorage.setItem(id, JSON.stringify(usuario));
+        location.reload;
+    }
+
+    
 });
 
 window.addEventListener('load', () => {
@@ -542,17 +473,127 @@ window.addEventListener('load', () => {
         }
     }
 
-    console.log(id);
+    if(id != undefined) {
+        //Array of the saved game
+        let savedGame
+        if(nivel.innerText == 'lev1') {
+            savedGame = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1']['savedGame'];
 
-    //Array of the saved game
-    let savedGame = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1']['savedGame'];
-    console.log(savedGame);
+            //If the saved is null
+            if(savedGame == null || savedGame.length == 0 || savedGame == undefined) {  //Si este array esta vacio
 
-    //If the saved is null
-    if(savedGame == null || savedGame.length == 0 || savedGame == undefined) {  //Si este array esta vacio
+                let random = Math.floor(Math.random() * 4);  //Random entre 0-3
+                
+                if(random >= 3 || random <= 0) {  //Comprovamos que el random realmente ha sacado entre 0-3
+                    while(random > 4 || random < 0) {  //Si no es asi(superior a 3)
+                        random = Math.floor(Math.random() * 4);  //Volveremos a hacer random hasta que salga entre 0-3
+                    }
+                } 
+
+                jsonSudoku = obtenerSudoku(nivel.innerHTML,random)['jsonSudoku'];         //Json de la jugada
+                jsonCorreccion = obtenerSudoku(nivel.innerHTML,random)['correccion'];     //Josn de la correccion
+                jsonOriginal = jsonSudoku;                                  //El json original sera el json Sudoku(ya que sera el json que luego vamos a usar para comparar)
+                faltas = 0;
+                tiempoInput.innerHTML = "00:00:00"; //Cronometro a 0
+                faltasInput.innerHTML = 0;
+                puntuacionInput.innerHTML = 0;
+
+            } else {  //Si el array del savbedGame no esta vacia
+
+                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].faults == null)  {
+                    faltas = 0;
+                    faltasInput.innerHTML = faltas;
+                } else {
+                    faltas = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].faults;
+                    faltasInput.innerHTML = faltas; 
+                }
+
+                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].time == null)  {
+                    tiempoInput.innerHTML = "00:00:00";
+                } else {
+                    tiempoInput.innerHTML = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].time;
+                    let tiempo = tiempoInput.innerHTML.split(":");
+                    horas = +tiempo[0];
+                    minutos = +tiempo[1];
+                    segundos = +tiempo[2];
+                }
+
+                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].puntuacion == null)  {
+                    puntuacionInput.innerHTML = 0;
+                    puntuacion = 0;
+                } else {
+                    puntuacion = +JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].puntuacion;
+                    puntuacionInput.innerHTML = +puntuacion;
+                }
+
+                
+                jsonSudoku = savedGame['saved'];            //Json de la jugada actual(la guardada)
+                jsonCorreccion = savedGame['correccion'];   //Json de la correccion(tiene la solucion)
+                jsonOriginal = savedGame['original'];       //Json original(para saber si el numero es del original o no(correcto/incorrecto))
+
+            } 
+
+        }else {
+            savedGame = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1']['savedGame'];
+
+            //If the saved is null
+            if(savedGame == null || savedGame.length == 0 || savedGame == undefined) {  //Si este array esta vacio
+
+                let random = Math.floor(Math.random() * 4);  //Random entre 0-3
+                
+                if(random >= 3 || random <= 0) {  //Comprovamos que el random realmente ha sacado entre 0-3
+                    while(random > 4 || random < 0) {  //Si no es asi(superior a 3)
+                        random = Math.floor(Math.random() * 4);  //Volveremos a hacer random hasta que salga entre 0-3
+                    }
+                } 
+
+                jsonSudoku = obtenerSudoku(nivel.innerHTML,random)['jsonSudoku'];         //Json de la jugada
+                jsonCorreccion = obtenerSudoku(nivel.innerHTML,random)['correccion'];     //Josn de la correccion
+                jsonOriginal = jsonSudoku;                                  //El json original sera el json Sudoku(ya que sera el json que luego vamos a usar para comparar)
+                faltas = 0;
+                tiempoInput.innerHTML = "00:00:00"; //Cronometro a 0
+                faltasInput.innerHTML = 0;
+                puntuacionInput.innerHTML = 0;
+
+            } else {  //Si el array del savbedGame no esta vacia
+
+                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].faults == null)  {
+                    faltas = 0;
+                    faltasInput.innerHTML = faltas;
+                } else {
+                    faltas = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].faults;
+                    faltasInput.innerHTML = faltas; 
+                }
+
+                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].time == null)  {
+                    tiempoInput.innerHTML = "00:00:00";
+                } else {
+                    tiempoInput.innerHTML = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].time;
+                    let tiempo = tiempoInput.innerHTML.split(":");
+                    horas = +tiempo[0];
+                    minutos = +tiempo[1];
+                    segundos = +tiempo[2];
+                }
+
+                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].puntuacion == null)  {
+                    puntuacionInput.innerHTML = 0;
+                    puntuacion = 0;
+                } else {
+                    puntuacion = +JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].puntuacion;
+                    puntuacionInput.innerHTML = +puntuacion;
+                }
+                
+                jsonSudoku = savedGame['saved'];            //Json de la jugada actual(la guardada)
+                jsonCorreccion = savedGame['correccion'];   //Json de la correccion(tiene la solucion)
+                jsonOriginal = savedGame['original'];       //Json original(para saber si el numero es del original o no(correcto/incorrecto))
+
+            }
+        }
+
+    } else {
 
         let random = Math.floor(Math.random() * 4);  //Random entre 0-3
-        
+            
         if(random >= 3 || random <= 0) {  //Comprovamos que el random realmente ha sacado entre 0-3
             while(random > 4 || random < 0) {  //Si no es asi(superior a 3)
                 random = Math.floor(Math.random() * 4);  //Volveremos a hacer random hasta que salga entre 0-3
@@ -567,42 +608,12 @@ window.addEventListener('load', () => {
         faltasInput.innerHTML = 0;
         puntuacionInput.innerHTML = 0;
 
-    } else {  //Si el array del savbedGame no esta vacia
-
-        if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].faults == null)  {
-            faltas = 0;
-            faltasInput.innerHTML = faltas;
-        } else {
-            faltas = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].faults;
-            faltasInput.innerHTML = faltas; 
-        }
-
-        if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].time == null)  {
-            tiempoInput.innerHTML = "00:00:00";
-        } else {
-            tiempoInput.innerHTML = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].time;
-            let tiempo = tiempoInput.innerHTML.split(":");
-            horas = +tiempo[0];
-            minutos = +tiempo[1];
-            segundos = +tiempo[2];
-        }
-
-        if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].puntuacion == null)  {
-            puntuacionInput.innerHTML = 0;
-            puntuacion = 0;
-        } else {
-            puntuacion = +JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].puntuacion;
-            puntuacionInput.innerHTML = +puntuacion;
-            console.log(typeof puntuacion);
-        }
-
-        jsonSudoku = savedGame['saved'];            //Json de la jugada actual(la guardada)
-        jsonCorreccion = savedGame['correccion'];   //Json de la correccion(tiene la solucion)
-        jsonOriginal = savedGame['original'];       //Json original(para saber si el numero es del original o no(correcto/incorrecto))
+        document.getElementById('save').style.display = "none";
 
     }
     
+    
     colocarNumeros(jsonSudoku);
 
-    inicio();
+    // inicio();
 });

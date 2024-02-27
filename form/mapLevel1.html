@@ -1,41 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <title>Escape Room</title> -->
-    <link rel="stylesheet" href="../style.css">
-    <link rel="stylesheet" href="../css/mapLevel.css">
-</head>
-<body>
-    <header>
-        <a href="../index.html"><img src="../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
-        <a href="../index.html"><h3>The Escape Room Game</h3></a>
-
-        <span id="buttonsLogInRegister">
-            <a href="../form/login.html"><button type="button"> Log in </button></a>
-            <a href="../form/register.html"><button type="button"> Register </button></a>
-        </span>
-        <button type="button" id="logout"> Log out </button>
-    </header>
-
-    <main>
-        <div id="container">
-            <div id="lev1"><p>1</p></div>
-            <div id="lev2"><p>2</p></div>
-            <div id="lev3"><p>3</p></div>
-      
-          <p id="aviso"></p>
-          <!-- <img id="locked" src="../iconos/lock-fill.svg" alt="" width="65px"  style="color:green"> -->
-        </div>
-        
-    </main>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Escape Room</title>
+        <!-- STYLE -->
+        <link rel="stylesheet" href="../style.css">
+        <link rel="stylesheet" href="../css/mapLevel.css">
+    </head>
     
-    <footer>
-        Hi
-    </footer>
+    <body>
+        <header>
+            <a href="../index.html"><img src="../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
+            <a href="../index.html"><h3>The Escape Room Game</h3></a>
 
-    <script src="../js/mapLev1.js"></script>
-    <script src="../js/logout.js"></script>
-</body>
+            <span id="buttonsLogInRegister"> <!-- Botones de registro y login -->
+                <a href="../form/login.html"><button type="button"> Log in </button></a>
+                <a href="../form/register.html"><button type="button"> Register </button></a>
+            </span>
+            <span id="admin">  <!-- Solo lo vera el administrador -->
+                <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+            </span> 
+            <button type="button" id="logout"> Log out </button>  <!-- Boton de logout -->
+        </header>
+
+        <main>
+            <div id="container">
+                <!-- Cuadrados de niveles -->
+                <div id="lev1"><p>1</p></div>
+                <div id="lev2"><p>2</p></div>
+                <div id="lev3"><p>3</p></div>
+                
+                <!-- Parrafo para mostrar el mensaje de aviso si clican una no posible -->
+                <p id="aviso"></p>
+            </div>
+        </main>
+        
+        <footer>
+        </footer>
+
+        <!-- Scripts de JS -->
+        <script src="../js/mapLev1.js"></script>
+        <script src="../js/logout.js"></script>
+    </body>
 </html>

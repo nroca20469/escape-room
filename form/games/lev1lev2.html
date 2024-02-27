@@ -1,91 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escape Room</title>
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../../css/game2.css">
-
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Escape Room</title>
+        <!-- STYLE -->
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="../../css/game2.css">
+    </head>
     
-</head>
-<body>
-    <header>
-        <a href="../../index.html"><img src="../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
-        <a href="../../index.html"><h3>The Escape Room Game</h3></a>
+    <body>
+        <header>
+            <a href="./../../index.html"><img src="./../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
+            <a href="./../../index.html"><h3>The Escape Room Game</h3></a>
 
-        <span id="buttonsLogInRegister">
-            <a href="../../form/login.html"><button type="button"> Log in </button></a>
-            <a href="../../form/register.html"><button type="button"> Register </button></a>
-        </span>
-        <span id="admin">
-            <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
-        </span>     
-        <button type="button" id="logout"> Log out </button>
-    </header>
+            <span id="buttonsLogInRegister">  <!-- Botones de login i register -->
+                <a href="./../../form/login.html"><button type="button"> Log in </button></a>
+                <a href="./../../form/register.html"><button type="button"> Register </button></a>
+            </span>
+            <span id="admin">  <!-- Solo lo vera el administrador -->
+                <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+            </span> 
+            <button type="button" id="logout"> Log out </button>  <!-- Boton de logout -->
+        </header>
+        
+        <main id="container">   
+            <!-- Tabla de las palabras para el anagrama -->
+            <table>
+                <tr>
+                    <td> <div id="palabra1"></div></td>
+                    <td> <div class="palabra1" id="null"></div> </td>
+                    <td id="pista1" type="button"> <img src="./../../iconos/lightbulb.svg" width="30"></img> </td>
+                </tr>
 
+                <tr>
+                    <td> <div id="palabra2"></div></td>
+                    <td> <div class="palabra2" id="null"></div> </td> 
+                    <td id="pista2"> <img  src="./../../iconos/lightbulb.svg" width="30"></img> </td>
+                </tr>
 
-    <main id="container">   
+                <tr>
+                    <td> <div id="palabra3"></div></td>
+                    <td> <div class="palabra3" id="null"></div> </td> 
+                    <td id="pista3"> <img src="./../../iconos/lightbulb.svg" width="30"></img> </td>
+                </tr>
+            </table>
 
-        <table>
-            <tr>
-                <td> <div id="palabra1"></div></td>
-                <td> <div class="palabra1"></div> </td>
-                <td onclick="mostrarPista('palabra1');"> <img src="./../../iconos/lightbulb.svg" width="30"></img> </td>
-            </tr>
+            <!-- Donde se veran las palabras(ordenadas por palabras) tanto en intentosy correctos -->
+            <div id="palabras">
+                <div id="intentos">
+                    <h2> Intentos </h2> 
+                    <div class="pal1"></div>
+                    <div class="pal2"></div>
+                    <div class="pal3"></div>
+                </div>
 
-            <tr>
-                <td> <div id="palabra2"></div></td>
-                <td> <div class="palabra2"></div> </td> 
-                <td onclick="mostrarPista('palabra2');"> <img  src="./../../iconos/lightbulb.svg" width="30"></img> </td>
-            </tr>
-
-            <tr>
-                <td> <div id="palabra3"></div></td>
-                <td> <div class="palabra3"></div> </td> 
-                <td onclick="mostrarPista('palabra3');"> <img src="./../../iconos/lightbulb.svg" width="30"></img> </td>
-            </tr>
-        </table>
-
-        <div id="palabras">
-            <div id="intentos">
-                <h2> Intentos </h2> 
-                <div class="pal1"></div>
-                <div class="pal2"></div>
-                <div class="pal3"></div>
-
-            </div>
-            <div id="correcto">
-                <h2> Correctas </h2>
-                <div id="correctas"></div>
-            </div>
-            
-        </div>
-
-        <div id="modal" class="close">
-            <div id="contenido-modal">
-                <p id="mensaje-modal"></p>
-
-                <div id="sure">
-                    <button id="okey" onclick="closeModal();"> Okey </button>
+                <div id="correcto">
+                    <h2> Correctas </h2>
+                    <div id="correctas"></div>
                 </div>
             </div>
-        </div>
 
-        <div id="faltasIPuntuacion">
-            <h4 id="faltas">Faltas: <a>0</a></h4>
-            <h4 id="puntuacion">Puntuacion: <a>0</a></h4>
-            <h4 id="tiempo">Tiempo: <a>00:00:00</a></h4>
-        </div>
+            <!-- Modal -->
+            <div id="modal" class="close">
+                <div id="contenido-modal">
+                    <p id="mensaje-modal"></p>
 
-    </main>
-   
-    <footer>
-        <button id="save"> Save </button>
-        <button id="check"> Check </button>
-    </footer>
+                    <div id="sure">
+                        <button id="okey"> Okey </button>
+                    </div>
+                </div>
+            </div>
 
-    <script src="../../js/lev1lev2.js"></script>
-    <script src="../../js/logout.js"></script>
-</body>
+            <!-- Ver el estado de la partida(faltas, pntuacion & tiempo) -->
+            <div id="faltasIPuntuacion">
+                <h4 id="faltas">Faltas: <a>0</a></h4>
+                <h4 id="puntuacion">Puntuacion: <a>0</a></h4>
+                <h4 id="tiempo">Tiempo: <a>00:00:00</a></h4>
+            </div>
+        </main>
+    
+        <footer>
+            <button id="save"> Save </button>
+            <button id="check"> Check </button>
+            <a href="./lev1lev3.html"><button id="next"> Next Game </button></a>
+            <button id="howToPlay"> How to play? </button>
+        </footer>
+
+        <!-- scripts de JS -->
+        <script src="./../../js/howToPlay.js"></script>
+        <script type="module" src="./../../js/lev1lev2.js"></script>
+        <script src="../../js/logout.js"></script>
+        <script type="module" src="./../../js/tiempo.js"></script>
+    </body>
 </html>

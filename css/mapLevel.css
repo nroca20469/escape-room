@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+Burned&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Sevillana&display=swap');
 
+/* Colocamos el main al centro */
 #container {
     width: 50%;
     height: 50%;
@@ -17,9 +18,9 @@
     justify-content: center;
     background-color: #041F1E;
     border-radius: 10px;
-    
 }
 
+/* Textos del parrafo del main */
 #container div p {
     padding-top: 35%;
     color: #FFDDD2;
@@ -39,7 +40,6 @@
 /* Blocked */
 #container .blocked {
     background-color: #041F1E;
-    
 }
 
 #container .blocked p {
@@ -49,24 +49,16 @@
 /* Done */
 #container .done {
     background-color: green;
-    
 }
 
 #container .done p {
     color: #041F1E;
 }
 
+/* Texto del aviso que sale al clicar sobre un numero incorrecto/bloqueado */
 #aviso {
     color: #774E24;
     font-family: 'Sevillana', cursive;
     font-size: 20px;
     padding-block: 20px;
 }
-/* div p #unlocked {
-    top: 40%;
-    left: 38%; */
-
-
-    /* width: 30px; 
-    position: absolute;
-} */

@@ -1,0 +1,237 @@
+[
+    {
+        "fila1": {
+            "cuadrado1": ["left", "top", "bottom"],
+            "cuadrado2": ["top", "bottom"],
+            "cuadrado3": ["right", "top"],
+            "cuadrado4": ["top", "left"],
+            "cuadrado5": ["top", "bottom"],
+            "cuadrado6": ["top", "right","bottom"]
+        },
+        "fila2": {
+            "cuadrado1": ["left", "bottom"],
+            "cuadrado2": ["right", "top"],
+            "cuadrado3": ["right", "left"],
+            "cuadrado4": ["left", "right"],
+            "cuadrado5": ["left", "top"],
+            "cuadrado6": ["right", "top"]
+        },
+        "fila3": {
+            "cuadrado1": ["bottom", "top"],
+            "cuadrado2": ["bottom", "right"],
+            "cuadrado3": ["right", "left"],
+            "cuadrado4": ["bottom", "left"],
+            "cuadrado5": ["right"],
+            "cuadrado6": ["right", "left"]
+        },
+        "fila4": {
+            "cuadrado1": ["left", "top"],
+            "cuadrado2": ["bottom", "top"],
+            "cuadrado3": ["bottom", "right"],
+            "cuadrado4": ["top", "left"],
+            "cuadrado5": ["bottom", "right"],
+            "cuadrado6": ["right", "left"]
+        },
+        "fila5": {
+            "cuadrado1": ["left", "right", "top"],
+            "cuadrado2": ["bottom", "top"],
+            "cuadrado3": ["bottom", "top"],
+            "cuadrado4": ["right"],
+            "cuadrado5": ["left", "top"],
+            "cuadrado6": ["right"]
+        },
+        "fila6": {
+            "cuadrado1": ["left", "bottom"],
+            "cuadrado2": ["bottom", "top"],
+            "cuadrado3": ["bottom", "top"],
+            "cuadrado4": ["bottom", "right"],
+            "cuadrado5": ["right", "left"],
+            "cuadrado6": ["right", "bottom", "left"]
+        }
+    },
+    {
+        "fila1": {
+            "cuadrado1": ["top", "bottom", "left"],
+            "cuadrado2": ["top"],
+            "cuadrado3": ["top", "right"],
+            "cuadrado4": ["left", "bottom"],
+            "cuadrado5": ["top", "bottom"],
+            "cuadrado6": ["left", "top", "right"],
+            "cuadrado7": ["top"],
+            "cuadrado8": ["top", "right"]
+        },
+        "fila2": {
+            "cuadrado1": ["left", "top"],
+            "cuadrado2": ["bottom", "right"],
+            "cuadrado3": ["left", "right"],
+            "cuadrado4": ["top"],
+            "cuadrado5": ["top", "bottom"],
+            "cuadrado6": ["bottom"],
+            "cuadrado7": ["bottom", "right"],
+            "cuadrado8": ["left", "bottom", "right"]
+        },
+        "fila3": {
+            "cuadrado1": ["left", "bottom"],
+            "cuadrado2": ["top", "right"],
+            "cuadrado3": ["left", "bottom"],
+            "cuadrado4": ["bottom", "right"],
+            "cuadrado5": ["left", "top"],
+            "cuadrado6": ["top", "right"],
+            "cuadrado7": ["left", "top"],
+            "cuadrado8": ["top", "right"]
+        },
+        "fila4": {
+            "cuadrado1": ["left", "top"],
+            "cuadrado2": ["bottom"],
+            "cuadrado3": ["top", "bottom"],
+            "cuadrado4": ["top", "bottom"],
+            "cuadrado5": ["right"],
+            "cuadrado6": ["left", "bottom"],
+            "cuadrado7": ["bottom", "right"],
+            "cuadrado8": ["left", "right"]
+        },
+        "fila5": {
+            "cuadrado1": ["left"],
+            "cuadrado2": ["top", "bottom", "right"],
+            "cuadrado3": ["left", "top"],
+            "cuadrado4": ["top", "right"],
+            "cuadrado5": ["left", "bottom"],
+            "cuadrado6": ["top", "bottom", "right"],
+            "cuadrado7": ["left", "top"],
+            "cuadrado8": ["right"]
+        },
+        "fila6": {
+            "cuadrado1": ["left", "right"],
+            "cuadrado2": ["left", "top"],
+            "cuadrado3": ["bottom", "right"],
+            "cuadrado4": ["left", "bottom"],
+            "cuadrado5": ["top", "bottom"],
+            "cuadrado6": ["top", "bottom"],
+            "cuadrado7": ["right"],
+            "cuadrado8": ["left", "bottom", "right"]
+        },
+        "fila7": {
+            "cuadrado1": ["left", "right"],
+            "cuadrado2": ["left", "bottom"],
+            "cuadrado3": ["top", "bottom"],
+            "cuadrado4": ["top", "right"],
+            "cuadrado5": ["left", "top", "bottom"],
+            "cuadrado6": ["top", "top", "right"],
+            "cuadrado7": ["left", "bottom"],
+            "cuadrado8": ["top", "right"]
+        },
+        "fila8": {
+            "cuadrado1": ["left", "bottom"],
+            "cuadrado2": ["top", "bottom"],
+            "cuadrado3": ["top", "bottom", "right"],
+            "cuadrado4": ["left", "bottom"],
+            "cuadrado5": ["top", "right"],
+            "cuadrado6": ["left", "bottom"],
+            "cuadrado7": ["top", "bottom"],
+            "cuadrado8": ["bottom", "right"]
+        }
+    },
+    {
+        "fila1": {
+            "cuadrado1": ["top", "left"],
+            "cuadrado2": ["top", "bottom"],
+            "cuadrado3": ["top", "right"],
+            "cuadrado4": ["left"],
+            "cuadrado5": ["top", "bottom"],
+            "cuadrado6": ["top", "left", "right"],
+            "cuadrado7": ["top", "right"]
+        },
+        "fila2": {
+            "cuadrado1": ["bottom", "left", "right"],
+            "cuadrado2": ["top", "left"],
+            "cuadrado3": ["right"],
+            "cuadrado4": ["bottom", "left"],
+            "cuadrado5": ["top", "bottom", "right"],
+            "cuadrado6": ["left"],
+            "cuadrado7": ["bottom", "right"]
+        },
+        "fila3": {
+            "cuadrado1": ["top", "left"],
+            "cuadrado2": ["bottom", "right"],
+            "cuadrado3": ["bottom", "left"],
+            "cuadrado4": ["top", "bottom"],
+            "cuadrado5": ["top"],
+            "cuadrado6": ["bottom"],
+            "cuadrado7": ["top", "right"]
+        },
+        "fila4": {
+            "cuadrado1": ["left", "right"],
+            "cuadrado2": ["top", "bottom", "left"],
+            "cuadrado3": ["top", "bottom"],
+            "cuadrado4": ["top", "right"],
+            "cuadrado5": ["left", "right"],
+            "cuadrado6": ["top", "left", "right"],
+            "cuadrado7": ["left", "right"]
+        },
+        "fila5": {
+            "cuadrado1": ["left"],
+            "cuadrado2": ["top", "bottom"],
+            "cuadrado3": ["top", "right"],
+            "cuadrado4": ["bottom", "left"],
+            "cuadrado5": ["right"],
+            "cuadrado6": ["bottom", "left"],
+            "cuadrado7": ["bottom", "right"]
+        },
+        "fila6": {
+            "cuadrado1": ["left"],
+            "cuadrado2": ["top", "right"],
+            "cuadrado3": ["bottom", "left"],
+            "cuadrado4": ["top", "right"],
+            "cuadrado5": ["left"],
+            "cuadrado6": ["top", "left", "right"],
+            "cuadrado7": ["top", "right"]
+        },
+        "fila7": {
+            "cuadrado1": ["bottom", "left", "right"],
+            "cuadrado2": ["bottom", "left"],
+            "cuadrado3": ["top", "bottom", "right"],
+            "cuadrado4": ["left", "right"],
+            "cuadrado5": ["bottom", "left", "right"],
+            "cuadrado6": ["bottom", "left"],
+            "cuadrado7": ["bottom", "right"]
+        }   
+    },
+    {
+        "fila1": {
+            "cuadrado1": ["top", "bottom", "left"],
+            "cuadrado2": ["top", "bottom"],
+            "cuadrado3": ["right"],
+            "cuadrado4": ["top", "bottom", "left"],
+            "cuadrado5": ["top", "right"]
+        },
+        "fila2": {
+            "cuadrado1": ["top", "left"],
+            "cuadrado2": ["top", "right"],
+            "cuadrado3": ["bottom", "left"],
+            "cuadrado4": ["top", "bottom"],
+            "cuadrado5": ["right"]
+        },
+        "fila3": {
+            "cuadrado1": ["bottom", "right", "left"],
+            "cuadrado2": ["left"],
+            "cuadrado3": ["top", "bottom"],
+            "cuadrado4": ["top"],
+            "cuadrado5": ["right"]
+        },
+        "fila4": {
+            "cuadrado1": ["top", "left"],
+            "cuadrado2": ["bottom", "right"],
+            "cuadrado3": ["top", "bottom", "left"],
+            "cuadrado4": ["bottom", "right"],
+            "cuadrado5": ["right", "left"]
+        },
+        "fila5": {
+            "cuadrado1": ["bottom", "left"],
+            "cuadrado2": ["top", "bottom"],
+            "cuadrado3": ["top", "right"],
+            "cuadrado4": ["top", "bottom", "left"],
+            "cuadrado5": ["bottom", "right"]
+        }
+    }
+
+]

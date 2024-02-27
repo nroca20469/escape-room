@@ -84,9 +84,7 @@ function refreshPassword(id) {
 }
 
 function refresh(id, e) {
-    // console.log(e.id);
     if(e.id == 'yes') {
-        console.log('YESSS');
         document.getElementById('youSure').style.display = "none";
         document.getElementById('yes').style.display = "none";
         document.getElementById('no').style.display = "none";
@@ -106,7 +104,6 @@ function refresh(id, e) {
 
         divUpdate.innerHTML += "Tu nueva contraseña es: 12345678";
     } else if(e.id == 'no'){
-        console.log('NOOOO');
         document.getElementById('youSure').style.display = "none";
         document.getElementById('yes').style.display = "none";
         document.getElementById('no').style.display = "none";
@@ -120,7 +117,6 @@ function saveUser(id) {
     const email = document.getElementById('email').value;
 
     let usuario = JSON.parse(localStorage.getItem(id));
-    console.log(usuario);
 
     let user = {
         email: email,
@@ -157,24 +153,15 @@ function viewGameStatus(id) {
 }
 
 function verInformacion(e, id) {
-    console.log(e.id);
     divInformacion.style.display = "block";
 
     let mapX = JSON.parse(localStorage.getItem(id))['gameEstate'][0][e.id];
-   console.log(mapX);
     
-    // console.log(divInformacion);
-    // console.log(document);
-    // divInformacion.style.display = "block";
     divInformacion.innerHTML = "";
 
     rellenarDivInformacion(divInformacion, 'level1', mapX);
     rellenarDivInformacion(divInformacion, 'level2', mapX);
     rellenarDivInformacion(divInformacion, 'level3', mapX);
-
-    // console.log(mapX);
-    // console.log(e.id);
-    // console.log(id);
 }
 
 function rellenarDivInformacion(divInformacion, level, mapX) {
@@ -188,31 +175,26 @@ function rellenarDivInformacion(divInformacion, level, mapX) {
         divInformacion.innerHTML += 
         "<h2> Level 3: </h2>";
     }
-    // console.log((mxapX));
     if(JSON.stringify(mapX[0][level]['estate']) == 'null') {  
        divInformacion.innerHTML += "<p><strong> Status: </strong> -- </p>";
-    //    console.log('HIIII');
     } else {
         divInformacion.innerHTML += "<p><strong> Status: </strong>" + JSON.stringify(mapX[0][level]['estate']) + "</p>";
     }
 
     if(JSON.stringify(mapX[0][level]['time']) == 'null') {  
         divInformacion.innerHTML += "<p><strong> Time: </strong> -- </p>";
-        // console.log('HIIII');
     } else {
         divInformacion.innerHTML += "<p><strong> Time: </strong>" + JSON.stringify(mapX[0][level]['time']) + "</p>";
     }
 
     if(JSON.stringify(mapX[0][level]['faults']) == 'null') {  
         divInformacion.innerHTML += "<p><strong> Faults: </strong> -- </p>";
-        // console.log('HIIII');
     } else {
         divInformacion.innerHTML += "<p><strong> Faults: </strong>" + JSON.stringify(mapX[0][level]['faults']) + "</p>";
     }
 }
 
 function changePassword(id) {
-    console.log(divPassword);
 
     divPassword.innerHTML = ' <h3> CHANGE PASSWORD </h3>'+
             '<div>'+
@@ -245,14 +227,8 @@ function checkPassword(id) {
     let newPassword = document.getElementById('newPassword').value;
     let repeatedPassword = document.getElementById('repeatedPassword').value;
     let usuario = JSON.parse(localStorage.getItem(id));
-    console.log(usuario);
-
-    console.log(usuario.email);
-    
-    console.log(actualPassword, newPassword, repeatedPassword);
 
     if(checkActualPassword(id, actualPassword)) {
-        console.log('HELLO');
 
         if(comprovarContrasenyas(newPassword, repeatedPassword)) {
 
@@ -276,14 +252,11 @@ function checkPassword(id) {
         document.getElementById('actualPassword').nextSibling.innerHTML = "<br>Contrasenya incorrecta";
     }
     
-    // console.log(correcta);
 }
 
 function checkActualPassword(id, actualPassword) {
-    // console.log(id);
 
     let passwordOriginal = JSON.parse(localStorage.getItem(id)).password;
-    console.log(passwordOriginal);
 
     if(passwordOriginal === actualPassword) {
         return true;
@@ -304,7 +277,6 @@ function comprovarContrasenyas(newPassword, repeatedPassword) {
 function validarContrasenya(newPassword) {
     const re = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/;
     if(re.test(newPassword.trim())) {
-        console.log('HOAL');
         return true;
     } else {
         document.getElementById('newPassword').nextSibling.innerHTML = '<br>La contrasenya no cumple con los parametros';
@@ -314,7 +286,5 @@ function validarContrasenya(newPassword) {
 
 
 window.addEventListener('load', ()=> {
-    // console.log('Hi');
-    // console.log(container);
     rellenarContainer();
 });

@@ -1,14 +1,27 @@
 const input = document.querySelectorAll('input');           //Array con inputs
 const quadricula = document.getElementById('quadricula');   //Nombre de la quadricula
 
+//Faltas + Puntuacion
+const faltasInput =  document.querySelector('#faltas a');
+const puntuacionInput =  document.querySelector('#puntuacion a');
+const tiempoInput =  document.querySelector('#tiempo a');
+
 let jsonCorreccion;     //JSON con la correccion del sudoku actual
 let jsonOriginal;       //JSON con el original del sudoku actual
 let jsonSudoku;         //JSON con el sudoku guardado(el actual ya guardado)
 let id;                 //El id del usuario
+let faltas = 0;
+let time = '00:00:00';
+let puntuacion = 0;
+let correctos;
+let estaticos;
+
+//Esconder boton de next
+document.getElementById('next').style.display = "none";
 
 // Funcion para colocar los numeros
 function colocarNumeros(json) {
-
+    console.log(json);
     for(let i = 1; i <= 9; i++) {
         const tabla = document.getElementById('table' + i);
         colocarNumerosTabla(json, tabla, i);
@@ -17,8 +30,8 @@ function colocarNumeros(json) {
 }
 
 function colocarNumerosTabla(json, tabla, numero) {
-    colocarNumerosFila(json, ('tabla'+numero), 'fila1', tabla, 0);
-    colocarNumerosFila(json, ('tabla'+numero), 'fila2', tabla, 1);
+    colocarNumerosFila(json, ('tabla' + numero), 'fila1', tabla, 0);
+    colocarNumerosFila(json, ('tabla' + numero), 'fila2', tabla, 1);
     colocarNumerosFila(json, ('tabla' + numero), 'fila3', tabla, 2);
 }
 
@@ -65,9 +78,24 @@ function colocarNumerosFila(json, numeroTabla, fila, tabla, filaNumero) {
 }
 
 function checkNumeros() {
+    correctos = 0;
+    estaticos = 0;
     for(let i = 1; i <= 9; i++) {
         const tabla = document.getElementById('table' + i);
         checkNumerosTabla(jsonCorreccion[quadricula.innerText], tabla, i);
+    }
+
+    //Actualizar faltas + puntuacion
+    faltasInput.innerHTML = faltas;
+    puntuacion = (100 * correctos) - (30 * faltas); 
+    puntuacionInput.innerHTML = puntuacion;
+
+
+    if(document.querySelectorAll('input').length == (correctos + estaticos)) {
+        document.getElementById('next').style.display = "inline-block";
+
+        //Save user
+        saveUser('done');
     }
 }
 
@@ -87,16 +115,21 @@ function checkNumerosFila(json, numeroTabla, fila, tabla, filaNumero) {
         if(filaJsonCorreccion[i] == input.value && !input.hasAttribute('readOnly')) {
             input.className = 'correcto';
             input.readOnly = true;
-            input.type = "none"; 
+            input.type = "none";
+            correctos++; 
         } else if(input.value == null || input.value == "") {
             input.className = 'intento';
         } else if(input.value != null && input.value != filaJsonCorreccion[i] && !input.hasAttribute('readOnly')){
             input.className = 'incorrecto';
+            faltas++;
+        } else {
+            estaticos++;
         }
     }
 }
 
-function saveGame() {
+function saveGame(estado) {
+    
     let jsonSudokuToSave;
     let jsonSudokuToSaveCorrection = jsonCorreccion;
     let contadorTabla = 0;
@@ -184,10 +217,7 @@ function saveGame() {
                         jsonSudokuToSave = jsonSudokuToSave + null + "]}}";
                     }   
                 }
-                
-                // if(tabla == 9) {
-                //     jsonSudokuToSave = jsonSudokuToSave + "}";
-                // }
+
                 contadorTabla = 0;
             }
         
@@ -199,93 +229,84 @@ function saveGame() {
 
     let gameState = '{ "saved":  ' + JSON.stringify(jsonToSave) + ', "correccion":  ' + JSON.stringify(jsonSudokuToSaveCorrection) + ', "original": ' + JSON.stringify(jsonOriginal) + '}';
 
-    saveUser(gameState, id);
+    saveUser(gameState, estado);
 
 }
 
 function saveJson(jsonSudokuToSave) {
     let quad = quadricula.innerText;
-
-    let savedGame = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map3'][0]['level1']['savedGame'];
     let jsonToSave;
-    if(quad == 'quadricula1') { 
-        jsonToSave = {
-            'quadricula1': JSON.parse(jsonSudokuToSave),
-            'quadricula2': savedGame['saved']['quadricula2'],
-            'quadricula3': savedGame['saved']['quadricula3'],
-            'quadricula4': savedGame['saved']['quadricula4'],
-            'quadricula5': savedGame['saved']['quadricula5']
-        };
-    } else if(quad == 'quadricula2') {
-        jsonToSave = {
-            'quadricula1': savedGame['saved']['quadricula1'],
-            'quadricula2': JSON.parse(jsonSudokuToSave),
-            'quadricula3': savedGame['saved']['quadricula3'],
-            'quadricula4': savedGame['saved']['quadricula4'],
-            'quadricula5': savedGame['saved']['quadricula5']
-        };
-    } else if(quad == 'quadricula3') {
-        jsonToSave = {
-            'quadricula1': savedGame['saved']['quadricula1'],
-            'quadricula2': savedGame['saved']['quadricula2'],
-            'quadricula3': JSON.parse(jsonSudokuToSave),
-            'quadricula4': savedGame['saved']['quadricula4'],
-            'quadricula5': savedGame['saved']['quadricula5']
-        };
-    } else if(quad == 'quadricula4') {
-        jsonToSave = {
-            'quadricula1': savedGame['saved']['quadricula1'],
-            'quadricula2': savedGame['saved']['quadricula2'],
-            'quadricula3': savedGame['saved']['quadricula3'],
-            'quadricula4': JSON.parse(jsonSudokuToSave),
-            'quadricula5': savedGame['saved']['quadricula5']
-        };
-    } else if(quad == 'quadricula5') {
-        jsonToSave = {
-            'quadricula1': savedGame['saved']['quadricula1'],
-            'quadricula2': savedGame['saved']['quadricula2'],
-            'quadricula3': savedGame['saved']['quadricula3'],
-            'quadricula4': savedGame['saved']['quadricula4'],
-            'quadricula5': JSON.parse(jsonSudokuToSave)
-        };
+    if(id != null) {
+        let savedGame = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map3'][0]['level1']['savedGame'];
+        
+        if(quad == 'quadricula1') { 
+            jsonToSave = {
+                'quadricula1': JSON.parse(jsonSudokuToSave),
+                'quadricula2': savedGame['saved']['quadricula2'],
+                'quadricula3': savedGame['saved']['quadricula3'],
+                'quadricula4': savedGame['saved']['quadricula4'],
+                'quadricula5': savedGame['saved']['quadricula5']
+            };
+        } else if(quad == 'quadricula2') {
+            jsonToSave = {
+                'quadricula1': savedGame['saved']['quadricula1'],
+                'quadricula2': JSON.parse(jsonSudokuToSave),
+                'quadricula3': savedGame['saved']['quadricula3'],
+                'quadricula4': savedGame['saved']['quadricula4'],
+                'quadricula5': savedGame['saved']['quadricula5']
+            };
+        } else if(quad == 'quadricula3') {
+            jsonToSave = {
+                'quadricula1': savedGame['saved']['quadricula1'],
+                'quadricula2': savedGame['saved']['quadricula2'],
+                'quadricula3': JSON.parse(jsonSudokuToSave),
+                'quadricula4': savedGame['saved']['quadricula4'],
+                'quadricula5': savedGame['saved']['quadricula5']
+            };
+        } else if(quad == 'quadricula4') {
+            jsonToSave = {
+                'quadricula1': savedGame['saved']['quadricula1'],
+                'quadricula2': savedGame['saved']['quadricula2'],
+                'quadricula3': savedGame['saved']['quadricula3'],
+                'quadricula4': JSON.parse(jsonSudokuToSave),
+                'quadricula5': savedGame['saved']['quadricula5']
+            };
+        } else if(quad == 'quadricula5') {
+            jsonToSave = {
+                'quadricula1': savedGame['saved']['quadricula1'],
+                'quadricula2': savedGame['saved']['quadricula2'],
+                'quadricula3': savedGame['saved']['quadricula3'],
+                'quadricula4': savedGame['saved']['quadricula4'],
+                'quadricula5': JSON.parse(jsonSudokuToSave)
+            };
+        }
     }
+    
 
     return jsonToSave;
 }
 
-function saveUser(gameState, id) {
-   
-    let gameStateMap1 = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'];
-    let gameStateMap2 = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'];
-    let gameStateMap3Lev2 = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map3'][0]['level2'];
-    let gameStateMap3Lev3 = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map3'][0]['level3'];
+function saveUser(gameState, estado) {
 
-    let user =  {
-        name: JSON.parse(localStorage.getItem(id))['name'],
-        username: JSON.parse(localStorage.getItem(id))['username'],
-        email: JSON.parse(localStorage.getItem(id))['email'],
-        estate: JSON.parse(localStorage.getItem(id))['estate'],
-        password: JSON.parse(localStorage.getItem(id))['password'],
-        userType: JSON.parse(localStorage.getItem(id))['userType'],
-        gameEstate: [{
-            "map1": gameStateMap1,
-            "map2": gameStateMap2,
-            "map3": [{
-                "level1": {
-                    "estate": 'intento',
-                    "time": null,
-                    "faults": null,
-                    "savedGame": JSON.parse(gameState)
-                },
-                "level2": gameStateMap3Lev2,
-                "level3": gameStateMap3Lev3
-            }]
-        }]
-    };
+    let usuario = JSON.parse(localStorage.getItem(id));
+    usuario.gameEstate[0].map3[0].level1.time = tiempoInput.innerHTML;
+    usuario.gameEstate[0].map3[0].level1.faults = usuario.gameEstate[0].map3[0].level1.faults == null ? faltasInput.innerText : +usuario.gameEstate[0].map3[0].level1.faltas + +faltasInput.innerHTML;     
+    usuario.gameEstate[0].map3[0].level1.savedGame = gameState;
 
-    localStorage.setItem(id, JSON.stringify(user));
+    if(quadricula.innerHTML == 'quadricula1') {
+        usuario.gameEstate[0].map3[0].level1.estado1 = estado;
+    } else if(quadricula.innerHTML == 'quadricula2') {
+        usuario.gameEstate[0].map3[0].level1.estado2 = estado;
+    } else if(quadricula.innerHTML == 'quadricula3') {
+        usuario.gameEstate[0].map3[0].level1.estado3 = estado;
+    } else if(quadricula.innerHTML == 'quadricula4') {
+        usuario.gameEstate[0].map3[0].level1.estado4 = estado;
+    } else if(quadricula.innerHTML == 'quadricula5') {
+        usuario.gameEstate[0].map3[0].level1.estado5 = estado;
+    }
 
-    let gameStateMap3Lev1 = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map3'][0]['level1'];
+    localStorage.setItem(id, JSON.stringify(usuario));
+
 }
 
 addEventListener('input', (e)=> {
@@ -299,7 +320,9 @@ document.getElementById('check').addEventListener('click', () => {
 
 
 document.getElementById('save').addEventListener('click', () => {
-    saveGame();
+    if(id) {
+        saveGame();
+    }
 
 });
 
@@ -310,9 +333,18 @@ window.addEventListener('load', ()=> {
             id=localStorage.key(i);
         }
     }
-
+    
     //Array of the saved game
-    let savedGame = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map3'][0]['level1']['savedGame'];
+    let savedGame;
+    if(id){
+        savedGame = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map3'][0]['level1']['savedGame'];
+        faltas =  JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map3'][0]['level1']['faults'];
+        time =  JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map3'][0]['level1']['time'];
+        puntuacion = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map3'][0]['level1']['putnuacion'];
+    } else {
+        savedGame = JSON.parse(localStorage.getItem('sudokuSamurai'));
+    } 
+     
    
     //Save the sudokus in variables to make it easy to use
     savedGame = JSON.stringify(savedGame);
@@ -321,5 +353,12 @@ window.addEventListener('load', ()=> {
     jsonOriginal = JSON.parse(savedGame)['original'];   
     
     let numQuadricula = quadricula.innerText;
+
+    //Colocar por pantalla los #x a
+    tiempoInput.innerHTML = time == null ? '00:00:00' : time; //Cronometro a 0
+    faltasInput.innerHTML = faltas == null ? 0 : faltas;
+    puntuacionInput.innerHTML = puntuacion == null ? 0 : puntuacion;
+
+    
     colocarNumeros(jsonSudoku[numQuadricula]);
 });

@@ -1,10 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
 
 /* MAIN */
-main.login {
-    padding-block: 5%;
-}
-
 main h2 {
     color: #041F1E;
     text-align: center;
@@ -13,8 +9,11 @@ main h2 {
     padding-top: 40px;  
 }
 
-main
-#form {
+main.login {  /* Centramos el formulario al centro */
+    padding-block: 5%;
+}
+
+main #form {
     width: 50%;
     background-color: #774E24;
     color: #FFDDD2;
@@ -28,26 +27,26 @@ main #form div {
     margin-block: 20px;
 }
 
-#form div label {
+#form div label {  /* Damos al label(letras) un tipo determinado */
     font-family: 'Nanum Gothic', sans-serif;
     font-size: 14px;
 }
 
-#form div input {
+#form div input {  /* Damos al input un color de fondo y al centrado (para mayor orden) */
     margin-inline: 10px;
     background-color: #9C9990;
     border: 2px solid #FFDDD2;
     border-radius: 7px;
     padding: 3px;
-    
 }
 
-#form div input:hover, #form div input:focus {
+/* Cambiar el color de fondo y el color a hover y cuando estre en ese input  */
+#form div input:hover, #form div input:focus { 
     background-color: #FFDDD2;
     color: #041F1E;
 }
 
-
+/* Darle forma y estilo a los botones del formulario */
 #form div button {
     padding: 5px 10%;
     margin-top: 10px;
@@ -57,6 +56,7 @@ main #form div {
     border-radius: 5px;
 }
 
+/* En el hover del boton, darle un color de fondo y color de letra diferente */
 #form div button:hover {
     background-color: #041F1E;
     color: #9C9990;

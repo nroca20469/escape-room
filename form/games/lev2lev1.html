@@ -1,213 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=.0">
-    <!-- <title>Escape Room</title> -->
-    <link rel="stylesheet" href="../../style.css">
-    <link rel="stylesheet" href="../../css/game1.css">
-</head>
-<body>
-    <header>
-        <a href="../../index.html"><img src="../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
-        <a href="../../index.html"><h3>The Escape Room Game</h3></a>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=.0">
+        <title>Escape Room</title>
+        <!-- STYLE -->
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="../../css/game1.css">
+    </head>
 
-        <span id="buttonsLogInRegister">
-            <a href="../form/login.html"><button type="button"> Log in </button></a>
-            <a href="../form/register.html"><button type="button"> Register </button></a>
-        </span>
-        <button type="button" id="logout"> Log out </button>
-    </header>
+    <body>    
+        <header>
+            <a href="./../../index.html"><img src="../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
+            <a href="./../../index.html"><h3>The Escape Room Game</h3></a>
 
-    <div id="nivel" style="display: none">lev2</div>
+            <span id="buttonsLogInRegister">  <!-- Botones de login i register -->
+                <a href="./../../form/login.html"><button type="button"> Log in </button></a>
+                <a href="./../../form/register.html"><button type="button"> Register </button></a>
+            </span>
+            <span id="admin">  <!-- Solo lo vera el administrador -->
+                <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+            </span> 
+            <button type="button" id="logout"> Log out </button>  <!-- Boton de logout -->
+        </header>
 
-    <main id="container">
-        <div>
-            <table id="table1">
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>    
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-            </table>
-            <table id="table2">
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>    
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-            </table>
-            <table id="table3">
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>    
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-            </table>
-            <table id="table4">
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>    
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-            </table>
-            <table id="table5">
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>    
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-            </table>
-            <table id="table6">
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>    
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-            </table>
-            <table id="table7">
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>    
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-            </table>
-            <table id="table8">
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>    
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-            </table>
-            <table id="table9">
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>    
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-                <tr>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                    <td><input></input></td>
-                </tr>  
-            </table>
+        <div id="nivel" style="display: none">lev2</div>   <!-- Saber el nivel en el que esta el usuario en JS -->
 
-        </div>
-            
-        <div id="modal" class="close">
-            <div id="contenido-modal">
-                <p id="mensaje-modal"></p>
-                <button id="next-game"> Next Game </button>
-                <button id="retryGame"> Retry Game </button>
+        <main id="container">
+            <!-- Tabla del sudoku(rellenado en JS) -->
+            <div>
+                <table id="table1">
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>    
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                </table>
+                <table id="table2">
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>    
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                </table>
+                <table id="table3">
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>    
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                </table>
+                <table id="table4">
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>    
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                </table>
+                <table id="table5">
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>    
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                </table>
+                <table id="table6">
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>    
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                </table>
+                <table id="table7">
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>    
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                </table>
+                <table id="table8">
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>    
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                </table>
+                <table id="table9">
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>    
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                    <tr>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                        <td><input></input></td>
+                    </tr>  
+                </table>
 
-                <div id="sure">
-                    <p>Are you sure</p><br>
-                    <button id="yesSure"> Yes </button> 
-                    <button id="noSure"> No </button>
+            </div>
+                
+            <!-- Modal -->
+            <div id="modal" class="close">
+                <div id="contenido-modal">
+                    <p id="mensaje-modal"></p>
+                    <button id="next-game"> Next Game </button>
+                    <button id="retryGame"> Retry Game </button>
+
+                    <div id="sure">
+                        <p>Are you sure</p><br>
+                        <button id="yesSure"> Yes </button> 
+                        <button id="noSure"> No </button>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <div id="faltasIPuntuacion">
-            <h4 id="faltas">Faltas: <a></a></h4>
-            <h4 id="puntuacion">Puntuacion: <a></a></h4>
-            <h4 id="tiempo">Tiempo: <a></a></h4>
-        </div>
-        <!-- </input> -->
-    </main>
+            <!-- Ver el estado de la partida(faltas, puntuacion & tiempo) -->
+            <div id="faltasIPuntuacion">
+                <h4 id="faltas">Faltas: <a></a></h4>
+                <h4 id="puntuacion">Puntuacion: <a></a></h4>
+                <h4 id="tiempo">Tiempo: <a></a></h4>
+            </div>
+        </main>
 
-    <footer>
-        <button id="save"> Save </button>
-        <button id="check"> Check </button>
-        <button id="pista"> Pista </button>
-    </footer>
-    <script type="module" src="../../js/sudoku.js"> </script>
-    <script type="module" src="../../js/lev12lev1.js"> </script>
-    <script src="../../js/logout.js"> </script>
-</body>
+        <footer>
+            <button id="save"> Save </button>
+            <button id="check"> Check </button>
+            <button id="pista"> Pista </button>
+            <a href="./lev2lev2.html"><button id="next"> Next Game </button></a>
+        </footer>
+
+        <!-- scripts de JS -->
+        <script type="module" src="../../js/sudoku.js"> </script>
+        <script type="module" src="../../js/lev12lev1.js"> </script>
+        <script src="../../js/logout.js"> </script>
+    </body>
 </html>

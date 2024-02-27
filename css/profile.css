@@ -1,21 +1,21 @@
+/* Centramos el main del perfil */
 main div {
     text-align: center;
     background-color: #774E24;
-    /* margin: 5%; */
     width: 60%;
     margin-inline-start: 20%;
     margin-top: 5%;
-
     border-radius: 7px;
 }
 
-
+/* Daamos valor a la letra y titulos del perfil */
 h3, h2 {
     color: #9C9990;
     font-size: 20px;
     margin-bottom: 10px;
 }
 
+/* Estilo a los parrafos y letras del label */
 p, label {
     margin: 1%;
     font-family: 'Nanum Gothic', sans-serif;
@@ -34,12 +34,10 @@ input {
 }
 
 button {
-     margin-top: 5px;
-     margin-bottom: 10px;
-   /* margin-right: 30px; */
+    margin-top: 5px;
+    margin-bottom: 10px;
     font-size: 18px;
     padding: 10px;
-    /* float: right; */
     border: 1px solid #FFDDD2;
     border-radius: 10px;
     background-color: #774E24;

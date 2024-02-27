@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=.0">
+        <title>Escape Room</title>
+        <!-- STYLE -->
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="../../css/laberinto.css">
+    </head>
+    <body>
+      
+        <header>
+            <a href="./../../index.html"><img src="../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
+            <a href="./../../index.html"><h3>The Escape Room Game</h3></a>
+
+            <span id="buttonsLogInRegister">   <!-- Botones de login i register -->
+                <a href="./../../form/login.html"><button type="button"> Log in </button></a>
+                <a href="./../../form/register.html"><button type="button"> Register </button></a>
+            </span>
+            <span id="admin">  <!-- Solo lo vera el administrador -->
+                <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+            </span> 
+            <button type="button" id="logout"> Log out </button>  <!-- Boton de logout -->
+        </header>
+
+        <main>
+            <div id="level" hidden>medium</div>   <!-- Saber el nivel en el que esta el usuario en JS -->
+            <div id="laberinto"> </div>  <!-- Contenedor del laberinto -->
+
+            <!-- Modal -->
+            <div id="modal" class="close">
+                <div id="contenido-modal">
+                    <p id="mensaje-modal"></p>
+                </div>
+            </div>
+
+            <!-- Ver el estado de la partida(faltas, puntuacion & tiempo) -->
+            <div id="faltasIPuntuacion">
+                <h4 id="faltas">Faltas: <a>0</a></h4>
+                <h4 id="puntuacion">Puntuacion: <a>0</a></h4>
+                <h4 id="tiempo">Tiempo: <a>00:00:00</a></h4>
+            </div>
+        </main>
+
+        <footer>
+            <button id="howToPlay"> How to play? </button>
+            <button id="save"> Save </button>
+            <button id="check"> Check </button>
+            <a href="./lev3lev1.html"><button id="next">Next game</button></a>
+        </footer>
+
+        <!-- scripts de JS -->
+        <script src="./../../js/howToPlay.js"></script>
+        <script type="module" src="../../js/tiempo.js"> </script>
+        <script type="module" src="./../../js/lev2lev3.js"> </script>
+        <script src="../../js/logout.js"> </script>
+    </body>
+</html>

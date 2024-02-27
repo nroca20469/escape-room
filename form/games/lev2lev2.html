@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Escape Room</title>
+        <!-- STYLE -->
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="../../css/game1.css">
+
+        <!-- Style propio de la pagina -->
+        <style>
+            #enunciado {
+                background-color:#6A381F;
+                padding: 5%;
+                color: #FFDDD2;
+                border-radius: 7px;
+                border: 1px solid #FFDDD2;
+            }
+
+            button {
+                margin-top: 4%;
+                padding-inline: 5%;
+                padding-block: 2%;
+                background-color: #FFDDD2;
+                color:#6A381F;
+                border: 1px solid #6A381F;
+                border-radius: 7px;
+                margin-inline: 1%;
+            }
+
+            #faltasIPuntuacion {
+                width: 100%;
+                margin-block: 2%;
+                text-align: center;
+            }
+        </style>
+    </head>
+
+    <body>    
+        <header>
+            <a href="./../../index.html"><img src="../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
+            <a href="./../../index.html"><h3>The Escape Room Game</h3></a>
+
+            <span id="buttonsLogInRegister">  <!-- Botones de login i register -->
+                <a href="./../../form/login.html"><button type="button"> Log in </button></a>
+                <a href="./../../form/register.html"><button type="button"> Register </button></a>
+            </span>
+            <span id="admin">  <!-- Solo lo vera el administrador -->
+                <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+            </span> 
+            <button type="button" id="logout"> Log out </button> <!-- Boton de logout -->
+        </header>
+
+        <main id="container">
+            <!-- Juego de matematicas y logica -->
+            <div id="juego1">
+                <h2 id="titulo"></h2>
+                <p id="enunciado"></p>
+                <button type="button" id="a"></button>
+                <button type="button" id="b"></button>
+                <button type="button" id="c"></button>
+            </div>
+
+            <div id="juego2">
+                <h2 id="titulo"></h2>
+                <p id="enunciado"></p>
+                <button type="button" id="a"></button>
+                <button type="button" id="b"></button>
+                <button type="button" id="c"></button>
+            </div>
+
+            <div id="juego3">
+                <h2 id="titulo"></h2>
+                <p id="enunciado"></p>
+                <button type="button" id="a"></button>
+                <button type="button" id="b"></button>
+                <button type="button" id="c"></button>
+            </div>
+
+            <!-- Modal -->
+            <div id="modal" class="close">
+                <div id="contenido-modal">
+                    <p id="mensaje-modal"></p>
+                    <button id="okay"> Okey </button>
+                </div>
+            </div>
+
+            <!-- Ver el estado de la partida(faltas, pntuacion & tiempo) -->
+            <div id="faltasIPuntuacion">
+                <h4 id="faltas">Faltas: <a>0</a></h4>
+                <h4 id="puntuacion">Puntuacion: <a>0</a></h4>
+                <h4 id="tiempo">Tiempo: <a>00:00:00</a></h4>
+            </div>
+        </main>
+
+        <footer>
+            <button id="save"> Save </button>
+            <button id="check"> Check </button>
+            <button id="pista"> Pista </button>
+            <button id="howToPlay"> How to play? </button>
+            <a href="./lev2lev3easy.html"><button id="next"> Next Game </button></a>
+        </footer>
+            
+        <!-- scripts de JS -->
+        <script src="./../../js/howToPlay.js"></script>
+        <script type="module" src="../../js/lev2lev2.js"></script>
+        <script type="module" src="../../js/tiempo.js"></script>
+        <script src="../../js/logout.js"></script>
+    </body>
+</html>

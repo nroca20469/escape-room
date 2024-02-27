@@ -1,47 +1,14 @@
-* {
-    margin: 0;
-}
+/* Darle estilo al MAIN */
+/*  Al div principal de cada pagibna(casi todos tienen id container) */
 #container {
-    /* width: 50%; */
-    /* margin: 3%; */
-    /* margin-bottom: 10%; */
     height: 100%;
     width: 50%;
     margin-inline: 25%;
     margin-block: 5%;
     text-align: center;
-    
-}
-/* 
-#cuadrado1, #cuadrado2, #cuadrado3 {
-    width: 32%;
-    height: 100px;
-    float: left;
-    /* margin: 5px; */
-    /* margin-top: 10%; */
-/*}
-
-#cuadrado4, #cuadrado5, #cuadrado6, #cuadrado7, #cuadrado8, #cuadrado9 {
-    width: 32%;
-    height: 100px;
-    float: left;
-    margin-top: 10%;
-    
 }
 
-#container div div{
-    width: 30%;
-    height: 40%;
-    margin:0;
-    background-color: antiquewhite;
-    border: 1px solid black;
-    display: inline-block;
-}
-
-#container div div:nth-child(1), #container div div:nth-child(4), #container div div:nth-child(7) {
-    border-left: 1px solid red;
-} */
-
+/* Para las tablas de sudokus(principalmente) */
 table{
     border: 3px solid black;
     display: inline-block;
@@ -55,114 +22,30 @@ div {
     height: 100%;
 }
 
-/* div {
-    /* border: 2px solid black;
-    border-color: black;
-    border-style: solid;
-    border-width: 1px;
-} */
-
-table  input  {
-    /* padding: 3px; */
+/* A los inputs de las tablas(9 tablas X 9 inputs en cada una) */
+table input {
     font-size: 18px;
     width: 95%;
     background-color: #6A381F;
 }
 
-footer {
-    text-align: center;
-}
-
-input.correcto {
+/* Segun las clases de los inputs, damos un color diferente  */
+input.correcto {  /* Si el intento se ha dado como correcto */
     color:chartreuse !important;
 } 
 
-input.incorrecto {
+input.incorrecto {  /* Si el intento a pasado a incorrecto(malo) */
     color: red !important;
 }
 
-input.intento {
+input.intento {  /* Al cambiar el valor del input */
     color:aqua !important;
 }
 
-input.estatico {
+input.estatico {  /* Cuando viene del json */
     color:#FFDDD2 !important;
 }
 
-input.pista {
+input.pista {  /* Si el input es una pista del juego */
     color:orange !important;
 }
-
-#save, #check, #pista, #howToPlay {
-    margin-top: 12px;
-    /* margin-right: 30px; */
-    font-size: 18px;
-    padding: 10px;
-    margin-inline: 10px;
-    /* float: right; */
-    border: 1px solid #FFDDD2;
-    border-radius: 10px;
-    background-color: #6A381F;
-    color:#FFDDD2;
-}
-
-#pista{
-    float: right;
-    margin-right: 5%;
-}
-
-#modal.close {
-    display: none; /* Por defecto, estará oculto */
-    position: fixed; /* Posición fija */
-    z-index: 1; /* Se situará por encima de otros elementos de la página*/
-    padding-top: 200px; /* El contenido estará situado a 200px de la parte superior */
-    left: 0;
-    top: 0;
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Algura completa */
-    overflow: auto; /* Se activará el scroll si es necesario */
-    background-color: rgba(0,0,0,0.5); /* Color negro con opacidad del 50% */
-    text-align: center;
-}
-
-#modal.open {
-    position: fixed; /* Posición fija */
-    z-index: 1; /* Se situará por encima de otros elementos de la página*/
-    padding-top: 200px; /* El contenido estará situado a 200px de la parte superior */
-    left: 0;
-    top: 0;
-    width: 100%; /* Ancho completo */
-    height: 100%; /* Algura completa */
-    overflow: auto; /* Se activará el scroll si es necesario */
-    background-color: rgba(0,0,0,0.5); /* Color negro con opacidad del 50% */
-    text-align: center;
-    
-}
-
-#modal.open #contenido-modal {
-    position: relative; /* Relativo con respecto al contenedor -modal- */
-    background-color: #9C9990;
-    margin: auto; /* Centrada */
-    padding: 40px;
-    width: 60%;
-    height: 25%;
-    border-radius: 15px;
-    color: #041F1E;
-    font-size: 20px;
-    justify-content: center;
-}
-
-#modal.open #contenido-modal button {
-    /* margin-bottom: 20px; */
-    font-family: 'Kalam', cursive;
-    
-    
-    font-size: 18px;
-    padding: 10px;
-    margin-inline: 10px;
-    border: 1px solid #9C9990;
-    border-radius: 10px;
-    background-color: #6A381F;
-    color:#9C9990;
-}
-

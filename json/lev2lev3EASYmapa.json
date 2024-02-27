@@ -1,0 +1,237 @@
+[
+    {
+        "fila1": {
+            "cuadrado1": ["border-left", "border-top"],
+            "cuadrado2": ["border-top"],
+            "cuadrado3": ["border-right", "border-top"],
+            "cuadrado4": ["border-top", "border-left"],
+            "cuadrado5": ["border-top"],
+            "cuadrado6": ["border-top", "border-right"]
+        },
+        "fila2": {
+            "cuadrado1": ["border-left", "border-bottom"],
+            "cuadrado2": ["border-right", "border-top"],
+            "cuadrado3": ["border-right"],
+            "cuadrado4": ["border-left"],
+            "cuadrado5": ["border-left", "border-top"],
+            "cuadrado6": ["border-right", "border-top"]
+        },
+        "fila3": {
+            "cuadrado1": ["border-bottom"],
+            "cuadrado2": ["border-bottom", "border-right"],
+            "cuadrado3": ["border-right"],
+            "cuadrado4": ["border-bottom", "border-left"],
+            "cuadrado5": ["border-right"],
+            "cuadrado6": ["border-right"]
+        },
+        "fila4": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-bottom"],
+            "cuadrado3": ["border-bottom", "border-right"],
+            "cuadrado4": ["border-left"],
+            "cuadrado5": ["border-bottom", "border-right"],
+            "cuadrado6": ["border-right"]
+        },
+        "fila5": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-bottom", "border-left"],
+            "cuadrado3": ["border-bottom"],
+            "cuadrado4": ["border-right"],
+            "cuadrado5": [],
+            "cuadrado6": ["border-right"]
+        },
+        "fila6": {
+            "cuadrado1": ["border-left", "border-bottom"],
+            "cuadrado2": ["border-bottom"],
+            "cuadrado3": ["border-bottom"],
+            "cuadrado4": ["border-bottom", "border-right"],
+            "cuadrado5": ["border-right"],
+            "cuadrado6": ["border-right", "border-bottom"]
+        }
+    },
+    {
+        "fila1": {
+            "cuadrado1": ["border-top", "border-bottom", "border-left"],
+            "cuadrado2": ["border-top"],
+            "cuadrado3": ["border-top"],
+            "cuadrado4": ["border-left"],
+            "cuadrado5": ["border-top"],
+            "cuadrado6": ["border-top", "border-right"],
+            "cuadrado7": ["border-top"],
+            "cuadrado8": ["border-top", "border-right"]
+        },
+        "fila2": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": [],
+            "cuadrado3": ["border-left"],
+            "cuadrado4": ["border-top", "border-left"],
+            "cuadrado5": ["border-top"],
+            "cuadrado6": [],
+            "cuadrado7": ["border-right"],
+            "cuadrado8": ["border-right"]
+        },
+        "fila3": {
+            "cuadrado1": ["border-left", "border-bottom"],
+            "cuadrado2": ["border-top"],
+            "cuadrado3": ["border-left", "border-bottom"],
+            "cuadrado4": ["border-bottom"],
+            "cuadrado5": ["border-top", "border-left"],
+            "cuadrado6": ["border-top", "border-right"],
+            "cuadrado7": ["border-top"],
+            "cuadrado8": ["border-top", "border-right"]
+        },
+        "fila4": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": [],
+            "cuadrado3": [],
+            "cuadrado4": [],
+            "cuadrado5": [],
+            "cuadrado6": ["border-left", "border-bottom"],
+            "cuadrado7": ["border-bottom", "border-right"],
+            "cuadrado8": ["border-right"]
+        },
+        "fila5": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-top", "border-right"],
+            "cuadrado3": ["border-top"],
+            "cuadrado4": ["border-top"],
+            "cuadrado5": ["border-bottom", "border-left"],
+            "cuadrado6": ["border-bottom", "border-right"],
+            "cuadrado7": [],
+            "cuadrado8": ["border-right"]
+        },
+        "fila6": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-left", "border-top"],
+            "cuadrado3": ["border-right", "border-bottom"],
+            "cuadrado4": ["border-bottom"],
+            "cuadrado5": ["border-bottom"],
+            "cuadrado6": ["border-bottom"],
+            "cuadrado7": ["border-right"],
+            "cuadrado8": ["border-right", "border-bottom"]
+        },
+        "fila7": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-left","border-bottom"],
+            "cuadrado3": ["border-bottom"],
+            "cuadrado4": [],
+            "cuadrado5": ["border-left"],
+            "cuadrado6": [],
+            "cuadrado7": ["border-bottom", "border-left"],
+            "cuadrado8": ["border-right"]
+        },
+        "fila8": {
+            "cuadrado1": ["border-left", "border-bottom"],
+            "cuadrado2": ["border-bottom"],
+            "cuadrado3": ["border-bottom", "border-right"],
+            "cuadrado4": ["border-bottom"],
+            "cuadrado5": ["border-right", "border-top"],
+            "cuadrado6": ["border-bottom"],
+            "cuadrado7": ["border-bottom"],
+            "cuadrado8": ["border-bottom", "border-right"]
+        }
+    },
+    {
+        "fila1": {
+            "cuadrado1": ["border-left", "border-top"],
+            "cuadrado2": ["border-top"],
+            "cuadrado3": ["border-top"],
+            "cuadrado4": ["border-left"],
+            "cuadrado5": ["border-top"],
+            "cuadrado6": ["border-top", "border-right"],
+            "cuadrado7": ["border-top", "border-right"]
+        },
+        "fila2": {
+            "cuadrado1": ["border-left", "border-bottom"],
+            "cuadrado2": ["border-left", "border-top"],
+            "cuadrado3": [],
+            "cuadrado4": ["border-left"],
+            "cuadrado5": ["border-top", "border-right"],
+            "cuadrado6": [],
+            "cuadrado7": ["border-right", "border-bottom"]
+        },
+        "fila3": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-right"],
+            "cuadrado3": [],
+            "cuadrado4": ["border-top"],
+            "cuadrado5": ["border-top"],
+            "cuadrado6": [],
+            "cuadrado7": ["border-right"]
+        },
+        "fila4": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-left", "border-top"],
+            "cuadrado3": ["border-top"],
+            "cuadrado4": ["border-top", "border-right"],
+            "cuadrado5": ["border-right"],
+            "cuadrado6": ["border-right", "border-top"],
+            "cuadrado7": ["border-right"]
+        },
+        "fila5": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-top"],
+            "cuadrado3": ["border-top", "border-right"],
+            "cuadrado4": ["border-bottom"],
+            "cuadrado5": ["border-right"],
+            "cuadrado6": ["border-bottom"],
+            "cuadrado7": ["border-right", "border-bottom"]
+        },
+        "fila6": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-top", "border-right"],
+            "cuadrado3": ["border-bottom", "border-left"],
+            "cuadrado4": ["border-right"],
+            "cuadrado5": [],
+            "cuadrado6": ["border-right"],
+            "cuadrado7": ["border-right"]
+        },
+        "fila7": {
+            "cuadrado1": ["border-left", "border-bottom"],
+            "cuadrado2": ["border-bottom", "border-left"],
+            "cuadrado3": ["border-bottom", "border-right"],
+            "cuadrado4": ["border-right"],
+            "cuadrado5": ["border-bottom", "border-right"],
+            "cuadrado6": ["border-bottom"],
+            "cuadrado7": ["border-right", "border-bottom"]
+        }
+    },
+    {
+        "fila1": {
+            "cuadrado1": ["border-top", "border-left"],
+            "cuadrado2": ["border-top"],
+            "cuadrado3": [],
+            "cuadrado4": ["border-top", "border-left"],
+            "cuadrado5": ["border-top", "border-right"]
+        },
+        "fila2": {
+            "cuadrado1": ["border-top", "border-left"],
+            "cuadrado2": ["border-top", "border-right"],
+            "cuadrado3": ["border-bottom"],
+            "cuadrado4": ["border-top"],
+            "cuadrado5": ["border-right"]
+        },  
+        "fila3": {
+            "cuadrado1": ["border-left"],
+            "cuadrado2": ["border-left"],
+            "cuadrado3": ["border-bottom"],
+            "cuadrado4": ["border-top"],
+            "cuadrado5": ["border-right"]
+        },
+        "fila4": {
+            "cuadrado1": ["border-top", "border-left"],
+            "cuadrado2": ["border-bottom", "border-right"],
+            "cuadrado3": ["border-bottom"],
+            "cuadrado4": ["border-bottom", "border-right"],
+            "cuadrado5": ["border-right"]
+        },
+        "fila5": {
+            "cuadrado1": ["border-bottom", "border-left"],
+            "cuadrado2": ["border-bottom"],
+            "cuadrado3": [],
+            "cuadrado4": ["border-bottom", "border-left"],
+            "cuadrado5": ["border-bottom", "border-right"]
+        }
+    }
+
+]
