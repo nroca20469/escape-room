@@ -136,3 +136,15 @@ POR HACER:
 HECHO:
 - Correccion de errores 
 - How to play "botones"
+
+POR HACER: 
+- Comentar y refactorizar codigo
+- Si da tiempo hacer, crear y poner en practica el ultimo juego
+
+26/02/2024 - 28/02/2024
+HECHO:
+- Refactorizacion y limpieza del codigo
+- Comentar el codigo
+
+PARA HACER:
+- Mirar si el nivel 3 nivel 3 da tiempo de hacerlo(hay hasta el 3.2)

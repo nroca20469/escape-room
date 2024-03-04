@@ -170,7 +170,7 @@ function colocarPrincipioFinal() {
         } else if(rand == 1) {  // Si el rand es 1(laberinto 1)
 
             // Colocar muñeco y final + clase inicio/actual
-            colocarInicioFinal('fila01cuadrado01', 'recto', 'fila17cuadrado17', '');  
+            colocarInicioFinal('fila01cuadrado01', 'recto', 'fila17cuadrado17', 'borderTop');  
 
         }
     }
@@ -364,7 +364,7 @@ function finalizarPartida() {
             user.gameEstate[0].map2[0].level3.medium.estate = "done";   // Cambiamos el estado tanto del individual
             user.gameEstate[0].map2[0].level3.estate = "done";          // Como del estado general del nivel
         } else if(level.innerHTML == 'difficult') {
-            user.gameEstate[0].map3[0].level2.estate = "done";            
+            user.gameEstate[0].map3[0].level3.estate = "done";            
         }
 
         // Actualizamos el usuario
@@ -407,7 +407,7 @@ function guardarPartida() {
         jsonJuego = gameEstatus.medium;
     } else if(level.innerHTML == 'difficult') {
         // Al ser del m3l2(diferente ruta)
-        jsonJuego = JSON.parse(localStorage.getItem(idUsuario)).gameEstate[0].map3[0].level2;
+        jsonJuego = JSON.parse(localStorage.getItem(idUsuario)).gameEstate[0].map3[0].level3;
     }
 
     //Recogemos todas las imagenes (rectas y giradas)
@@ -449,7 +449,7 @@ function guardarPartida() {
     } else if(level.innerHTML == 'medium') {
         user.gameEstate[0].map2[0].level3.medium = jsonJuego;
     } else if(level.innerHTML == 'difficult') {
-        user.gameEstate[0].map3[0].level2 = jsonJuego;
+        user.gameEstate[0].map3[0].level3 = jsonJuego;
     }
 
     // Guardar en el LS
@@ -529,11 +529,11 @@ function eleccionLaberinto() {
 
         rand = Math.floor(Math.random() * lev2MEDIUMExercice.length);
         jsonLaberinto = lev2MEDIUMExercice[rand];
-        jsonParedes = lev2MEDIUMParedes[0];
+        jsonParedes = lev2MEDIUMParedes[rand];
     
     } else if(level.innerHTML == 'difficult') {
     
-        rand = Math.floor(Math.random() * lev3lev2Exercice.length);
+        rand = 1//Math.floor(Math.random() * lev3lev2Exercice.length);
         jsonLaberinto = lev3lev2Exercice[rand];
         jsonParedes = lev3lev2Paredes[rand];
 
@@ -732,20 +732,20 @@ window.addEventListener('load', () => {
         
         if(idUsuario != null) {     // Si el usuario esta inciado
             
-            let gameEstatus = JSON.parse(localStorage.getItem(idUsuario)).gameEstate[0].map3[0].level2;  // Recogemos el estado del juego actual
+            let gameEstatus = JSON.parse(localStorage.getItem(idUsuario)).gameEstate[0].map3[0].level3;  // Recogemos el estado del juego actual
 
             // Si el estado esta vacio
             if(gameEstatus.estate == null) {
     
                 let usuario = JSON.parse(localStorage.getItem(idUsuario));  // Llamamos al usuario
-                usuario.gameEstate[0].map3[0].level2 = nuevoEstado();  // Guardar estado en el usuario
+                usuario.gameEstate[0].map3[0].level3 = nuevoEstado();  // Guardar estado en el usuario
 
                 //Subir a localStorage
                 localStorage.setItem(id, JSON.stringify(usuario));
             }
 
             // Guardar nivel en una variable
-            let lev2 = JSON.parse(localStorage.getItem(idUsuario)).gameEstate[0].map3[0].level2;
+            let lev2 = JSON.parse(localStorage.getItem(idUsuario)).gameEstate[0].map3[0].level3;
 
             //Recoger los json guardados de la partida anteriors            
             if(lev2.estate == 'intento') {  
@@ -816,9 +816,12 @@ window.addEventListener('load', () => {
 
         // Colocar muñequitos
         if(id) {
-            if(Object.keys(actual).length != 0) {  // Si el array de actual tiene algun valor
-                document.querySelector('.' + actual).className += ' actual';  // Añadimos al classname el nombre actual
+            if(actual) {
+                if(Object.keys(actual).length != 0) {  // Si el array de actual tiene algun valor
+                    document.querySelector('.' + actual).className += ' actual';  // Añadimos al classname el nombre actual
+                }
             }
+            
 
             // Colocacion de muñecos/imagenes segun sentido
             if(reves) { 
@@ -829,7 +832,7 @@ window.addEventListener('load', () => {
             }
 
         }
-       
+        console.log(rand);
         colocarPrincipioFinal();
     }
 

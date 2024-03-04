@@ -168,7 +168,7 @@ function comprovarPalabra(id, div) {
             parar();  //Paramos el tiempo
 
             if(idUsuario) {  //Si el usuario esta iniciado
-                estadoActualJSON('end');  //Cambaimos estado del usuario del juego a acabado
+                estadoActualJSON('done');  //Cambaimos estado del usuario del juego a acabado
             }  
             
             if(document.getElementById('intentos').childElementCount >= 3) {  //Si el de intents es menor/igual a 3
@@ -450,7 +450,7 @@ window.addEventListener('load', () => {
             puntuacionInput.innerHTML = level.puntuacion != null ? level.puntuacion : '0' ;  //Actualizamos el tiempo
             faltasInput.innerHTML = level.faults != null ? level.faults : '0' ;  //Actualizamos el tiempo
 
-        } else if(level.estate == 'end') {   //Si el estado esta en acabado
+        } else if(level.estate == 'done') {   //Si el estado esta en acabado
 
             //Mostramos el boton de next game y escondemos el de check y el de save
             btnNext.style.display = "inline-block";

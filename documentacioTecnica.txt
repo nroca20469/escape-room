@@ -1,0 +1,38 @@
+1.- DESCRIPCIO GENERAL DEL PROJECTE
+    Descripcio: jocs mentals y logics(sudoku, laberintos, etc.), Joc amb 3 nivells(3 maps), i aquests mateixos en 3 nivells(1, 2 y 3)
+    Proposit: fer pensar y potenciar al pensament y al jocs en pantalla que es solen fer en escrit
+
+2.- FUNCIONALITAT
+
+3.- ESTRUCTURA
+    Estructura en carpetes per tipos de archius(css, js, html, etc.), i en aquests mateixos els html y js tenen el mateix nom si es especific, sino tenen nom mes general, pero es poden associar facilment uns amb els altres.
+
+4.- REQUISITS DEL SISTEMA
+ - Chrome v.121.0.6167.189
+
+5.- INSTAL·LACIÓ I CONFIGURACIÓ
+    No hi ha que instalar res, basta en tenir un navegador chrome(no s'ha comprovat en altres navegadors).
+    Per poder guardar les partides, hi ha que registrarse.
+
+6.- ÚS DEL PROJECTE
+    Instruccions: 
+        1.- Registre de usuario
+        2.- Eleccio de nivell/mapa(1, 2 o 3)
+        3.- En mapa, eleccio del 1r nivell.
+        4.- En cada nivell, hi ha un HowToPlay button, per veure com jugar a x joc
+
+7.- REFERENCIES
+    MDNWebDocs de JS --> https://developer.mozilla.org/en-US/docs/Learn/JavaScript
+    CSS en MDNWebDocs --> https://developer.mozilla.org/en-US/docs/Learn/CSS 
+    Ayuda en cosas especificas --> https://es.stackoverflow.com/questions/317077/evento-al-darle-clic-en-celda-de-una-tabla 
+
+    Ideas per al Maze --> https://uipencil.com/2023/04/12/how-to-build-a-mini-maze-game-using-html-css-and-javascript/
+    Imagenes de Mazes --> https://stock.adobe.com/es/images/white-vector-template-with-a-black-maze-puzzle-maze-design-in-a-simple-style-on-a-white-background-concept-for-making-right-choices/364456859
+    Imagens de Sudokus Samurai --> https://www.samurai-sudoku.com/es/ 
+    Idea de sudoku --> Libro de sudokus
+
+    Instrucciones de Sudoku --> https://sudoku.com/how-to-play/sudoku-rules-for-complete-beginners/
+    Cambair color de iconos con filter --> https://codepen.io/sosuke/pen/Pjoqqp
+
+    Idees de llibres propis o de ideas propies, y agafar el joc cercat i ns quina pagina exacte.
+    

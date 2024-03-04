@@ -1,3 +1,4 @@
+// Import funcitons(eleguir/obtener sudoku y parar temporizador)
 import  {obtenerSudoku} from './sudoku.js';  //Importamos la funcion que nos va a obtener el sudoku que vamos a utilizar(desde un json)
 import { parar } from './tiempo.js';
 
@@ -7,6 +8,8 @@ let jsonCorreccion;  //JSON con la correccion del sudoku actual
 let jsonOriginal;    //JSON con el sudoku original(como viene por defecto cuando empiezas una partida)
 let id;              //ID del usuario
 let inputColocado = 0;
+
+// Variables de faltas y puntuacion
 let faltas = 0;
 let puntuacion = 0;
 
@@ -21,6 +24,10 @@ const tiempoInput =  document.querySelector('#tiempo a');
 
 //Div con el nivel
 const nivel = document.getElementById('nivel');
+
+
+// FUNCTIONS
+// ----------
 
 //Funcion para colocar los numeros en el sudoku
 function colocarNumeros(json) {  //Json que recorreremos para rellenar el sudoku por pantalla
@@ -178,8 +185,6 @@ function saveGame() {
     let contadorFila1 = 0;
     let contadorFila2 = 0;
     let contadorFila3 = 0;
-
-    
 
     inputs.forEach((input, index) => {  //Reorremos todos los inputs
         let tabla = 1;
@@ -355,20 +360,28 @@ function comprovarSiJuegoAcabado() {
     }
 }
 
+
+// EVENTOS
+// --------
+
+// Evento del boton check(comprovar)
 document.getElementById('check').addEventListener('click', () => {  //Del boton de comprovar
     checkNumeros();  //Lo mandamos al checkNumeros, para que esta funcion lo compruebe
 
     comprovarSiJuegoAcabado();
 });
 
+// Evento al cambiar un input
 addEventListener('input', (e)=> {
     e.target.className = 'intento';  //Si editan cualquier input, este pasara a ser intento(saldra en azul)
 });
 
+// Evento del boton save(guardar)
 document.getElementById('save').addEventListener('click', ()=> {  //Del boton de guarda
     saveGame();  //Lo mandamos a guardar el juego para guardarlo
 });
 
+// Evento del boton pista
 document.getElementById('pista').addEventListener('click', ()=> {
     let rand = Math.floor(Math.random() * inputs.length);
     while(inputs[rand].className == "correcto" || inputs[rand].className == "estatico") {
@@ -403,6 +416,7 @@ document.getElementById('pista').addEventListener('click', ()=> {
 
 })
 
+// Evento del boton next game(siguinente)
 btnNextGame.addEventListener('click', ()=> {
 
     //Coger nivel
@@ -430,14 +444,17 @@ btnNextGame.addEventListener('click', ()=> {
     
 })
 
+// Evento del boton retry(reintentar)
 btnRetryGame.addEventListener('click', (e) => {
     document.getElementById('sure').style.display = "block";
 });
 
+// Evento del boton noSure(del modal)
 document.getElementById('noSure').addEventListener('click', () => {
     document.getElementById('sure').style.display = "none";
 });
 
+// Evento del boton yesSure(del modal)
 document.getElementById('yesSure').addEventListener('click', () => {
     let usuario = JSON.parse(localStorage.getItem(id));
     if(nivel.innerText == 'lev1') {
@@ -463,6 +480,7 @@ document.getElementById('yesSure').addEventListener('click', () => {
     
 });
 
+// Evento al cargarse la pagina
 window.addEventListener('load', () => {
     let jsonSudoku;//Para guardar el json de sudoku
 
@@ -473,7 +491,7 @@ window.addEventListener('load', () => {
         }
     }
 
-    if(id != undefined) {
+    if(id) {        // Si el usuario esta iniciado
         //Array of the saved game
         let savedGame
         if(nivel.innerText == 'lev1') {
@@ -494,39 +512,21 @@ window.addEventListener('load', () => {
                 jsonCorreccion = obtenerSudoku(nivel.innerHTML,random)['correccion'];     //Josn de la correccion
                 jsonOriginal = jsonSudoku;                                  //El json original sera el json Sudoku(ya que sera el json que luego vamos a usar para comparar)
                 faltas = 0;
+
                 tiempoInput.innerHTML = "00:00:00"; //Cronometro a 0
                 faltasInput.innerHTML = 0;
                 puntuacionInput.innerHTML = 0;
 
-            } else {  //Si el array del savbedGame no esta vacia
+            } else {  //Si el array del savedGame no esta vacia
 
-                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].faults == null)  {
-                    faltas = 0;
-                    faltasInput.innerHTML = faltas;
-                } else {
-                    faltas = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].faults;
-                    faltasInput.innerHTML = faltas; 
-                }
+                // Recogemos en variable el nivel
+                let level1 = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'];
 
-                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].time == null)  {
-                    tiempoInput.innerHTML = "00:00:00";
-                } else {
-                    tiempoInput.innerHTML = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].time;
-                    let tiempo = tiempoInput.innerHTML.split(":");
-                    horas = +tiempo[0];
-                    minutos = +tiempo[1];
-                    segundos = +tiempo[2];
-                }
-
-                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].puntuacion == null)  {
-                    puntuacionInput.innerHTML = 0;
-                    puntuacion = 0;
-                } else {
-                    puntuacion = +JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map1'][0]['level1'].puntuacion;
-                    puntuacionInput.innerHTML = +puntuacion;
-                }
-
-                
+                // Damos el valor a las variables i por pantalla
+                faltas = faltasInput.innerHTML = level1.faults == null ? 0 : level1.faults;
+                tiempoInput.innerHTML = level1.time == null ? '00:00:00' : level1.time;
+                puntuacion = puntuacionInput.innerHTML = level1.puntuacion == null ? 0 : level1.puntuacion;
+                                
                 jsonSudoku = savedGame['saved'];            //Json de la jugada actual(la guardada)
                 jsonCorreccion = savedGame['correccion'];   //Json de la correccion(tiene la solucion)
                 jsonOriginal = savedGame['original'];       //Json original(para saber si el numero es del original o no(correcto/incorrecto))
@@ -557,31 +557,14 @@ window.addEventListener('load', () => {
 
             } else {  //Si el array del savbedGame no esta vacia
 
-                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].faults == null)  {
-                    faltas = 0;
-                    faltasInput.innerHTML = faltas;
-                } else {
-                    faltas = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].faults;
-                    faltasInput.innerHTML = faltas; 
-                }
 
-                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].time == null)  {
-                    tiempoInput.innerHTML = "00:00:00";
-                } else {
-                    tiempoInput.innerHTML = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].time;
-                    let tiempo = tiempoInput.innerHTML.split(":");
-                    horas = +tiempo[0];
-                    minutos = +tiempo[1];
-                    segundos = +tiempo[2];
-                }
+                // Recogemos en variable el nivel
+                let level2 = JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'];
 
-                if(JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].puntuacion == null)  {
-                    puntuacionInput.innerHTML = 0;
-                    puntuacion = 0;
-                } else {
-                    puntuacion = +JSON.parse(localStorage.getItem(id))['gameEstate'][0]['map2'][0]['level1'].puntuacion;
-                    puntuacionInput.innerHTML = +puntuacion;
-                }
+                // Damos el valor a las variables i por pantalla
+                faltas = faltasInput.innerHTML = level2.faults == null ? 0 : level2.faults;
+                tiempoInput.innerHTML = level2.time == null ? '00:00:00' : level2.time;
+                puntuacion = puntuacionInput.innerHTML = level2.puntuacion == null ? 0 : level2.puntuacion;
                 
                 jsonSudoku = savedGame['saved'];            //Json de la jugada actual(la guardada)
                 jsonCorreccion = savedGame['correccion'];   //Json de la correccion(tiene la solucion)
@@ -590,7 +573,7 @@ window.addEventListener('load', () => {
             }
         }
 
-    } else {
+    } else {        // Si el usuario no esta iniciado
 
         let random = Math.floor(Math.random() * 4);  //Random entre 0-3
             
@@ -603,17 +586,17 @@ window.addEventListener('load', () => {
         jsonSudoku = obtenerSudoku(nivel.innerHTML,random)['jsonSudoku'];         //Json de la jugada
         jsonCorreccion = obtenerSudoku(nivel.innerHTML,random)['correccion'];     //Josn de la correccion
         jsonOriginal = jsonSudoku;                                  //El json original sera el json Sudoku(ya que sera el json que luego vamos a usar para comparar)
-        faltas = 0;
+        
+        // Iniciamos los contadores/temporizadores a 0
         tiempoInput.innerHTML = "00:00:00"; //Cronometro a 0
-        faltasInput.innerHTML = 0;
-        puntuacionInput.innerHTML = 0;
+        faltas = faltasInput.innerHTML = 0;
+        puntuacion = puntuacionInput.innerHTML = 0;
 
+        // Esconder boton de guardar(no esta inciado)
         document.getElementById('save').style.display = "none";
 
     }
     
-    
+    // Colocar los nuero por pantalla
     colocarNumeros(jsonSudoku);
-
-    // inicio();
 });

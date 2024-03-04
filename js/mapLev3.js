@@ -1,15 +1,20 @@
+
+// Div general
 const container = document.getElementById('container');
 
-const lev1 = document.getElementById('lev1');
-const lev2 = document.getElementById('lev2');
-const lev3 = document.getElementById('lev3');
-
-// const unlocked = '<svg id="unlocked" xml ns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-unlock-fill" viewBox="0 0 16 16"> <path d="M11 1a2 2 0 0 0-2 2v4a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h5V3a3 3 0 0 1 6 0v4a.5.5 0 0 1-1 0V3a2 2 0 0 0-2-2"/> </svg>';
-// const locked = '<svg id="locked" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-lock-fill" viewBox="0 0 16 16"> <path d="M8 1a2 2 0 0 1 2 2v4H6V3a2 2 0 0 1 2-2m3 6V3a3 3 0 0 0-6 0v4a2 2 0 0 0-2 2v5a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2"/>  </svg>';
+// Constantes de los divs de niveles
+const level1 = document.getElementById('lev1');
+const level2 = document.getElementById('lev2');
+const level3 = document.getElementById('lev3');
 
 
+// FUNCTIONS
+// -----------
+
+// Funcion para redirigir la pagina
 function redirectPage(id) {
 
+    // Dependiendo del nivel, lo redirigimos a distintas paginas
     if(id == 'lev1') {
         location.href = "../form/games/lev3lev1.html";
     } else if(id == 'lev2') {
@@ -17,55 +22,89 @@ function redirectPage(id) {
     }
 }
 
-function actualizacionClases() {
-    mirarUsuario();
-}
-
+// Funcion para buscar si el usuario esta iniciado
 function mirarUsuario() {
+
+    // Variable para guardar el id del usuario
     let id;
+
     for(let i = 0; i < localStorage.length; i++) {
+
         let user = JSON.parse(localStorage.getItem(localStorage.key(i)));
-        if(user['estate'] == true) {
-            id = localStorage.key(i);
+
+        if(user['estate'] == true) {  // Si el usuario esta inciado
+            id = localStorage.key(i);  // Guardamos el id del LS
         }
+
     }
 
-    if(id) {
-            let gameEstate = (JSON.parse(localStorage.getItem(id))['gameEstate']);
-            // let map2 = gameEstate[0]['map2'];
-            let map3 = gameEstate[0]['map3'];
-            if(map3[0]['level1']['estate'] == null || map3[0]['level1']['estate'] == "done" || map3[0]['level1']['estate'] == "intento" ) {
-               lev1.className = "unblocked";
-            } else {
-               lev1.className = "blocked";
-            }
-            if((map3[0]['level1']['estate'] == "done" && map3[0]['level2']['estate'] == null) || map3[0]['level2']['estate'] == "done" ) {
-                if(map3[0]['level2']['estate'] == "done") {
-                    lev2.className = "done";
-                } else {
-                    lev2.className = "unblocked";
-                }
-            } else {
-                lev2.className = "blocked";
-            }   
-
-        } else {
-            lev1.className = "unblocked";
-            lev2.className = "blocked"
-        }
+    return id;
 }
 
-container.addEventListener('click', (e) => {
-    if(e.target.parentNode.className == "unblocked") {
-        document.getElementById('aviso').style.display = 'none';
+// Funcion para buscar en que nivel esta el usuario actual(o mostrar el primer nivel si no esta iniciado)
+function actualizarClases() {
+    // Variable para guardar el id del usuario
+    let id = mirarUsuario() ?? null;
 
+    if(id) {        // Si el usuario esta iniciado  
+
+        // Variable de estado del juego
+        let gameEstate = (JSON.parse(localStorage.getItem(id))['gameEstate']);
+    
+        // Variables de mapa i nivel
+        let map3 = gameEstate[0]['map3'];
+        let lev1 = map3[0].level1;
+        let lev2 = map3[0].level2;
+        let lev3 = map3[0].level3;
+
+        // Nivel 1
+        if(lev1.estate == null || lev1.estate) {
+            level1.className = 'unblocked';
+
+            if(lev1.estate == 'done') {
+                level1.classname += ' done';
+            }
+        }
+
+        // Nivel 2
+        if((lev2.estate == null && lev1.estate == 'done') || lev2.estate ) {
+            level2.className = 'unblocked';
+
+            if(lev2.estate == 'done') {
+                level2.classname += ' done';
+            }
+        }
+
+    } else {        // Si el usuario no esta iniciado 
+        level1.className = "unblocked";  // Desbloqueamos solo el primer nivel
+    }
+}
+
+
+// EVENTS
+// ----------
+
+// Evento al clicar en cualquier parte del div principal(buscamos si tienen clase unbloqued or done)
+container.addEventListener('click', (e) => {
+
+    // Guardamos la clase en una variable
+    let classe = e.target.parentNode.className;
+
+    if(classe == "unblocked" || classe == 'done') {      // Si el parent del clicado esta en unblocked
+
+        // No aparecera o simplemente se borrara el aviso
+        document.getElementById('aviso').style.display = 'none';  
+
+        // I se redirigira la pagina
         redirectPage(e.target.parentNode.id);
 
-    } else if(e.target.parentNode.className == "blocked"){ //Si el div/boton esta en estado "blocked" aparecera un mensaje de error
+    } else  {  //Si el div/boton esta en estado "blocked" aparecera un mensaje de error
+        
         document.getElementById('aviso').innerText = 'Tienes que superar los niveles anteriores para poder acceder a este';
         document.getElementById('aviso').style.display = 'block';
     }
 
 });
 
-window.addEventListener('load', actualizacionClases);
+// Evento al cargarse la pagina(cambiara las clases)
+window.addEventListener('load', actualizarClases);

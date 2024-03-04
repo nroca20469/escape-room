@@ -561,7 +561,7 @@
             "cuadrado04": ["border-left"],
             "cuadrado05": ["border-left"],
             "cuadrado06": ["border-bottom", "border-left"],
-            "cuadrado07": [],
+            "cuadrado07": ["border-left"],
             "cuadrado08": [],
             "cuadrado09": ["border-right", "border-bottom"],
             "cuadrado10": ["border-bottom"],
