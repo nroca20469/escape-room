@@ -1,0 +1,24 @@
+table {
+    text-align: center;
+    margin-block: 5%;
+    padding: 5%;
+    width: 100%;
+}
+
+tr {
+    margin-block: 5% !important;
+}
+
+thead {
+    color:#FFDDD2 !important;
+}
+
+tbody {
+    color: #9C9990;
+}
+
+h1 {
+    color: #041F1E;
+    margin-top: 5%;
+    text-align: center;    
+}

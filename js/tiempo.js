@@ -40,9 +40,6 @@ function parar() {
 
 // Funcion de cronomtero que se llaman cada segundo
 function cronometro() {
-
-    // Subimos el segundo +1
-    segundos++;
 		
     // Si el segundo es 59 
     if (segundos == 59) {
@@ -55,7 +52,7 @@ function cronometro() {
     // Si los segundos estan a 0(ya ha pasado de la segundo -1 a 0)
     if(segundos == 0) {
 
-        // Actualizamos los munutos +1
+        // Actualizamos los minutos +1
         minutos++;
 
     }
@@ -69,12 +66,15 @@ function cronometro() {
 	}
 
     // Si los segundos estan a 0 y los minutos a 0
-	if ( (segundos == 0)&&(minutos == 0) ) {
+	if ( (segundos == 0) && (minutos == 0) ) {
 
         // Subimos las horas +1
 		horas ++;
 
 	} 
+    
+    // Subimos el segundo +1
+    segundos++;
 
     // Actualizamos en las variables en las mayores(tienen los 0)
     Horas = (horas > 10) ? horas : (horas < 10 && horas > 0) ? "0" + horas : "00";
@@ -83,6 +83,8 @@ function cronometro() {
 
     // Mostramos el tiempo en pantalla(con 0)
     document.querySelector('#tiempo a').innerHTML = Horas + ":" + Minutos + ":" + Segundos;
+
+       
 
 }
 

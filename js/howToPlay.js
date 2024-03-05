@@ -44,6 +44,19 @@ function laberinto() {
     return instrucciones;
 }
 
+function crucigrama() {
+    let instrucciones = '<h4> How to play? Instrucciones: </h4><br>' + 
+                        '<h5> Ver informacion de palabra: </h5>' + 
+                        '<small> Clicar en "Ver", si esta en la 1a columna, se mostrara la definicion de la palabra horizontal propia, si esta en 1a linia, se mostrara la definicion de la palabra horizontal</small>' +
+                        '<br><br><h5> Escribir letras en tablero </h5>' + 
+                        '<small> Escribir directamaente en los cuadrados en marron(Los grises no son de escritura) </small>' + 
+                        '<br><br><h5> Comprovar i guardar partida </h5>' + 
+                        '<small> Para poder guardar la partida, debe estar iniciado, si esta iniciado, clicar en el boton "Save", si no esta iniciado y aparece el boton, este no hara nada<br> Para comprovar las palabras/letras, clicar en "Check", entonces se actualizara la puntuacion y las faltas</small><br>';
+
+
+    return instrucciones;
+}
+
 btnHow.addEventListener('click', ()=> {
     document.getElementById('modal').className = "open";
     let modal =  document.getElementById('contenido-modal');
@@ -59,8 +72,10 @@ btnHow.addEventListener('click', ()=> {
     } else if(document.querySelector('#juego1 #titulo')) {
         instrucciones = advinanzasMatematicas();  //Nivel 2.2
     } else if(document.getElementById('laberinto')) {
-        instrucciones = laberinto();  //Nivel 2.3 y 3.2
-    } 
+        instrucciones = laberinto();  //Nivel 2.3 y 3.3
+    } else if(document.getElementById('tablero')) {
+        instrucciones = crucigrama();
+    }
 
     // Rellenar modal
     modal.innerHTML = '<div>' + instrucciones + '<br><button id="modalClose"> Close </button></div>';

@@ -6,7 +6,23 @@
         <title>Escape Room</title>
         <!-- STYLE -->
         <link rel="stylesheet" href="../../style.css">
-        <link rel="stylesheet" href="../../css/laberinto.css">
+        <link rel="stylesheet" href="../../css/game1.css">
+        <style>
+            main {
+                text-align: center;
+                margin-bottom: 5%;
+            }
+
+            table {
+                border: none;
+                margin-block: 5%;
+            }
+
+            input {
+                color: #FFDDD2;
+                text-align: center;
+            }
+        </style>
     </head>
 
     <body>
@@ -19,14 +35,18 @@
                 <a href="./../../form/register.html"><button type="button"> Register </button></a>
             </span>
             <span id="admin">   <!-- Solo lo vera el administrador -->
-                <a href="./showAllUsers.html"><button type="button"> View Users </button></a>
+                <a href="./../../form/showAllUsers.html"><button type="button"> View Users </button></a>
             </span> 
             <button type="button" id="logout"> Log out </button>  <!-- Boton de logout -->
+            <a href="./../../form/estadistiques.html"> <button type="button"> View Stadistics </button></a><!-- Ver estadisticas -->
         </header>
 
-        <main>
-            <div id="level" hidden>difficult</div>  <!-- Para saber de que dificultad es el laberinto-->
-            <div id="laberinto"> </div>
+        <main id="container">
+            <div id="tablero">
+                <table>
+                    <tbody></tbody> 
+                </table>    
+            </div>
 
             <!-- Modal -->
             <div id="modal" class="close">
@@ -47,13 +67,14 @@
             <button id="howToPlay"> How to play? </button>
             <button id="save"> Save </button>
             <button id="check"> Check </button>    
-            <a href="./../../index.html"><button id="next">Next Game</button></a>
+            <a href="./../games/lev3lev3.html"><button id="next">Next Game</button></a>
+            <button id="pista"> Pista </button>
         </footer>
 
         <!-- Scripts de JS -->
         <script src="./../../js/howToPlay.js"></script>
         <script type="module" src="../../js/tiempo.js"> </script>
-        <script type="module" src="./../../js/lev2lev3.js"> </script>
+        <script type="module" src="./../../js/lev3lev2.js"> </script>
         <script src="../../js/logout.js"> </script>
     </body>
 </html>

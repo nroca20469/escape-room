@@ -44,7 +44,7 @@ function mirarUsuario() {
 // Funcion para buscar en que nivel esta el usuario actual(o mostrar el primer nivel si no esta iniciado)
 function actualizarClases() {
     // Variable para guardar el id del usuario
-    let id = mirarUsuario() ?? null;
+    let id = mirarUsuario();
 
     if(id) {        // Si el usuario esta iniciado  
 
@@ -72,6 +72,15 @@ function actualizarClases() {
 
             if(lev2.estate == 'done') {
                 level2.classname += ' done';
+            }
+        }
+
+        // Nivel 3
+        if((lev3.estate == null && lev3.estate == 'done') || lev3.estate ) {
+            level3.className = 'unblocked';
+
+            if(lev3.estate == 'done') {
+                level3.classname += ' done';
             }
         }
 

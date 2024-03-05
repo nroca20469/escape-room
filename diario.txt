@@ -148,3 +148,10 @@ HECHO:
 
 PARA HACER:
 - Mirar si el nivel 3 nivel 3 da tiempo de hacerlo(hay hasta el 3.2)
+
+04/03/2024 - 05/03/2024
+HECHO:
+- Juego 3.2 --> todo hecho de este codigo 
+
+POR HACER:
+- El how to play de este nivel

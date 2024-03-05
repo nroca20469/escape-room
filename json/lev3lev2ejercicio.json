@@ -1,0 +1,27 @@
+[
+    {   
+        "pistas": {
+            "h0": "Prenda interior",
+            "h1": "Signo exterior de pena y duelo",
+            "h2": "Señal de peligro",
+            "h3": "Escala de Vernier",
+            "h4": "Pintor de cuardro 'La maja desnuda'",
+            "h5": "Apuntas, registras",
+            "v0": "Empuñe su espada, n0o sea tan debil",
+            "v1": "Rizo del cabello",
+            "v2": "Ajusto, sujeto mis acciones a algo",
+            "v3": "'Papa,...' novela del escritor Honoré de Balzac",
+            "v4": "Las gransdes consumidores",
+            "v5": "De tu propuedad(fem)"
+        },
+        "tablero": {
+            "fila1": [null, null, null, null, null, "b-black"],
+            "fila2": [null, null, null, null, "b-black", null],
+            "fila3": [null, null, null, null, null, null],
+            "fila4": [null, null, null, null, null, null],
+            "fila5": [null, "b-black", null, null, null, null],
+            "fila6": [null, null, null, null, null, null]
+        }
+        
+    }
+]

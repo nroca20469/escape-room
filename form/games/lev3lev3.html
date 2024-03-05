@@ -4,15 +4,16 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=.0">
         <title>Escape Room</title>
-        <link rel="stylesheet" href="./../../style.css">
-        <link rel="stylesheet" href="./../../css/game1.css">
+        <!-- STYLE -->
+        <link rel="stylesheet" href="../../style.css">
+        <link rel="stylesheet" href="../../css/laberinto.css">
     </head>
 
     <body>
         <header>
             <a href="./../../index.html"><img src="../../img/kisspng-logo-brand-product-design-font-booking-little-chicago-escape-room-moose-jaw-5be6a8ad7053b0.3185436115418431174601.png" alt="Logo"  height="75px"></a>
             <a href="./../../index.html"><h3>The Escape Room Game</h3></a>
-
+    
             <span id="buttonsLogInRegister">  <!-- Botones de login i register -->
                 <a href="./../../form/login.html"><button type="button"> Log in </button></a>
                 <a href="./../../form/register.html"><button type="button"> Register </button></a>
@@ -24,16 +25,9 @@
             <a href="./../../form/estadistiques.html"> <button type="button"> View Stadistics </button></a><!-- Ver estadisticas -->
         </header>
 
-        <main id="container">
-            <!-- Mapeamos la imagen del sudoku -->
-            <img src="./../../img/lev3lev1/1.png" id="imgSudoku" style="width: 726px; max-width: 100%; height: auto;" alt="" usemap="#map" />
-            <map name="map">
-                <area shape="rect" coords="11, 9, 320, 310"  href="./lev3level1sudoku1.html" />
-                <area shape="rect" coords="418, 8, 719, 310" href="./lev3level1sudoku2.html" />
-                <area shape="rect" coords="214, 210, 519, 516" href="./lev3level1sudoku3.html" />
-                <area shape="rect" coords="11, 413, 317, 715" href="./lev3level1sudoku4.html" />
-                <area shape="rect" coords="419, 412, 722, 717" href="./lev3level1sudoku5.html" />  
-            </map>
+        <main>
+            <div id="level" hidden>difficult</div>  <!-- Para saber de que dificultad es el laberinto-->
+            <div id="laberinto"> </div>
 
             <!-- Modal -->
             <div id="modal" class="close">
@@ -41,17 +35,26 @@
                     <p id="mensaje-modal"></p>
                 </div>
             </div>
+
+            <!-- Ver el estado de la partida(faltas, puntuacion & tiempo) -->
+            <div id="faltasIPuntuacion">
+                <h4 id="faltas">Faltas: <a>0</a></h4>
+                <h4 id="puntuacion">Puntuacion: <a>0</a></h4>
+                <h4 id="tiempo">Tiempo: <a>00:00:00</a></h4>
+            </div> 
         </main>
 
         <footer>
-            <button id="save">Save</button>
-            <button id="check">Check</button>
-            <a href="./lev3lev2.html"><button id="next"> Next Game </button></a>
+            <button id="howToPlay"> How to play? </button>
+            <button id="save"> Save </button>
+            <button id="check"> Check </button>    
+            <a href="./../../index.html"><button id="next">Next Game</button></a>
         </footer>
 
-        <!-- Script JS -->
-        <script type="module" src="../../js/sudoku.js"></script>
-        <script type="module" src="../../js/lev3lev1.js"> </script>
-        <script src="../../js/logout.js"></script>
+        <!-- Scripts de JS -->
+        <script src="./../../js/howToPlay.js"></script>
+        <script type="module" src="../../js/tiempo.js"> </script>
+        <script type="module" src="./../../js/lev2lev3.js"> </script>
+        <script src="../../js/logout.js"> </script>
     </body>
 </html>

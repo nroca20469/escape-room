@@ -113,7 +113,6 @@ window.addEventListener('load', () => {  //Cuando la ventana se inicie
 
         // Si en el LS no esta guardado un sudokuSamurai
         if(!localStorage.getItem('sudokuSamurai')) {
-
             // Creacion del estado
             let gameEstat = crearGameEstate();
 
@@ -156,23 +155,27 @@ window.addEventListener('load', () => {  //Cuando la ventana se inicie
         }
         
     } else {
-        // Comprovar si el estado del juego del LS esta finalizado
-        let savedGame = JSON.parse(localStorage.getItem('sudokuSamurai'));
-        let estados = savedGame.estados;
-        let estadosAcabados = 0;  // Contador de estados en 'done'
 
-        Object.keys(estados).forEach(element => {  // Comprovar que todo este acabado en el estado del juego
-            if(estados[element] == 'done') {
-                estadosAcabados++;  // Subimos le contador
-            }
-        });
+        if(localStorage.getItem('sudokuSamurai')) {
+            // Comprovar si el estado del juego del LS esta finalizado
+            let savedGame = JSON.parse(localStorage.getItem('sudokuSamurai'));
+            let estados = savedGame.estados;
+            let estadosAcabados = 0;  // Contador de estados en 'done'
+            console.log(savedGame);
+            Object.keys(estados).forEach(element => {  // Comprovar que todo este acabado en el estado del juego
+                if(estados[element] == 'done') {
+                    estadosAcabados++;  // Subimos le contador
+                }
+            });
 
-        if(estadosAcabados == 5) {  // Si el contador muestra que todos los estados estan finalizados
-            savedGame.estate = 'done'; // Cambiamos estado general a acabado
-            localStorage.setItem('sudokuSamurai', JSON.stringify(savedGame)); // Actualizamoes el estado general
+            if(estadosAcabados == 5) {  // Si el contador muestra que todos los estados estan finalizados
+                savedGame.estate = 'done'; // Cambiamos estado general a acabado
+                localStorage.setItem('sudokuSamurai', JSON.stringify(savedGame)); // Actualizamoes el estado general
 
-            document.getElementById('next').style.display = 'inline-block';  // Mostramos el boton de porximo juego
-        }        
+                document.getElementById('next').style.display = 'inline-block';  // Mostramos el boton de porximo juego
+            }        
+        }
+        
     }
         
 });
