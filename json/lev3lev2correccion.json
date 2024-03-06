@@ -6,5 +6,21 @@
         "fila4": ["n", "o", "n", "i", "u", "s"],
         "fila5": ["d", "b-black", "g", "o", "y", "a"],
         "fila6": ["a", "n", "o", "t", "a", "s"]
+    },
+    {
+        "fila1": ["d", "u", "n", "e", "b-black", "p"],
+        "fila2": ["u", "s", "a", "b-black", "b-black", "a"],
+        "fila3": ["c", "a", "n", "e", "s", "u"],
+        "fila4": ["a", "b", "e", "d", "u", "l"],
+        "fila5": ["l", "a", "r", "e", "s", "b-black"],
+        "fila6": ["b-black", "b-black", "a", "n", "i", "s"]
+    },
+    {
+        "fila1": ["b", "r", "a", "c", "o", "b-black"],
+        "fila2": ["r", "u", "d", "a", "b-black", "v"],
+        "fila3": ["a", "l", "u", "m", "n", "a"],
+        "fila4": ["g", "o", "l", "p", "e", "s"],
+        "fila5": ["a", "b-black", "t", "a", "m", "o"],
+        "fila6": ["b-black", "p", "o", "l", "o", "s"]
     }
 ]

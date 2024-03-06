@@ -11,8 +11,8 @@
             "v1": "Rizo del cabello",
             "v2": "Ajusto, sujeto mis acciones a algo",
             "v3": "'Papa,...' novela del escritor Honoré de Balzac",
-            "v4": "Las gransdes consumidores",
-            "v5": "De tu propuedad(fem)"
+            "v4": "Las grandes consumidores",
+            "v5": "De tu propiedad(fem)"
         },
         "tablero": {
             "fila1": [null, null, null, null, null, "b-black"],
@@ -22,6 +22,53 @@
             "fila5": [null, "b-black", null, null, null, null],
             "fila6": [null, null, null, null, null, null]
         }
-        
+    },
+    {   
+        "pistas": {
+            "h0": "Novela de ciecia ficción, por Frank Herbert(1965)",
+            "h1": "Estados Unidos de América (siglas en inglés)",
+            "h2": "Cuerpo de vestido de muher corto y s in manga",
+            "h3": "Árbol Nacional de Finlandia, Suecia",
+            "h4": "Casa propia u hogar (pl)",
+            "h5": "Alanis bebiendo cazalla",
+            "v0": "Relativo al duque",
+            "v1": "Empleaba, utilizaba",
+            "v2": "Cuando suben, llenan la casa de arena",
+            "v3": "'... Atreides' el prota de Dune",
+            "v4": "El Paraíso",
+            "v5": "A Susana con cariño"
+        },
+        "tablero": {
+            "fila1": [null, null, null, null, "b-black", null],
+            "fila2": [null, null, null, "b-black", "b-black", null],
+            "fila3": [null, null, null, null, null, null],
+            "fila4": [null, null, null, null, null, null],
+            "fila5": [null, null, null, null, null, "b-black"],
+            "fila6": ["b-black", "b-black", null, null, null, null]
+        }
+    },
+    {
+        "pistas": {
+            "h0": "El perro de Weimaraner",
+            "h1": "Una tipa dura, sin delicadeza",
+            "h2": "Una estudiante",
+            "h3": "Se los dan en el pecho los arrepentidos",
+            "h4": "Pelusilla que se cría debajo de las camas por falta de aseo",
+            "h5": "Los opuestos se atraen",
+            "v0": "Prenda interior",
+            "v1": "Rizo del cabello",
+            "v2": "Un tipo plenamente desarrollado",
+            "v3": "Batalla intensa y decisiva que se libra a campo abierta",
+            "v4": "El pececito más buscado",
+            "v5": "Recipientes cilíncricos para beber"
+        },
+        "tablero": {
+            "fila1": [null, null, null, null, null, "b-black"],
+            "fila2": [null, null, null, null, "b-black", null],
+            "fila3": [null, null, null, null, null, null],
+            "fila4": [null, null, null, null, null, null],
+            "fila5": [null, "b-black", null, null, null, null],
+            "fila6": ["b-black", null, null, null, null, null]
+        }
     }
 ]
