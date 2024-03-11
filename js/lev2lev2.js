@@ -281,7 +281,7 @@ window.addEventListener('load', ()=> {
             ejercicio3 = level2.jsonPreguntas.preg3;
 
             // Actualizamos el tiempo al guardado
-            tiempo.innerHTML = nivel.tiempo;
+            tiempo.innerHTML = level2.tiempo == null ? '00:00:00' : level2.tiempo;
 
         } else {                                    // Si no esta ni vacio ni en intento es que esta acabado
             

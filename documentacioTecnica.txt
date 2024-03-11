@@ -21,6 +21,7 @@
         3.- En mapa, eleccio del 1r nivell.
         4.- En cada nivell, hi ha un HowToPlay button, per veure com jugar a x joc
 
+
 7.- REFERENCIES
     MDNWebDocs de JS --> https://developer.mozilla.org/en-US/docs/Learn/JavaScript
     CSS en MDNWebDocs --> https://developer.mozilla.org/en-US/docs/Learn/CSS 

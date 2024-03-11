@@ -420,12 +420,12 @@ document.getElementById('pista').addEventListener('click', ()=> {
 btnNextGame.addEventListener('click', ()=> {
 
     //Coger nivel
-    let nivel = nivel.innerHTML;
+    let niv = nivel.innerText; 
 
     if(id) {
         saveGame(); //Save the game
         let usuario = JSON.parse(localStorage.getItem(id));
-        if(nivel == 'lev1') {
+        if(niv == 'lev1') {
             usuario.gameEstate[0].map1[0].level1.estate = 'done';
         } else if(nivel == 'lev2') {
             usuario.gameEstate[0].map2[0].level1.estate = 'done';
@@ -434,9 +434,9 @@ btnNextGame.addEventListener('click', ()=> {
         localStorage.setItem(id, JSON.stringify(usuario));  //Save estate of the game
 
         //Change to the next level
-        if(nivel == 'lev1') {
+        if(niv == 'lev1') {
             location.href = './lev1lev2.html';
-        } else if(nivel == 'lev2') {
+        } else if(niv == 'lev2') {
             location.href = "./lev2lev2.html"
         }
         
